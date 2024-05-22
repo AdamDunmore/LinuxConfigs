@@ -44,38 +44,52 @@
             };
         };
 
-        hostName = "${builtins.getEnv "HOSTNAME"}";
-        hostPath = ./. + (if "${hostName}" == "desktop" then "/hosts/desktop/configuration.nix" else if "${hostName}" == "laptop" then "/hosts/laptop/configuration.nix" else "/hosts/desktop/configuration.nix");
-
-    in
-    {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-                inherit system;
+        nixConfigSpecialArgs = {
+                    inherit system;
+                    inherit pkgs;
+                    inherit pkgs-unstable;
+                    inherit spicetify-nix;
+                    inherit stylix;
+                    inherit hyprland;
+                    inherit split-monitor-workspaces;
+                };
+        homeManagerConfig = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.adam.imports = [ ./modules/home.nix ];
+            extraSpecialArgs = {
                 inherit pkgs;
                 inherit pkgs-unstable;
                 inherit spicetify-nix;
-                inherit stylix;
                 inherit hyprland;
                 inherit split-monitor-workspaces;
             };
-            modules = [
-                hostPath
-                home-manager.nixosModules.home-manager {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.users.adam.imports = [ ./modules/home.nix ];
-                    home-manager.extraSpecialArgs = {
-                        inherit pkgs-unstable;
-                        inherit spicetify-nix;
-                        inherit hyprland;
-                        inherit split-monitor-workspaces;
-                    };
-                }
-                #stylix.nixosModules.stylix
-            ];
+        };
+ 
+    in
+    {
+        nixosConfigurations = {
+            laptop = nixpkgs.lib.nixosSystem {
+                specialArgs = nixConfigSpecialArgs;
+                modules = [
+                    ./hosts/laptop/configuration.nix  
+                    home-manager.nixosModules.home-manager {
+                        home-manager = homeManagerConfig;
+                    }
+                    #stylix.nixosModules.stylix
+                ];
+            };
 
-      };
+            desktop = nixpkgs.lib.nixosSystem {
+                specialArgs = nixConfigSpecialArgs;
+                modules = [
+                    ./hosts/desktop/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager = homeManagerConfig;
+                    }
+                ];
+            };
+        };
     };
 }
 

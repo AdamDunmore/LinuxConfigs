@@ -10,5 +10,8 @@
             enable = true;
             theme = "agnoster";
         };
+        envExtra = "
+        HOSTNAME=$(hostname)
+        ";
     };
 }
