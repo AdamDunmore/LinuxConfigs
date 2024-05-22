@@ -1,3 +1,2 @@
 *.txt
 .config/hypr/hyprland.conf
-flake.lock

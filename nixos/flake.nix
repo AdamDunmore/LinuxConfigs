@@ -11,11 +11,12 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     stylix.url = "github:danth/stylix";
 
-    hyprland = {
-        url = "github:hyprwm/Hyprland";
-        follows = "hyprland-virtual-desktops/hyprland";     
+    #hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; #Temporary and waiting for fix
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
     };
-    hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
   };
 
   outputs = { 
@@ -26,7 +27,7 @@
     spicetify-nix,
     stylix,
     hyprland, 
-    hyprland-virtual-desktops 
+    split-monitor-workspaces
   }@inputs: 
     let
         system = "x86_64-linux";
@@ -56,7 +57,7 @@
                 inherit spicetify-nix;
                 inherit stylix;
                 inherit hyprland;
-                inherit hyprland-virtual-desktops;
+                inherit split-monitor-workspaces;
             };
             modules = [
                 hostPath
@@ -68,7 +69,7 @@
                         inherit pkgs-unstable;
                         inherit spicetify-nix;
                         inherit hyprland;
-                        inherit hyprland-virtual-desktops;
+                        inherit split-monitor-workspaces;
                     };
                 }
                 #stylix.nixosModules.stylix

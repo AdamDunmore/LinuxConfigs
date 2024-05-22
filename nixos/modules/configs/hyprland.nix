@@ -1,11 +1,11 @@
-{ pkgs, hyprland, hyprland-virtual-desktops, ... }:
+{ pkgs, hyprland, split-monitor-workspaces, ... }:
 
 {
         wayland.windowManager.hyprland = {
             enable = true;
             package = hyprland.packages.${pkgs.system}.hyprland;
             plugins = [
-                hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+                split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
             ];
             settings = {
                 "$mod" = "SUPER";
@@ -30,57 +30,29 @@
                     "$mod SHIFT, up, movewindow, u"
                     "$mod SHIFT, down, movewindow, d" 
 
-                    "$mod, 1, exec, ~/.config/eww/scripts/change_workspace.sh 1"                    
-                    "$mod, 2, exec, ~/.config/eww/scripts/change_workspace.sh 2"
-                    "$mod, 3, exec, ~/.config/eww/scripts/change_workspace.sh 3"
-                    "$mod, 4, exec, ~/.config/eww/scripts/change_workspace.sh 4"
-                    "$mod, 5, exec, ~/.config/eww/scripts/change_workspace.sh 5"
-                    "$mod, 6, exec, ~/.config/eww/scripts/change_workspace.sh 6"
-                    "$mod, 7, exec, ~/.config/eww/scripts/change_workspace.sh 7"
-                    "$mod, 8, exec, ~/.config/eww/scripts/change_workspace.sh 8"
-                    "$mod, 9, exec, ~/.config/eww/scripts/change_workspace.sh 9"
-                    "$mod, 0, exec, ~/.config/eww/scripts/change_workspace.sh 10"
 
-#                    "$mod, 1, focusmonitor, DP-1"
-#                    "$mod, 1, workspace, 1"
-#                
-#                    "$mod, 2, focusmonitor, DP-1"
-#                    "$mod, 2, workspace, 2"
-#                    
-#                    "$mod, 3, focusmonitor, DP-1"
-#                    "$mod, 3, workspace, 3"
-#                    
-#                    "$mod, 4, focusmonitor, DP-1"
-#                    "$mod, 4, workspace, 4"
-#                    
-#                    "$mod, 5, focusmonitor, DP-1"
-#                    "$mod, 5, workspace, 5"
-#                
-#                    "$mod, 6, focusmonitor, DP-1"
-#                    "$mod, 6, workspace, 6"
-#                    
-#                    "$mod, 7, focusmonitor, DP-1"
-#                    "$mod, 7, workspace, 7"
-#                    
-#                    "$mod, 8, focusmonitor, DP-1"
-#                    "$mod, 8, workspace, 8"
-#                    
-#                    "$mod, 9, focusmonitor, DP-3"
-#                    "$mod, 9, workspace, 9"
-#                    
-#                    "$mod, 0, focusmonitor, HDMI-A-1"
-#                    "$mod, 0, workspace, 10"
 
-                    "$mod SHIFT, 1, movetodesksilent, 1"
-                    "$mod SHIFT, 2, movetodesksilent, 2"
-                    "$mod SHIFT, 3, movetodesksilent, 3"
-                    "$mod SHIFT, 4, movetodesksilent, 4"
-                    "$mod SHIFT, 5, movetodesksilent, 5"
-                    "$mod SHIFT, 6, movetodesksilent, 6"
-                    "$mod SHIFT, 7, movetodesksilent, 7"
-                    "$mod SHIFT, 8, movetodesksilent, 8"
-                    "$mod SHIFT, 9, movetodesksilent, 9"
-                    "$mod SHIFT, 0, movetodesksilent, 10"
+                    "$mod, 1, split-workspace, 1"
+                    "$mod, 2, split-workspace, 2"
+                    "$mod, 3, split-workspace, 3"
+                    "$mod, 4, split-workspace, 4"
+                    "$mod, 5, split-workspace, 5"
+                    "$mod, 6, split-workspace, 6"
+                    "$mod, 7, split-workspace, 7"
+                    "$mod, 8, split-workspace, 8"
+                    "$mod, 9, split-workspace, 9"
+                    "$mod, 0, split-workspace, 10"
+
+                    "$mod SHIFT, 1, split-movetoworkspacesilent , 1"
+                    "$mod SHIFT, 2, split-movetoworkspacesilent , 2"
+                    "$mod SHIFT, 3, split-movetoworkspacesilent , 3"
+                    "$mod SHIFT, 4, split-movetoworkspacesilent , 4"
+                    "$mod SHIFT, 5, split-movetoworkspacesilent , 5"
+                    "$mod SHIFT, 6, split-movetoworkspacesilent , 6"
+                    "$mod SHIFT, 7, split-movetoworkspacesilent , 7"
+                    "$mod SHIFT, 8, split-movetoworkspacesilent , 8"
+                    "$mod SHIFT, 9, split-movetoworkspacesilent , 9"
+                    "$mod SHIFT, 0, split-movetoworkspacesilent , 10"
 
 
                     "$mod, S, togglespecialworkspace, magic"
@@ -106,19 +78,6 @@
 
                 #Misc
                 monitor=,1920x1080,auto,1
-
-                #workspace=1,monitor:DP-1
-                #workspace=2,monitor:DP-1
-                #workspace=3,monitor:DP-1
-                #workspace=4,monitor:DP-1
-                #workspace=5,monitor:DP-1
-                #workspace=6,monitor:DP-1
-                #workspace=7,monitor:DP-1
-                #workspace=8,monitor:DP-1
-                #workspace=9,monitor:DP-1
-                #workspace=10,monitor:DP-1
-                #workspace=11,monitor:DP-3
-                #workspace=12,monitor:HDMI-A-1
 
                 exec-once = ~/.config/eww/scripts/open.sh
                 exec-once = hyprpaper
@@ -218,12 +177,10 @@
                 }
 
                 plugin {
-                    virtual-desktops {
-                        names = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 
-                        cycleworkspaces = 1
-                        rememberlayout = size
-                        notifyinit = 0
-                        verbose_logging = 0
+                    split-monitor-workspaces {
+                        count = 5
+                        keep_focused = 0
+                        enable_notifications = 0
                     }
                 }
         ";
