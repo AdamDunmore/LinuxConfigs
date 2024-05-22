@@ -76,7 +76,6 @@
                     home-manager.nixosModules.home-manager {
                         home-manager = homeManagerConfig;
                     }
-                    #stylix.nixosModules.stylix
                 ];
             };
 
@@ -87,6 +86,7 @@
                     home-manager.nixosModules.home-manager {
                         home-manager = homeManagerConfig;
                     }
+                    #stylix.nixosModules.stylix
                 ];
             };
         };

@@ -3,7 +3,7 @@
 {
 
   imports = [
-#   (import ./configs/stylix.nix { inherit pkgs; inherit stylix; })
+   #(import ./configs/stylix.nix { inherit pkgs; inherit stylix; })
   ];
 
   # Bootloader
@@ -133,7 +133,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.hyprland = {
     enable = true;
-    package = hyprland.packages.${pkgs.system}.hyprland;
   };
   programs.steam.enable = true;
 }
