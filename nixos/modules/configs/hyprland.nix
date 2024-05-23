@@ -5,7 +5,7 @@
             enable = true;
             package = hyprland.packages.${pkgs.system}.hyprland;
             plugins = [
-                #inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+                inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
             ];
             settings = {
                 "$mod" = "SUPER";
@@ -45,16 +45,16 @@
                     "$mod, 9, split-workspace, 9"
                     "$mod, 0, split-workspace, 10"
 
-                    "$mod SHIFT, 1, split-movetoworkspacesilent , 1"
-                    "$mod SHIFT, 2, split-movetoworkspacesilent , 2"
-                    "$mod SHIFT, 3, split-movetoworkspacesilent , 3"
-                    "$mod SHIFT, 4, split-movetoworkspacesilent , 4"
-                    "$mod SHIFT, 5, split-movetoworkspacesilent , 5"
-                    "$mod SHIFT, 6, split-movetoworkspacesilent , 6"
-                    "$mod SHIFT, 7, split-movetoworkspacesilent , 7"
-                    "$mod SHIFT, 8, split-movetoworkspacesilent , 8"
-                    "$mod SHIFT, 9, split-movetoworkspacesilent , 9"
-                    "$mod SHIFT, 0, split-movetoworkspacesilent , 10"
+                    "$mod SHIFT, 1, split-movetoworkspacesilent, 1"
+                    "$mod SHIFT, 2, split-movetoworkspacesilent, 2"
+                    "$mod SHIFT, 3, split-movetoworkspacesilent, 3"
+                    "$mod SHIFT, 4, split-movetoworkspacesilent, 4"
+                    "$mod SHIFT, 5, split-movetoworkspacesilent, 5"
+                    "$mod SHIFT, 6, split-movetoworkspacesilent, 6"
+                    "$mod SHIFT, 7, split-movetoworkspacesilent, 7"
+                    "$mod SHIFT, 8, split-movetoworkspacesilent, 8"
+                    "$mod SHIFT, 9, split-movetoworkspacesilent, 9"
+                    "$mod SHIFT, 0, split-movetoworkspacesilent, 10"
 
 
                     "$mod, S, togglespecialworkspace, magic"
@@ -179,11 +179,11 @@
                 }
 
                 plugin {
-                    #split-monitor-workspaces {
-                    #    count = 5
-                    #    keep_focused = 0
-                    #    enable_notifications = 0
-                    #}
+                    split-monitor-workspaces {
+                        count = 10
+                        keep_focused = 0
+                        enable_notifications = 0
+                    }
                 }
         ";
         };
