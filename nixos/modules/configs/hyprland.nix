@@ -1,11 +1,11 @@
-{ pkgs, hyprland, split-monitor-workspaces, ... }:
+{ pkgs, hyprland, inputs, ... }:
 
 {
         wayland.windowManager.hyprland = {
             enable = true;
             package = hyprland.packages.${pkgs.system}.hyprland;
             plugins = [
-                split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+                #inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
             ];
             settings = {
                 "$mod" = "SUPER";
@@ -179,11 +179,11 @@
                 }
 
                 plugin {
-                    split-monitor-workspaces {
-                        count = 5
-                        keep_focused = 0
-                        enable_notifications = 0
-                    }
+                    #split-monitor-workspaces {
+                    #    count = 5
+                    #    keep_focused = 0
+                    #    enable_notifications = 0
+                    #}
                 }
         ";
         };

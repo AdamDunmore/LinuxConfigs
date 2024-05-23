@@ -11,8 +11,7 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     stylix.url = "github:danth/stylix";
 
-    #hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; #Temporary and waiting for fix
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
@@ -26,7 +25,7 @@
     home-manager, 
     spicetify-nix,
     stylix,
-    hyprland, 
+    hyprland,
     split-monitor-workspaces
   }@inputs: 
     let
@@ -51,7 +50,7 @@
                     inherit spicetify-nix;
                     inherit stylix;
                     inherit hyprland;
-                    inherit split-monitor-workspaces;
+                    inherit inputs;
                 };
         homeManagerConfig = {
             useGlobalPkgs = true;
@@ -62,7 +61,7 @@
                 inherit pkgs-unstable;
                 inherit spicetify-nix;
                 inherit hyprland;
-                inherit split-monitor-workspaces;
+                inherit inputs;
             };
         };
  
@@ -86,7 +85,7 @@
                     home-manager.nixosModules.home-manager {
                         home-manager = homeManagerConfig;
                     }
-                    #stylix.nixosModules.stylix
+#                    stylix.nixosModules.stylix
                 ];
             };
         };

@@ -1,10 +1,10 @@
-{ config, lib, pkgs, pkgs-unstable, hyprland, split-monitor-workspaces, spicetify-nix, ... }:
+{ config, lib, pkgs, pkgs-unstable, hyprland, split-monitor-workspaces, spicetify-nix, inputs, ... }:
 
 let
 in
 {
   imports = [
-    (import ./configs/hyprland.nix { inherit pkgs; inherit hyprland; inherit split-monitor-workspaces; }) 
+    (import ./configs/hyprland.nix { inherit pkgs; inherit hyprland; inherit inputs;}) 
     ./configs/kitty.nix
     ./configs/zsh.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })

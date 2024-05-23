@@ -3,7 +3,7 @@
 {
 
   imports = [
-   #(import ./configs/stylix.nix { inherit pkgs; inherit stylix; })
+#    (import ./configs/stylix.nix { inherit pkgs; inherit stylix; })
   ];
 
   # Bootloader
