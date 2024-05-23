@@ -29,6 +29,8 @@ in
     vesktop
     heroic
     prismlauncher
+    grim
+    slurp
   ])
 
   ++

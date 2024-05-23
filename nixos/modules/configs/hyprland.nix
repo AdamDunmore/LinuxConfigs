@@ -12,11 +12,10 @@
 
                 bind = 
                 [
-                    "$mod, T, exec, kitty echo '${builtins.getEnv "hostname"}'"
-
                     "$mod, D, exec,  wofi --show drun --allow-images -a --height 300 --width 600"
                     "$mod, Return, exec, kitty"
                     "$mod SHIFT, Q, killactive,"
+                    "$mod, C, exec, grim -g \"$(slurp)\""
 
                     "$mod, F, fullscreen,"
                     "$mod, P, pseudo,"
