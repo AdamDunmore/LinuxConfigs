@@ -29,6 +29,8 @@ in
     vesktop
     heroic
     prismlauncher
+    motrix
+    android-studio
   ])
 
   ++
