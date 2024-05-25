@@ -31,8 +31,6 @@
                     "$mod SHIFT, up, movewindow, u"
                     "$mod SHIFT, down, movewindow, d" 
 
-
-
                     "$mod, 1, split-workspace, 1"
                     "$mod, 2, split-workspace, 2"
                     "$mod, 3, split-workspace, 3"
@@ -55,10 +53,8 @@
                     "$mod SHIFT, 9, split-movetoworkspacesilent, 9"
                     "$mod SHIFT, 0, split-movetoworkspacesilent, 10"
 
-
                     "$mod, S, togglespecialworkspace, magic"
                     "$mod SHIFT, S, movetoworkspace, special:magic"
-
 
                     ",XF86AudioRaiseVolume, exec, ~/.config/eww/scripts/change_volume.sh +"
                     ",XF86AudioLowerVolume, exec, ~/.config/eww/scripts/change_volume.sh -"
