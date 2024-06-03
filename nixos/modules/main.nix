@@ -57,8 +57,8 @@
     libinput.enable = true;
 	
     displayManager.sddm.enable = true;
-	desktopManager.plasma5.enable = true;
-    desktopManager.gnome.enable = true;
+    #desktopManager.gnome.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
 
@@ -73,6 +73,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  hardware.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.adam = {
