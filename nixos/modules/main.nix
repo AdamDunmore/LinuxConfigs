@@ -58,6 +58,7 @@
 	
     displayManager.sddm.enable = true;
 	desktopManager.plasma5.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
 
