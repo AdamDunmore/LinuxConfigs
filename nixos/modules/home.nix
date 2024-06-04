@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, hyprland, split-monitor-workspaces, spicetify-nix, inputs, ... }:
+{ config, lib, pkgs, pkgs-unstable, hyprland, spicetify-nix, inputs, ... }:
 
 let
 in
@@ -26,7 +26,6 @@ in
     logseq
     lutris
     discord
-    vesktop
     heroic
     prismlauncher
     motrix
@@ -39,6 +38,7 @@ in
     #Unstable Packages
     zed-editor
     neovim
+    vesktop
   ]);
 }
 
