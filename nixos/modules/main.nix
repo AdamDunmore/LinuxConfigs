@@ -119,6 +119,8 @@
         ripgrep
         jq
         python3
+        grim
+        slurp
 
         wineWowPackages.stable
         winetricks
