@@ -40,7 +40,7 @@ component.line_number = {
 
 --Date Component
 component.date = {
-    provider = function () return " " .. tostring(os.date('%m/%d/%y %H:%M:%S',t0)) .. " " end,
+    provider = function () return " " .. tostring(os.date('%d/%m/%y %H:%M:%S',t0)) .. " " end,
     hl = function ()
         return{
             fg = text_colour,
