@@ -30,6 +30,7 @@ in
     prismlauncher
     motrix
     android-studio
+    parsec-bin
   ])
 
   ++
