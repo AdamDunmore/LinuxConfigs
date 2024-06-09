@@ -9,7 +9,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    stylix.url = "github:danth/stylix";
   };
 
   outputs = { 
@@ -18,7 +17,6 @@
     nixpkgs-unstable, 
     home-manager, 
     spicetify-nix,
-    stylix
   }@inputs: 
     let
         system = "x86_64-linux";
@@ -40,7 +38,6 @@
                     inherit pkgs;
                     inherit pkgs-unstable;
                     inherit spicetify-nix;
-                    inherit stylix;
                     inherit inputs;
                 };
         homeManagerConfig = {
@@ -75,7 +72,6 @@
                     home-manager.nixosModules.home-manager {
                         home-manager = homeManagerConfig;
                     }
-#                    stylix.nixosModules.stylix
                 ];
             };
         };

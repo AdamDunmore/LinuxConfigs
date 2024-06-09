@@ -1,10 +1,6 @@
-{ pkgs, pkgs-unstable, hyprland, stylix, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-
-  imports = [
-#    (import ./configs/stylix.nix { inherit pkgs; inherit stylix; })
-  ];
 
   # Bootloader
   boot.loader = {
