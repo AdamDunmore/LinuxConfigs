@@ -1,3 +1,6 @@
+###Startup
+exec mako
+
 ### Variables
 set $mod Mod4
 set $wallpaper ~/Pictures/wallpaper.png
