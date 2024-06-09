@@ -1,0 +1,27 @@
+ignore-empty-password
+indicator
+
+indicator-thickness=15
+indicator-radius=150
+
+image=~/Pictures/wallpaper.png
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+effect-blur=7x5
+effect-vignette=0.5:0.5
+
+line-color=00000000
+
+ring-color=333355CC
+key-hl-color=555577EE
+separator-color=00000010
+
+inside-color=00000060
+
+text-color=FFFFFFAA
+
+
+

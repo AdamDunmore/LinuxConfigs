@@ -30,7 +30,6 @@ in
     prismlauncher
     motrix
     android-studio
-    parsec-bin
   ])
 
   ++
@@ -40,6 +39,7 @@ in
     zed-editor
     neovim
     vesktop
+    parsec-bin
   ]);
 }
 

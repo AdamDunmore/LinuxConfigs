@@ -90,6 +90,10 @@
         zsh-syntax-highlighting
         zsh-autosuggestions
 
+        wl-clipboard
+        mako
+        swaylock-effects
+
         hyprpaper
         waybar
         eww-wayland
@@ -135,8 +139,11 @@
   system.stateVersion = "23.11";
 	
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  programs.hyprland = {
-    enable = true;
+
+  programs = {
+    steam.enable = true;
+
+    hyprland.enable = true;
+    sway.enable = true;
   };
-  programs.steam.enable = true;
 }
