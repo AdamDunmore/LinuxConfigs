@@ -9,6 +9,7 @@ window {
 
 #entry {
     padding: 10px;
+    color: #ffffff;
 }
 
 #entry:selected {
@@ -22,6 +23,8 @@ window {
 #input{
     font-size: 24px;
     padding: 10px;
+
+    color: #ffffff;
 
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
