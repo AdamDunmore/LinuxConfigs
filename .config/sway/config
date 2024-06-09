@@ -120,4 +120,14 @@ bar {
     }
 }
 
+#Apperance
+default_border none
+for_window [class=".*"] opacity 0.9
+for_window [app_id=".*"] opacity 0.9
+gaps inner 10
+gaps outer 10
+
+
+
 include /etc/sway/config.d/*
+include ~/.config/sway/swaysome.conf

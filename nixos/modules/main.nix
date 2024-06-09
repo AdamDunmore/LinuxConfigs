@@ -93,6 +93,7 @@
         wl-clipboard
         mako
         swaylock-effects
+        swaysome
 
         hyprpaper
         waybar
