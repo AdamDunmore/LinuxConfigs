@@ -1,0 +1,44 @@
+{
+    "height": 30,
+    "spacing": 0,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network"
+    ],
+    "fixed-center" : true,
+    "reload_style_on_change" : true,
+
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "backlight": {
+        "format": "{icon}   {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-full": "{icon}   {capacity}%",
+        "format-charging": "󰠠   {capacity}%",
+        "format-plugged": "   {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{icon}   {signalStrength}%",
+        "format-disconnected": "Disconnected ⚠",
+        "format-icons": [""]
+    },
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-icons": [""]
+    }
+}
