@@ -1,5 +1,5 @@
 ###Startup
-exec mako
+exec mako -C ~/.config/sway/mako
 
 ### Variables
 set $mod Mod4
