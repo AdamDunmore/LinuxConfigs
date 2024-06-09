@@ -94,8 +94,6 @@
         mako
         swaylock-effects
         swaysome
-
-        hyprpaper
         waybar
         eww-wayland
         wofi
@@ -143,8 +141,6 @@
 
   programs = {
     steam.enable = true;
-
-    hyprland.enable = true;
     sway.enable = true;
   };
 }

@@ -10,12 +10,6 @@
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     stylix.url = "github:danth/stylix";
-
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
   };
 
   outputs = { 
@@ -24,9 +18,7 @@
     nixpkgs-unstable, 
     home-manager, 
     spicetify-nix,
-    stylix,
-    hyprland,
-    split-monitor-workspaces
+    stylix
   }@inputs: 
     let
         system = "x86_64-linux";
@@ -49,7 +41,6 @@
                     inherit pkgs-unstable;
                     inherit spicetify-nix;
                     inherit stylix;
-                    inherit hyprland;
                     inherit inputs;
                 };
         homeManagerConfig = {
@@ -60,7 +51,6 @@
                 inherit pkgs;
                 inherit pkgs-unstable;
                 inherit spicetify-nix;
-                inherit hyprland;
                 inherit inputs;
             };
         };

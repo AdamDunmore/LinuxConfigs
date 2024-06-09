@@ -1,10 +1,9 @@
-{ config, lib, pkgs, pkgs-unstable, hyprland, spicetify-nix, inputs, ... }:
+{ config, lib, pkgs, pkgs-unstable, spicetify-nix, inputs, ... }:
 
 let
 in
 {
   imports = [
-    (import ./configs/hyprland.nix { inherit pkgs; inherit hyprland; inherit inputs;}) 
     ./configs/kitty.nix
     ./configs/zsh.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
