@@ -1,21 +1,25 @@
 {
     "height": 30,
     "spacing": 0,
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock"],
+    "modules-left": [
+        "sway/workspaces",
+    ],
+    "modules-center": ["clock", "clock#date"],
     "modules-right": [
         "pulseaudio",
         "backlight",
         "battery",
-        "network"
+        "network",
     ],
     "fixed-center" : true,
     "reload_style_on_change" : true,
 
-
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "format-alt": "Clock {:%Y-%m-%d} Clock"
+    },
+    "clock#date": {
+        "format": "{:%A %d %B %Y}"
     },
     "backlight": {
         "format": "{icon}   {percent}%",
@@ -40,5 +44,5 @@
     "pulseaudio": {
         "format": "{icon}   {volume}%",
         "format-icons": [""]
-    }
+    },
 }
