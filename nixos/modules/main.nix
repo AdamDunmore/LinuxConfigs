@@ -47,19 +47,21 @@
 
   #Enables Enviroments
   services.xserver = {
+    xkb = {
+        variant = "";
+        layout = "gb";
+    };
 	enable = true;
-	layout = "gb";
-	xkbVariant = "";
-    libinput.enable = true;
-	
-    displayManager.sddm.enable = true;
-    #desktopManager.gnome.enable = true;
+
     desktopManager.plasma5.enable = true;
   };
 
+  services = {
+    libinput.enable = true;
+    printing.enable = true;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+    displayManager.sddm.enable = true;
+  };
 
   sound.enable = true;
   security.rtkit.enable = true;
@@ -77,55 +79,6 @@
     description = "Adam Dunmore";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
-
-  environment.systemPackages = (with pkgs; [
-        git
-        
-        zsh
-        zsh-autocomplete
-        zsh-syntax-highlighting
-        zsh-autosuggestions
-
-        wl-clipboard
-        mako
-        swaylock-effects
-        swaysome
-        waybar
-        eww-wayland
-        wofi
-        kitty
-
-        sddm
-
-        networkmanager
-        brightnessctl
-        blueman #Bluetooth
-        bluez
-        zip
-        unzip
-        pulseaudio
-        killall
-        pkg-config
-        pango
-        nodejs_21
-        libgccjit
-        cargo
-        home-manager
-        sops
-        tree-sitter
-        wget
-        fd
-        ripgrep
-        jq
-        python3
-        grim
-        slurp
-
-        wineWowPackages.stable
-        winetricks
-        gamescope
-        vulkan-tools
-  ]);
 
   fonts.packages = with pkgs; [
 	(nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
