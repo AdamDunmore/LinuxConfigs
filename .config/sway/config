@@ -22,15 +22,10 @@ output HDMI-A-1 resolution 1920x1080 position 3840,0
 output eDP-1 resolution 1920x1080 position 0,0
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+input "10182:480:GXTP7863:00_27C6:01E0_Touchpad" {
+       natural_scroll enabled
+       tap enabled
+}
 
 input type:keyboard {
     xkb_layout gb
