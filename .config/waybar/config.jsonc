@@ -48,7 +48,7 @@
     },
     "custom/menu": {
         "format": "{icon}",
-        "format-icons": ["󰹯"],
+        "format-icons": ["󰍜"],
         "on-click": "ags -t menu1",
         "return-type": "json",
         "exec": "echo '{\"class\": \"menu\"}'"
