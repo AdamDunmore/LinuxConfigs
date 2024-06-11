@@ -36,7 +36,7 @@ const Power_Restart = Widget.Button({
 
 const Power_Lock = Widget.Button({
     label: "",
-    on_clicked: () => {Utils.exec("swaylock -C ~/.config/sway/swaylock")} 
+    on_clicked: () => {Utils.exec("swaylock -C ~/.config/sway/swaylock");} 
 })
 
 const Power = Widget.Box({
@@ -59,6 +59,7 @@ Container.add(Power);
 const Menu = (/** @type {number} */ monitor) => Widget.Window({
     monitor,
     name: `menu${monitor}`,
+
 //    anchor: ['top', 'left', 'bottom', 'right'],
     child: Container
 })
