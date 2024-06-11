@@ -1,6 +1,7 @@
 ###Startup
 exec mako -C ~/.config/sway/mako
 exec waybar
+exec ags -t "menu1"
 
 ### Variables
 set $mod Mod4

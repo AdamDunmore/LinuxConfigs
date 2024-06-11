@@ -10,6 +10,7 @@
         "backlight",
         "battery",
         "network",
+        "custom/menu"
     ],
     "fixed-center" : true,
     "reload_style_on_change" : true,
@@ -44,5 +45,12 @@
     "pulseaudio": {
         "format": "{icon}   {volume}%",
         "format-icons": [""]
+    },
+    "custom/menu": {
+        "format": "{icon}",
+        "format-icons": ["󰹯"],
+        "on-click": "ags -t menu1",
+        "return-type": "json",
+        "exec": "echo '{\"class\": \"menu\"}'"
     },
 }

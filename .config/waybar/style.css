@@ -41,11 +41,18 @@ window#waybar.hidden {
 }
 
 /* Widgets */
-#clock, #battery, #backlight, #pulseaudio, #network{
+#clock, #battery, #backlight, #pulseaudio, #network, .menu{
     border-radius: 45px;
     background-color: @item;
     padding-left: 10px;
     padding-right: 10px;
+    margin-left: 5px;
+}
+
+.menu{
+    padding-right: 16px;
+    font-size: 25px;
+    margin: 0px;
     margin-left: 5px;
 }
 
