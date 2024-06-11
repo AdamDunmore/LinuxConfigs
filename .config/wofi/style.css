@@ -5,6 +5,9 @@ window {
     color: rgba(255,255,255);
 
     border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.2);
 }
 
 #entry {
@@ -13,7 +16,8 @@ window {
 }
 
 #entry:selected {
-    background-color: rgba(60, 60, 70, 0.7)
+    background-color: rgba(60, 60, 70, 0.7);
+    border: none;
 }
 
 #text{
@@ -23,11 +27,10 @@ window {
 #input{
     font-size: 24px;
     padding: 10px;
+    margin: 10px;
 
     color: #ffffff;
-
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
     background-color: rgba(30, 30, 30, 0.7);
+
+    border-radius: 5px;
 }
