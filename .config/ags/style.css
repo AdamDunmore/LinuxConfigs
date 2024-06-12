@@ -1,3 +1,5 @@
+@define-color primary-colour rgba(10,10,10,0.9);
+
 * {
   all: unset;
 }
@@ -10,25 +12,15 @@ window, flowboxchild{
     background-color: rgba(0,0,0,0);
 }
 
-.device_info, .power_menu{
+.volume_slider, .power_menu{
     padding: 20px;
     margin: 5px;
     border-radius: 15px;
     min-width: 100px;
 }
 
-.device_info{
-    background-color: rgba(20, 20, 50, 1);
-}
-
-.power_menu{
-    background-color: rgba(20, 50, 20, 1);
-}
-
-button{
-  font-size: 20px;
-  margin-left: 10px;
-  padding: 5px;
+.volume_slider{
+    background-color: @primary-colour;
 }
 
 .volume_scale{
@@ -47,13 +39,37 @@ highlight{
   background-color: rgba(40,40,60,0.8);
 }
 
-slider{
-  
+slider{  
   min-height: 10px;
   min-width: 10px;
   background-color: rgba(0,0,0,0);
 }
 
+/* Device Info */
+.device_info{
+  background-color: @primary-colour;
+  margin: 3px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/* Power Menu */
+.power_menu{
+    background-color: @primary-colour;
+}
+
+.power_button{
+  font-size: 20px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.power_button:hover{
+  background-color: rgba(255,255,255, 0.1);
+  border-radius: 45px;
+}
+
+/* Power Warning */
 .power_warning_button{
   background-color: rgba(100,100,120,0.8);
   padding: 20px;
@@ -62,5 +78,3 @@ slider{
   border-radius: 15px;
   margin: 10px;
 }
-
-

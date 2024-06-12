@@ -6,7 +6,7 @@ let Power_Warning_SH = power_warning("shutdown now");
 let Power_Warning_RE = power_warning("reboot");
 let Power_Warning_SW = power_warning("swaylock -C ~/.config/sway/swaylock");
 App.config({
-    style: "./style.scss",
+    style: "./style.css",
     windows: [
         Menu,
         Power_Warning_SH,
