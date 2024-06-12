@@ -54,6 +54,11 @@ window#waybar.hidden {
     font-size: 25px;
     margin: 0px;
     margin-left: 5px;
+    transition: background-color 0.2s;
+}
+
+.menu:hover{
+    background-color: rgba(0,0,0,0.6);
 }
 
 /* Battery */
