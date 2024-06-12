@@ -49,7 +49,7 @@
     "custom/menu": {
         "format": "{icon}",
         "format-icons": ["󰍜"],
-        "on-click": "ags -t 'ags'",
+        "on-click": "ags -t 'menu'",
         "return-type": "json",
         "exec": "echo '{\"class\": \"menu\"}'"
     },

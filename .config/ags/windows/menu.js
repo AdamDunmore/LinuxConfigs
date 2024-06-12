@@ -1,5 +1,3 @@
-import power_menu from './power_warning.js'
-
 const audio = await Service.import("audio");
 
 const Volume = Widget.Box({
@@ -28,17 +26,17 @@ const DeviceInfo = Widget.Box({
 
 const Power_Off = Widget.Button({
     label: "󰐥",
-    on_clicked: (s) => {print(typeof(power_menu("S"))); s.parent.parent.add(power_menu("shutdown now"));} 
+    on_clicked: (s) => {Utils.execAsync("ags -t 'power_warning:sh'"); Utils.execAsync("ags -t 'menu'");}
 })
 
 const Power_Restart = Widget.Button({
     label: "",
-    on_clicked: () => {Utils.exec("reboot")} 
+    on_clicked: (s) => {Utils.execAsync("ags -t 'power_warning:re'"); Utils.execAsync("ags -t 'menu'");}
 })
 
 const Power_Lock = Widget.Button({
     label: "",
-    on_clicked: () => {Utils.exec("swaylock -C ~/.config/sway/swaylock");} 
+    on_clicked: (s) => {Utils.execAsync("ags -t 'power_warning:sw'"); Utils.execAsync("ags -t 'menu'");}
 })
 
 const Power = Widget.Box({
@@ -48,14 +46,21 @@ const Power = Widget.Box({
     children: [
         Power_Off,
         Power_Restart,
-        Power_Lock
+        Power_Lock,
     ]
 })
 
-const Menu = Widget.FlowBox({
+const Menu_Container = Widget.FlowBox({
     className: "menu_container"
 })
-Menu.add(DeviceInfo);
-Menu.add(Power);
+Menu_Container.add(DeviceInfo);
+Menu_Container.add(Power);
+
+const Menu = Widget.Window({
+    name: "menu",
+    monitor: 1,
+    className: "menu_window",
+    child: Menu_Container
+})
 
 export default Menu;
