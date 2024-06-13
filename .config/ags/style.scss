@@ -1,0 +1,59 @@
+* {
+  all: unset;
+}
+
+window, flowboxchild{
+    background-color: rgba(0,0,0,0);
+}
+
+.container{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    background-color: rgba(0,0,0,0);
+}
+
+.device_info, .power_menu{
+    padding: 20px;
+    margin: 5px;
+    border-radius: 15px;
+    min-width: 100px;
+}
+
+.device_info{
+    background-color: rgba(20, 20, 50, 1);
+}
+
+.power_menu{
+    background-color: rgba(20, 50, 20, 1);
+}
+
+button{
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.volume_scale{
+  margin-left: 20px;
+  min-width: 100px;
+}
+
+trough{
+  background-color: rgba(255,255,255,1);
+  color: rgba(255,255,255,1);
+  min-height: 5px;
+  min-width: 150px;
+}
+
+highlight{
+  background-color: rgba(40,40,60,0.8);
+}
+
+slider{
+  
+  min-height: 10px;
+  min-width: 10px;
+  background-color: rgba(0,0,0,0);
+}
