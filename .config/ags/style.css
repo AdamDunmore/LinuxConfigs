@@ -62,6 +62,14 @@ slider{
     background-color: @primary-colour-active;
 }
 
+.quick_setting_power{
+    background-color: @primary-colour;
+    margin: 3px;
+    padding: 10px;
+    border-radius: 15px;
+    min-width: 120px;
+}
+
 /* Device Info */
 .device_info{
   background-color: @primary-colour;

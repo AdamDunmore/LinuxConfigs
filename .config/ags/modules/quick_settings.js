@@ -1,6 +1,6 @@
 const network = await Service.import("network");
 const bluetooth = await Service.import("bluetooth");
-
+const power_profiles = await Service.import("powerprofiles");
 
 function toggleWifi(active){
     if(network.wifi.enabled != active){
@@ -11,6 +11,22 @@ function toggleWifi(active){
 function toggleBluetooth(active){
     if(bluetooth.enabled != active){
         bluetooth.toggle()
+    }
+}
+
+function toggleProfiles(){
+    switch(power_profiles.active_profile){
+        case 'balanced':
+            power_profiles.active_profile = 'performance';
+            break;
+        case 'performance':
+            power_profiles.active_profile = 'power-saver';
+            break;
+        case 'power-saver':
+            power_profiles.active_profile = 'balanced';
+            break;
+        default:
+            power_profiles.active_profile = 'balanced';
     }
 }
 
@@ -46,11 +62,18 @@ const Bluetooth = Widget.ToggleButton({
     }
 })
 
+const PowerProfile = Widget.Button({
+    className: "quick_setting_power",
+    label: power_profiles.bind('active_profile'),
+    on_clicked: () => toggleProfiles()
+})
+
 const Settings = Widget.Box({
     orientation: 0,
     children: [
         Wifi,
-        Bluetooth
+        Bluetooth,
+        PowerProfile
     ]
 })
 
