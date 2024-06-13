@@ -19,6 +19,7 @@ const Volume = Widget.Box({
 const VolumeSlider = Widget.Box({
     className: "volume_slider",
     orientation: 1,
+    vpack: "center",
     children: [
         Volume,
     ]

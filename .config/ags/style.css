@@ -14,11 +14,38 @@ window, flowboxchild{
     background-color: rgba(0,0,0,0);
 }
 
+.menu_container, .volume_slider, .power_menu, .quick_setting, .device_info, .now_playing_container{
+    margin: 5px;
+}
+
+
 .volume_slider, .power_menu{
     padding: 20px;
-    margin: 5px;
     border-radius: 15px;
     min-width: 100px;
+}
+
+/* Player */
+.now_playing_container{
+    border-radius: 10px;
+    background-color: @primary-colour;
+}
+
+.now_playing_cover{
+    min-width: 174px;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.now_playing_info{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.now_playing_info_artist{
+    color: rgba(200,200,200,0.9)
 }
 
 /* Volume Slider */
@@ -27,15 +54,15 @@ window, flowboxchild{
 }
 
 .volume_scale{
+  margin: 10px;
   margin-left: 20px;
-  min-width: 100px;
+  margin-right: 0px;
+  padding: 5px;
 }
 
 trough{
   background-color: rgba(255,255,255,1);
   color: rgba(255,255,255,1);
-  min-height: 5px;
-  min-width: 150px;
 }
 
 highlight{
@@ -51,10 +78,10 @@ slider{
 /* Quick Settings */
 .quick_setting{
   background-color: @primary-colour;
-  margin: 3px;
   padding: 10px;
   border-radius: 15px;
   min-width: 60px;
+  min-height: 60px;
   font-size: 28px;
 }
 
@@ -62,21 +89,13 @@ slider{
     background-color: @primary-colour-active;
 }
 
-.quick_setting_power{
-    background-color: @primary-colour;
-    margin: 3px;
-    padding: 10px;
-    border-radius: 15px;
-    min-width: 120px;
-}
-
 /* Device Info */
 .device_info{
   background-color: @primary-colour;
-  margin: 3px;
   padding: 10px;
   border-radius: 15px;
   min-width: 60px;
+  min-height: 60px;
 }
 
 /* Power Menu */

@@ -11,15 +11,20 @@ const Menu_Container = Widget.Box({
     children: [
         Widget.Box({
             children: [
-                volume_slider,
+                Widget.Box({
+                    orientation: 1,
+                    children: [
+                        device_info,
+                        quick_settings,
+                    ] 
+                }),
                 player
             ]
         }),
         Widget.Box({
             children: [
                 power_menu,
-                device_info,
-                quick_settings
+                volume_slider,
             ]
         })
     ]

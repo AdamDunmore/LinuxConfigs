@@ -73,7 +73,6 @@ const Settings = Widget.Box({
     children: [
         Wifi,
         Bluetooth,
-        PowerProfile
     ]
 })
 

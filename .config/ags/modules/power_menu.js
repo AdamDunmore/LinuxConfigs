@@ -1,3 +1,27 @@
+const power_profiles = await Service.import("powerprofiles");
+
+function toggleProfiles(){
+    switch(power_profiles.active_profile){
+        case 'balanced':
+            power_profiles.active_profile = 'performance';
+            break;
+        case 'performance':
+            power_profiles.active_profile = 'power-saver';
+            break;
+        case 'power-saver':
+            power_profiles.active_profile = 'balanced';
+            break;
+        default:
+            power_profiles.active_profile = 'balanced';
+    }
+}
+
+const PowerProfile = Widget.Button({
+    className: "power_button",
+    label: power_profiles.bind('active_profile'),
+    on_clicked: () => toggleProfiles()
+})
+
 const Power_Off = Widget.Button({
     label: "󰐥",
     className: "power_button",
@@ -25,6 +49,7 @@ const Power = Widget.Box({
         Power_Off,
         Power_Restart,
         Power_Lock,
+        PowerProfile
     ]
 })
 
