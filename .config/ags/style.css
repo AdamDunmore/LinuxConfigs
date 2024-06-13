@@ -1,5 +1,7 @@
 @define-color primary-colour rgba(10,10,10,0.9);
+@define-color primary-colour-active rgba(40,40,40,0.8);
 
+/* General */ 
 * {
   all: unset;
 }
@@ -19,6 +21,7 @@ window, flowboxchild{
     min-width: 100px;
 }
 
+/* Volume Slider */
 .volume_slider{
     background-color: @primary-colour;
 }
@@ -45,13 +48,27 @@ slider{
   background-color: rgba(0,0,0,0);
 }
 
+/* Quick Settings */
+.quick_setting{
+  background-color: @primary-colour;
+  margin: 3px;
+  padding: 10px;
+  border-radius: 15px;
+  min-width: 60px;
+  font-size: 28px;
+}
+
+.quick_setting:checked{
+    background-color: @primary-colour-active;
+}
+
 /* Device Info */
 .device_info{
   background-color: @primary-colour;
   margin: 3px;
   padding: 10px;
   border-radius: 15px;
-  min-width: 100px;
+  min-width: 60px;
 }
 
 /* Power Menu */

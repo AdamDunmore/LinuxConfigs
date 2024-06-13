@@ -1,6 +1,7 @@
 import device_info from '../modules/device_info.js'
 import power_menu from '../modules/power_menu.js'
 import volume_slider from '../modules/volume_slider.js'
+import quick_settings from '../modules/quick_settings.js'
 
 const Menu_Container = Widget.Box({
     className: "menu_container",
@@ -14,7 +15,8 @@ const Menu_Container = Widget.Box({
         Widget.Box({
             children: [
                 power_menu,
-                device_info
+                device_info,
+                quick_settings
             ]
         })
     ]
