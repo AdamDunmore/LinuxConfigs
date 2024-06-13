@@ -72,6 +72,7 @@ in
     python3
     grim
     slurp
+    obs-studio
 
     wineWowPackages.stable
     winetricks
