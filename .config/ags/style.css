@@ -14,27 +14,25 @@ window, flowboxchild{
     background-color: rgba(0,0,0,0);
 }
 
-.menu_container, .volume_slider, .power_menu, .quick_setting, .device_info, .now_playing_container{
+.menu_container, .volume_slider, .power_menu, .quick_setting, .device_info, .now_playing_container, .power_warning_container{
     margin: 5px;
+    border-radius: 10px;
 }
 
 
 .volume_slider, .power_menu{
     padding: 20px;
-    border-radius: 15px;
     min-width: 100px;
 }
 
 /* Player */
 .now_playing_container{
-    border-radius: 10px;
     background-color: @primary-colour;
 }
 
 .now_playing_cover{
     min-width: 174px;
     background-size: contain;
-    border-radius: 10px;
 }
 
 .now_playing_info{
@@ -79,7 +77,6 @@ slider{
 .quick_setting{
   background-color: @primary-colour;
   padding: 10px;
-  border-radius: 15px;
   min-width: 60px;
   min-height: 60px;
   font-size: 28px;
@@ -87,13 +84,17 @@ slider{
 
 .quick_setting:checked{
     background-color: @primary-colour-active;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(255,255,255,0.2);
+    min-width: calc(60px - 4px);
+    min-height: calc(60px - 4px);
 }
 
 /* Device Info */
 .device_info{
   background-color: @primary-colour;
   padding: 10px;
-  border-radius: 15px;
   min-width: 60px;
   min-height: 60px;
 }
@@ -115,6 +116,15 @@ slider{
 }
 
 /* Power Warning */
+.power_warning_container{
+    background-color: @primary-colour;
+    padding: 10px;
+}
+
+.power_warning_text{
+    font-size: 24px;
+}
+
 .power_warning_button{
   background-color: rgba(100,100,120,0.8);
   padding: 20px;

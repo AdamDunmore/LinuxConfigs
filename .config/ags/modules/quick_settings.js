@@ -18,7 +18,7 @@ const Wifi = Widget.ToggleButton({
     label: "󰖩",
     onToggled: (state) => toggleWifi(state.active),
     setup: (self) => {
-        Utils.interval(1000, () => {
+        Utils.interval(500, () => {
             if (network.wifi.enabled == true){
                 self.set_active(true)
             }
@@ -34,7 +34,7 @@ const Bluetooth = Widget.ToggleButton({
     label: "",
     onToggled: (state) => toggleBluetooth(state.active),
     setup: (self) => {
-        Utils.interval(1000, () => {
+        Utils.interval(500, () => {
             if (bluetooth.enabled == true){
                 self.set_active(true)
             }

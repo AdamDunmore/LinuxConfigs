@@ -14,8 +14,8 @@ const Menu_Container = Widget.Box({
                 Widget.Box({
                     orientation: 1,
                     children: [
-                        device_info,
                         quick_settings,
+                        device_info,
                     ] 
                 }),
                 player

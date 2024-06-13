@@ -49,7 +49,6 @@ const Power = Widget.Box({
         Power_Off,
         Power_Restart,
         Power_Lock,
-        PowerProfile
     ]
 })
 
