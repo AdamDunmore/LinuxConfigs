@@ -45,7 +45,7 @@ window, flowboxchild{
 }
 
 .now_playing_info_artist{
-    color: rgba(200,200,200,0.9)
+    color: rgba(200,200,200,0.9);
 }
 
 /* Volume Slider */
