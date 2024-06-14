@@ -32,6 +32,8 @@ const App_Input = Widget.Entry({
     hexpand: true,
     on_change: ({ text }) => apps.forEach(item => {
         item.visible = item.attribute.app.match(text ?? "")
+        active = 0
+        setActive()
     }),
 })
 
