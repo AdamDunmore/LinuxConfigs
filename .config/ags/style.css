@@ -30,8 +30,27 @@ window, flowboxchild{
   padding: 15px;
   background-color: @primary-colour;
   border-radius: 10px;
-  min-width: 300px;
-  min-height: 400px;
+  min-width: 500px;
+  min-height: 300px;
+}
+
+.app_menu_input{
+  font-size: 20px;
+  padding: 5px;
+}
+
+.app_menu_entry{
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255,255,255, 0.1);
+  border-radius: 10px;
+
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.app_menu_entry_text, .app_menu_entry_icon{
+  font-size: 28px;
 }
 
 /* Player */

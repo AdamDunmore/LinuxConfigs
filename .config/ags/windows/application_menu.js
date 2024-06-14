@@ -2,13 +2,25 @@
 const applications = await Service.import("applications")
 
 const App_Entry = app => Widget.Button({
+    child: Widget.Box({
+        spacing: 10,
+        children: [
+            Widget.Icon({
+                className: "app_menu_entry_icon",
+                icon: app.icon_name
+            }),
+            Widget.Label({
+                className: "app_menu_entry_text",
+                label: app.name
+            })
+        ]
+    }),
     className: "app_menu_entry",
     on_clicked: () => {
         App_Launcher.hide()
         app.launch()
     },
     attribute: { app },
-    label: app.name
 })
 
 const apps = applications.query("").map(App_Entry)
