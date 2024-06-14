@@ -1,8 +1,6 @@
 // Code heavily inspired by https://github.com/Aylur/ags/blob/main/example/applauncher/applauncher.js
 const applications = await Service.import("applications")
 
-let active = 0;
-
 const App_Entry = app => Widget.Button({
     child: Widget.Box({
         spacing: 10,
@@ -32,8 +30,6 @@ const App_Input = Widget.Entry({
     hexpand: true,
     on_change: ({ text }) => apps.forEach(item => {
         item.visible = item.attribute.app.match(text ?? "")
-        active = 0
-        setActive()
     }),
 })
 
