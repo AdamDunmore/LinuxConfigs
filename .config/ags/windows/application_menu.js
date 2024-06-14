@@ -1,8 +1,8 @@
 // Code heavily inspired by https://github.com/Aylur/ags/blob/main/example/applauncher/applauncher.js
 const applications = await Service.import("applications")
-const gtk = imports.gi
 
 let active = 0;
+let oldActive;
 
 const App_Entry = app => Widget.Button({
     child: Widget.Box({
@@ -33,8 +33,18 @@ const App_Input = Widget.Entry({
     hexpand: true,
     on_change: ({ text }) => apps.forEach(item => {
         item.visible = item.attribute.app.match(text ?? "")
+        
         active = 0
         setActive()
+    }),
+})
+
+const App_Scrollable = Widget.Scrollable({
+    vexpand: true,
+    hscroll: "never",
+    child: Widget.Box({
+        orientation: 1,
+        children: apps
     }),
 })
 
@@ -47,36 +57,45 @@ const App_Launcher = Widget.Window({
         className: "app_menu_container",
         orientation: 1,
         children: [
-            App_Input,
-            Widget.Scrollable({
-                vexpand: true,
-                hscroll: "never",
-                child: Widget.Box({
-                    orientation: 1,
-                    children: apps
-                }),
-            })
+            Widget.Box({
+                spacing: 20,
+                children: [
+                    Widget.Label({
+                        css: "font-size: 26px;",
+                        label: ""
+                    }),
+                    App_Input
+                ]
+            }),
+            App_Scrollable
         ]
     })
 })
 
 App_Launcher.connect("key_press_event", (s, t) => {
     let keyval = t.get_keyval()[1];
-
     if (keyval == 65307){ //If key is escape then close
         close()
     }
     else if (keyval == 65362){ //Up arrow key
-       setActive("-") 
+        setActive("-")
+        let adj = App_Scrollable.get_vadjustment()
+        adj.set_value(adj.get_value() - 56)
     } 
     else if (keyval == 65364){ //Down Arrow Key
         setActive("+")
+        let adj = App_Scrollable.get_vadjustment()
+        adj.set_value(adj.get_value() + 56)
     }
     else if (keyval == 65293){ //Enter key
         const results = apps.filter((item) => item.visible);
         results[active].attribute.app.launch();
         close()
     } 
+    else{
+        return false;
+    }
+    return true;
 })
 
 function close(){
@@ -86,7 +105,11 @@ function close(){
 
 function setActive(state){
     const results = apps.filter((item) => item.visible);
-    results[active].class_name = "app_menu_entry"    
+
+    if(oldActive){
+        oldActive.class_name = "app_menu_entry"    
+    }
+
     if (state == "+"){
         active += 1
     }
@@ -96,7 +119,9 @@ function setActive(state){
     if(active < 0){
         active = 0
     }
+
     results[active].class_name = "app_menu_entry active"
+    oldActive = results[active]
     //Utils.timeout(100, () => App_Input.grab_focus());
 }setActive()
 
