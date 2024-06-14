@@ -65,16 +65,8 @@ App_Launcher.connect("key_press_event", (s, t) => {
     if (keyval == 65307){ //If key is escape then close
         close()
     }
-    else if (keyval == 65362){ //Up arrow key
-       setActive("-") 
-    } 
-    else if (keyval == 65364){ //Down Arrow Key
-        setActive("+")
-    }
     else if (keyval == 65293){ //Enter key
-        const results = apps.filter((item) => item.visible);
-        results[active].attribute.app.launch();
-        close()
+        App_Input.set_text("")
     } 
 })
 
@@ -82,20 +74,5 @@ function close(){
     App_Launcher.hide()
     App_Input.set_text("")
 }
-
-function setActive(state){
-    const results = apps.filter((item) => item.visible);
-    results[active].class_name = "app_menu_entry"    
-    if (state == "+"){
-        active += 1
-    }
-    else if (state == "-"){
-        active -= 1
-    }
-    if(active < 0){
-        active = 0
-    }
-    results[active].class_name = "app_menu_entry active"
-}setActive()
 
 export default App_Launcher
