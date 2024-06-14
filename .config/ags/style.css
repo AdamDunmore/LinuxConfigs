@@ -19,7 +19,6 @@ window, flowboxchild{
     border-radius: 10px;
 }
 
-
 .volume_slider, .power_menu{
     padding: 20px;
     min-width: 100px;
@@ -47,6 +46,11 @@ window, flowboxchild{
 
   padding: 5px;
   margin-top: 5px;
+}
+
+.app_menu_entry.active{
+    border-width: 2px;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .app_menu_entry_text, .app_menu_entry_icon{
