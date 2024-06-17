@@ -1,5 +1,6 @@
 @define-color primary-colour rgba(10,10,10,0.9);
 @define-color primary-colour-active rgba(40,40,40,0.8);
+@define-color text rgba(255,255,255,1);
 
 /* General */ 
 * {
@@ -22,6 +23,45 @@ window, flowboxchild{
 .volume_slider, .power_menu{
     padding: 20px;
     min-width: 100px;
+}
+
+/* Bar TODO: Fix this for when workspaces are finished*/
+.bar{
+    background-color: rgba(255,255,255,0.07);
+    color: @text;
+}
+
+.bar_left{
+    margin-left: 10px;
+}
+
+.bar_right{
+    margin-right: 10px;
+}
+
+.bar_item{
+    background-color: @primary-colour;
+    border-radius: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bar_workspace{
+    
+}
+
+.bar_workspace.focused{
+    background-color: rgba(0,0,0,0.6)
+}
+
+.bar_menu{
+    font-size: 25px;
+    transition: background-color 0.2s;
+    padding-right: 15px;
+}
+
+.bar_menu:hover{
+    background-color: rgba(0,0,0,0.6);
 }
 
 /* App Launcher */

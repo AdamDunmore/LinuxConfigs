@@ -10,6 +10,7 @@ class BrightnessService extends Service {
             {
                 // 'name-of-signal': [type as a string from GObject.TYPE_<type>],
                 'screen-changed': ['float'],
+                'available': ['boolean'],
             },
             {
                 // 'kebab-cased-name': [type as a string from GObject.TYPE_<type>, 'r' | 'w' | 'rw']
@@ -17,6 +18,7 @@ class BrightnessService extends Service {
                 // 'w' means writable
                 // guess what 'rw' means
                 'screen-value': ['float', 'rw'],
+                'available': ['float', 'r'],
             },
         );
     }
@@ -45,10 +47,16 @@ class BrightnessService extends Service {
         // the file monitor will handle the rest
     }
 
+    get available() {
+        let returnVal = false;
+        Utils.exec("brightnessctl --list", (a) => {print(`a: ${a}`); returnVal = true}, (b) => {print(`b: ${b}`); returnVal = true})
+        return returnVal; 
+    }
+
     constructor() {
         super();
 
-        // setup monitor
+        // Monitor Brightness
         const brightness = `/sys/class/backlight/${this.#interface}/brightness`;
         Utils.monitorFile(brightness, () => this.#onChange());
 

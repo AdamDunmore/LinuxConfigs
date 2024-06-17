@@ -1,3 +1,9 @@
+import backlight from '../services/brightness.js'
+import workspace from '../services/workspaces.js'
+const audio = await Service.import('audio')
+const battery = await Service.import('battery')
+const network = await Service.import('network')
+
 function getTime(){
     const date = new Date()
     const hour = date.getHours()
@@ -16,7 +22,38 @@ function getCalendar(){
     return `${day}, ${date_day} ${date_month} ${date_year}`
 }
 
+const Backlight = Widget.Box({
+    className: "bar_item",
+    child: Widget.Label({
+        label: backlight.bind('screen_value').as(v => `󰃠\t${Math.floor(v*100)}%`),
+        visible: backlight.bind('available') //Fix when able to test
+    })
+})
+
+const Volume = Widget.Box({
+    className: "bar_item",
+    child: Widget.Label({
+        label: audio["speaker"].bind('volume').as(v => `\t${Math.round(v * 100)}%`)
+    })
+})
+
+const Battery = Widget.Box({
+    className: "bar_item",
+    child: Widget.Label({
+        label: battery.bind("percent").as(v => `\t${v}%`),
+        visible: battery.bind("available")
+    })
+})
+
+const Network = Widget.Box({
+    className: "bar_item",
+    child: Widget.Label({
+        label: network.bind("wifi").as(v => `\t${v.strength}%`)
+    })
+})
+
 const Clock = Widget.Box({
+    className: "bar_item",
     child: Widget.Label({
         setup: (self) => {
             Utils.interval(1000, () => {
@@ -27,6 +64,7 @@ const Clock = Widget.Box({
 })
 
 const Calendar = Widget.Box({
+    className: "bar_item",
     child: Widget.Label({
         setup: (self) => {
             Utils.interval(1000, () => {
@@ -36,16 +74,36 @@ const Calendar = Widget.Box({
     })
 })
 
+const Workspace = Widget.Box({
+    className: "bar_item bar_workspace",
+    child: Widget.Label({
+        label: workspace.bind("workspace-active").as(v => `${v}`)
+    })
+})
+
+const Menu = Widget.Box({
+    child: Widget.Button({
+        className: "bar_item bar_menu",
+        label: "󰍜",
+        on_clicked: () => {
+            Utils.execAsync('ags -t "menu"')
+        }
+    })
+})
+
 const Left = Widget.Box({
-    hpack: "start", 
+    className: "bar_left",
     hexpand: true,
+    hpack: "start",
     spacing: 10,
+    children: [
+        Workspace
+    ]
 
 })
 
 const Middle = Widget.Box({
     hpack: "center",
-    hexpand: true,
     spacing: 10,
     children: [
         Clock,
@@ -55,24 +113,33 @@ const Middle = Widget.Box({
 })
 
 const Right = Widget.Box({
-    hpack: "end", 
+    className: "bar_right",
     hexpand: true,
+    hpack: "end",
     spacing: 10,
+    children: [
+        Backlight,
+        Volume,
+        Battery,
+        Network,
+        Menu,
+    ]
+})
+
+const BarBox = Widget.CenterBox({
+    hexpand: true,
+    startWidget: Left,
+    centerWidget: Middle,
+    endWidget: Right
 })
 
 const Bar = Widget.Window({
     name: "bar",
     hexpand: true,
-    css: "background-color: red;",
+    className: "bar",
     anchor: ["left", "top", "right"],
-    child: Widget.Box({
-        hexpand: true,
-        children: [
-            Left,
-            Middle,
-            Right
-        ]
-    })
+    child: BarBox
 })
+
 
 export default Bar
