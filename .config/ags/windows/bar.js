@@ -120,7 +120,10 @@ const Search = Widget.Box({
             label: ""
         }),
         Widget.Entry({
-            on_accept: v => Utils.exec(`firefox google.com/search?q=${v.text}`)
+            on_accept: v => {
+                let data = v.text?.replaceAll(" ", "+")
+                Utils.exec(`firefox google.com/search?q=${data}`)
+            }
         })
     ]
 })
