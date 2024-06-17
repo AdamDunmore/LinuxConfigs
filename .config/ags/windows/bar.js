@@ -111,6 +111,20 @@ const Menu = Widget.Box({
     })
 })
 
+const Search = Widget.Box({
+    className: "bar_item",
+    orientation: 0,
+    spacing: 20,
+    children: [
+        Widget.Label({
+            label: ""
+        }),
+        Widget.Entry({
+            on_accept: v => Utils.exec(`firefox google.com/search?q=${v.text}`)
+        })
+    ]
+})
+
 const Left = Widget.Box({
     hexpand: true,
     hpack: "start",
@@ -136,6 +150,7 @@ const Right = Widget.Box({
     hpack: "end",
     spacing: 10,
     children: [
+        Search,
         Backlight,
         Volume,
         Battery,
@@ -158,6 +173,7 @@ const Bar = Widget.Window({
     anchor: ["left", "top", "right"],
     exclusivity: "exclusive",
     margins: [10, 10],
+    keymode: "on-demand",
     child: BarBox
 })
 
