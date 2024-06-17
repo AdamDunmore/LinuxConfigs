@@ -92,7 +92,6 @@ const Menu = Widget.Box({
 })
 
 const Left = Widget.Box({
-    className: "bar_left",
     hexpand: true,
     hpack: "start",
     spacing: 10,
@@ -113,7 +112,6 @@ const Middle = Widget.Box({
 })
 
 const Right = Widget.Box({
-    className: "bar_right",
     hexpand: true,
     hpack: "end",
     spacing: 10,
@@ -138,6 +136,8 @@ const Bar = Widget.Window({
     hexpand: true,
     className: "bar",
     anchor: ["left", "top", "right"],
+    exclusivity: "exclusive",
+    margins: [10, 10],
     child: BarBox
 })
 

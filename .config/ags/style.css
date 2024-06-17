@@ -31,14 +31,6 @@ window, flowboxchild{
     color: @text;
 }
 
-.bar_left{
-    margin-left: 10px;
-}
-
-.bar_right{
-    margin-right: 10px;
-}
-
 .bar_item{
     background-color: @primary-colour;
     border-radius: 45px;
