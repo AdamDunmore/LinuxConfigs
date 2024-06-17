@@ -1,0 +1,3 @@
+Make service for workspace swaymsg -t get_outputs -r
+Add menu button to bar
+
