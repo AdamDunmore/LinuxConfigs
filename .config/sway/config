@@ -1,5 +1,5 @@
 ###Startup
-exec mako -C ~/.config/sway/mako
+#exec mako -C ~/.config/sway/mako
 exec ags -t "bar"
 
 ### Variables
