@@ -38,13 +38,9 @@ in
     zsh-autosuggestions
 
     wl-clipboard
-    #mako
     swaylock-effects
     swaysome
-    waybar
-    eww
     ags
-    wofi
     kitty
 
     sddm
