@@ -175,7 +175,7 @@ const Bar = Widget.Window({
     className: "bar",
     anchor: ["left", "top", "right"],
     exclusivity: "exclusive",
-    margins: [10, 10],
+    margins: [10, 10, 0, 10],
     keymode: "on-demand",
     child: BarBox
 })
