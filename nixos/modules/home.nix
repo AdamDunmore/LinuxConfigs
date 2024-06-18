@@ -38,7 +38,7 @@ in
     zsh-autosuggestions
 
     wl-clipboard
-    mako
+    #mako
     swaylock-effects
     swaysome
     waybar

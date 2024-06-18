@@ -2,14 +2,16 @@ import menu from './windows/menu.js'
 import power_warning from './windows/power_warning.js'
 import app_launcher from './windows/application_menu.js'
 import bar from './windows/bar.js'
+import notifications from './windows/notifications.js'
 
 
-let Menu = menu;
-let Power_Warning_SH = power_warning("shutdown now");
-let Power_Warning_RE = power_warning("reboot");
-let Power_Warning_SW = power_warning("swaylock -C ~/.config/sway/swaylock");
-let App_Launcher = app_launcher
-let Bar = bar
+const Menu = menu;
+const Power_Warning_SH = power_warning("shutdown now");
+const Power_Warning_RE = power_warning("reboot");
+const Power_Warning_SW = power_warning("swaylock -C ~/.config/sway/swaylock");
+const App_Launcher = app_launcher;
+const Bar = bar;
+const Notifications = notifications;
 
 App.config({
     style: "./style.css",
@@ -20,6 +22,7 @@ App.config({
         Power_Warning_SW,
         App_Launcher,
         Bar,
+        Notifications,
     ]
 })
 

@@ -75,7 +75,7 @@ const Calendar = Widget.Box({
 })
 
 const Workspace = Widget.Box({
-    className: "bar_item",
+    className: "bar_item bar_workspaces",
     setup: self => {
         workspace.connect("changed", v => {
             let data = v["workspace-data"]

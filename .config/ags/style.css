@@ -25,6 +25,23 @@ window, flowboxchild{
     min-width: 100px;
 }
 
+/* Notifications */
+.notification_item{
+  min-width: 1px; 
+  min-height: 1px;
+  background-color: @primary-colour;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.notification_image{
+  font-size: 100px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
 /* Bar */
 .bar{
     background-color: rgba(255,255,255,0.07);
@@ -36,6 +53,10 @@ window, flowboxchild{
     border-radius: 45px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.bar_workspaces{
+    padding: 3px;
 }
 
 .bar_workspace{
