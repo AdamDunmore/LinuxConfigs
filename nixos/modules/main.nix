@@ -63,6 +63,15 @@
     desktopManager.plasma6.enable = true;
   };
 
+  #KDE Config
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole
+    kate
+    elisa
+    okular
+    kwalletmanager
+  ];
+
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
