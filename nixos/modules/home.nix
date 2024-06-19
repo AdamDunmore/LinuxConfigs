@@ -33,6 +33,7 @@ in
     motrix
     android-studio
     gnome.nautilus
+    gnome.eog
 
     git
       

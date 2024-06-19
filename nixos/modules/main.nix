@@ -71,6 +71,7 @@
     okular
     kwalletmanager
     dolphin
+    gwenview
   ];
 
   sound.enable = true;
