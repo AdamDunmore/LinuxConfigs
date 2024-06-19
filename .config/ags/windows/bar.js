@@ -6,9 +6,18 @@ const network = await Service.import('network')
 
 function getTime(){
     const date = new Date()
-    const hour = date.getHours()
-    const min = date.getMinutes()
+    const hour = padTime(date.getHours())
+    const min = padTime(date.getMinutes())
     return `${hour}:${min}`
+}
+
+function padTime(time){
+    if (time.toString().length < 2){
+        return `0${time}` 
+    }
+    else{
+        return time
+    }
 }
 
 function getCalendar(){

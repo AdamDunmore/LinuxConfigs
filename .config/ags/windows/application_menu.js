@@ -101,7 +101,7 @@ App_Launcher.connect("key_press_event", (s, t) => {
 function close(){
     App_Launcher.hide()
     App_Input.set_text("")
-    apps = applications.query("").map(App_Entry)
+    //apps = applications.query("").map(App_Entry)
 }
 
 function setActive(state){
@@ -123,7 +123,6 @@ function setActive(state){
 
     results[active].class_name = "app_menu_entry active"
     oldActive = results[active]
-    //Utils.timeout(100, () => App_Input.grab_focus());
 }setActive()
 
 export default App_Launcher
