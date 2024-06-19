@@ -52,8 +52,6 @@
         layout = "gb";
     };
 	enable = true;
-
-    desktopManager.plasma5.enable = true;
   };
 
   services = {
@@ -62,6 +60,7 @@
     power-profiles-daemon.enable = true;
     gvfs.enable = true;
     displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   sound.enable = true;
