@@ -26,7 +26,7 @@ const App_Entry = app => Widget.Button({
     attribute: { app },
 })
 
-const apps = applications.query("").map(App_Entry)
+let apps = applications.query("").map(App_Entry)
 
 const App_Input = Widget.Entry({
     className: "app_menu_input",
@@ -101,6 +101,7 @@ App_Launcher.connect("key_press_event", (s, t) => {
 function close(){
     App_Launcher.hide()
     App_Input.set_text("")
+    apps = applications.query("").map(App_Entry)
 }
 
 function setActive(state){

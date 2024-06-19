@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./configs/kitty.nix
+    ./configs/a.nix
     ./configs/zsh.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
   ];
@@ -42,6 +43,7 @@ in
     swaysome
     ags
     kitty
+    alacritty
 
     sddm
 
