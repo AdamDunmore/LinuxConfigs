@@ -6,7 +6,8 @@ in
   imports = [
     ./configs/kitty.nix
     ./configs/zsh.nix
-    (import ./configs/alacritty.nix)
+    ./configs/zellij.nix
+    ./configs/alacritty.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
   ];
 
@@ -32,7 +33,9 @@ in
     android-studio
 
     git
-        
+      
+    alacritty
+    zellij
     zsh
     zsh-autocomplete
     zsh-syntax-highlighting
@@ -43,7 +46,6 @@ in
     swaysome
     ags
     kitty
-    alacritty
 
     sddm
 
