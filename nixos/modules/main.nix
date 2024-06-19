@@ -70,6 +70,7 @@
     elisa
     okular
     kwalletmanager
+    dolphin
   ];
 
   sound.enable = true;

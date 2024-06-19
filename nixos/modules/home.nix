@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./configs/gtk.nix
     ./configs/kitty.nix
     ./configs/zsh.nix
     ./configs/zellij.nix
@@ -31,6 +32,7 @@ in
     prismlauncher
     motrix
     android-studio
+    gnome.nautilus
 
     git
       

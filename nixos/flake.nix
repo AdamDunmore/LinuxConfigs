@@ -41,6 +41,7 @@
                     inherit inputs;
                 };
         homeManagerConfig = {
+            backupFileExtension = "backup";
             useGlobalPkgs = true;
             useUserPackages = true;
             users.adam.imports = [ ./modules/home.nix ];
