@@ -48,6 +48,10 @@ window, flowboxchild{
     color: @text;
 }
 
+.bar_container{
+    padding: 10px;
+}
+
 .bar_item{
     background-color: @primary-colour;
     border-radius: 45px;

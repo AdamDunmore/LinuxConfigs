@@ -172,6 +172,7 @@ const Right = Widget.Box({
 })
 
 const BarBox = Widget.CenterBox({
+    className: "bar_container",
     hexpand: true,
     startWidget: Left,
     centerWidget: Middle,
@@ -184,7 +185,6 @@ const Bar = Widget.Window({
     className: "bar",
     anchor: ["left", "top", "right"],
     exclusivity: "exclusive",
-    margins: [10, 10, 0, 10],
     keymode: "on-demand",
     child: BarBox
 })
