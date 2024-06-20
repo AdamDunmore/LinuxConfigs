@@ -80,12 +80,9 @@ App_Launcher.connect("key_press_event", (s, t) => {
     else if (keyval == 65362){ //Up arrow key
         setActive("-")
         let adj = App_Scrollable.get_vadjustment()
-        adj.set_value(adj.get_value() - 56)
     } 
     else if (keyval == 65364){ //Down Arrow Key
         setActive("+")
-        let adj = App_Scrollable.get_vadjustment()
-        adj.set_value(adj.get_value() + 56)
     }
     else if (keyval == 65293){ //Enter key
         const results = apps.filter((item) => item.visible);
@@ -101,11 +98,11 @@ App_Launcher.connect("key_press_event", (s, t) => {
 function close(){
     App_Launcher.hide()
     App_Input.set_text("")
-    //apps = applications.query("").map(App_Entry)
 }
 
 function setActive(state){
     const results = apps.filter((item) => item.visible);
+    let adj = App_Scrollable.get_vadjustment()
 
     if(oldActive){
         oldActive.class_name = "app_menu_entry"    
@@ -113,12 +110,15 @@ function setActive(state){
 
     if (state == "+"){
         active += 1
+        adj.set_value(adj.get_value() + 56)
     }
-    else if (state == "-"){
+    else if (state == "-" && active > 0){
         active -= 1
+        adj.set_value(adj.get_value() - 56)
     }
-    if(active < 0){
-        active = 0
+    if (active > results.length){
+        active = 0;
+        adj.set_value(0)
     }
 
     results[active].class_name = "app_menu_entry active"
