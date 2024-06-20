@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./configs/gtk.nix
+    ./configs/theme.nix
     ./configs/kitty.nix
     ./configs/zsh.nix
     ./configs/zellij.nix

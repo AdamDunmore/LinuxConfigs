@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 
 {
+    # GTK
     gtk = {
         enable = true;
         theme = {
