@@ -6,6 +6,7 @@
         enableZshIntegration = true;
         settings = {
             default_shell = "zsh";
+            theme = "nord";
         };
     };
 }
