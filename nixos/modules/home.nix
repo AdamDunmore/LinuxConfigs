@@ -4,13 +4,12 @@ let
 in
 {
   imports = [
-    ./configs/theme.nix
-    ./configs/kitty.nix
-    ./configs/zsh.nix
-    ./configs/zellij.nix
     ./configs/alacritty.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
-  ];
+    ./configs/theme.nix
+    ./configs/zellij.nix
+    ./configs/zsh.nix
+];
 
   home.username = "adam";
   home.homeDirectory = "/home/adam";

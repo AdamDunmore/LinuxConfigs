@@ -6,6 +6,7 @@
         ./system/audio.nix
         ./system/bluetooth.nix
         ./system/bootloader.nix
+        ./system/greetd/greetd.nix
         ./system/kde.nix
         ./system/keyboard.nix
         ./system/timezone.nix
@@ -17,7 +18,7 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Display Manager
-    services.displayManager.sddm.enable = true;
+    #services.displayManager.sddm.enable = true;
 
     # Downloading Nerd Font
     fonts.packages = with pkgs; [
