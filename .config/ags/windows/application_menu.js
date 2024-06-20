@@ -123,6 +123,7 @@ function setActive(state){
 
     results[active].class_name = "app_menu_entry active"
     oldActive = results[active]
+    App_Input.grab_focus()
 }setActive()
 
 export default App_Launcher
