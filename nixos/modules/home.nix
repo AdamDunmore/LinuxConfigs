@@ -34,6 +34,8 @@ in
     android-studio
     gnome.nautilus
     gnome.eog
+    gnome.file-roller
+    gnome.seahorse
 
     git
       

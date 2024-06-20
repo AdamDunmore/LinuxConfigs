@@ -10,5 +10,6 @@
         kwalletmanager
         dolphin
         gwenview
+        ark
     ];
 }
