@@ -14,7 +14,6 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.opengl = {
-    #package = hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.mesa.drivers;
     enable = true;
     driSupport = true;
     driSupport32Bit = true;

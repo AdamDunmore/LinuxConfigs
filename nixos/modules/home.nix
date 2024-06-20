@@ -48,7 +48,8 @@ in
     swaylock-effects
     swaysome
     ags
-    kitty
+    grim
+    slurp
 
     sddm
 
@@ -73,11 +74,10 @@ in
     ripgrep
     jq
     python3
-    grim
-    slurp
     obs-studio
 
     wineWowPackages.stable
+    #winwWowPackages.waylandFull #Unstable
     winetricks
     gamescope
     vulkan-tools
