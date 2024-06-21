@@ -38,6 +38,7 @@ in
     gnome.seahorse
     gnome.gnome-system-monitor
     protonvpn-gui
+    arduino-ide
 
     git
       
