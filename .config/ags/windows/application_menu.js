@@ -42,6 +42,7 @@ const App_Input = Widget.Entry({
 const App_Scrollable = Widget.Scrollable({
     vexpand: true,
     hscroll: "never",
+    vscroll: "external",
     child: Widget.Box({
         orientation: 1,
         children: apps

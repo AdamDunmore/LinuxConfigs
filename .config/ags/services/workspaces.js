@@ -54,7 +54,7 @@ class WorkspaceService extends Service {
         super();
 
         //Monitor
-        Utils.interval(250, () => this.#updateWorkspace())
+        Utils.interval(150, () => this.#updateWorkspace())
     }
 
     #updateWorkspace() { //TODO: Change to IPC

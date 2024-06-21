@@ -4,11 +4,7 @@
 
 /* General */ 
 * {
-  all: unset;
-}
-
-window, flowboxchild{
-    background-color: rgba(0,0,0,0);
+    all: unset;
 }
 
 .menu_container{
@@ -16,7 +12,7 @@ window, flowboxchild{
 }
 
 .menu_container, .volume_slider, .power_menu, .quick_setting, .device_info, .now_playing_container, .power_warning_container{
-    margin: 5px;
+    margin: 10px;
     border-radius: 10px;
 }
 
@@ -29,7 +25,8 @@ window, flowboxchild{
 .notification_item{
   min-width: 1px; 
   min-height: 1px;
-  background-color: @primary-colour;
+  background-color: @theme_bg_color;
+  color: @theme_text_color;
   padding: 10px;
   margin-top: 10px;
   margin-right: 10px;
@@ -44,7 +41,7 @@ window, flowboxchild{
 
 /* Bar */
 .bar{
-    background-color: rgba(255,255,255,0.07);
+    background-color: rgba(255,255,255,0.03);
     color: @text;
 }
 
@@ -53,10 +50,11 @@ window, flowboxchild{
 }
 
 .bar_item{
-    background-color: @primary-colour;
     border-radius: 45px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: @theme_bg_color;
+    color: @theme_text_color;
 }
 
 .bar_workspaces{
@@ -69,7 +67,7 @@ window, flowboxchild{
 }
 
 .bar_workspace.focused{
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255,255,255,0.2);
 }
 
 .bar_menu{
@@ -85,7 +83,7 @@ window, flowboxchild{
 /* App Launcher */
 .app_menu_container{
   padding: 15px;
-  background-color: @primary-colour;
+  background-color: @theme_bg_color;
   border-radius: 10px;
   min-width: 500px;
   min-height: 300px;
@@ -94,21 +92,24 @@ window, flowboxchild{
 .app_menu_input{
   font-size: 20px;
   padding: 5px;
+  color: @theme_text_color;
 }
 
 .app_menu_entry{
-  border-width: 1px;
+  border-width: 0.5px;
   border-style: solid;
-  border-color: rgba(255,255,255, 0.1);
+  border-color: @theme_border_color;
   border-radius: 10px;
 
   padding: 5px;
   margin-top: 5px;
+
+  transition: border-width 0.4s;
 }
 
 .app_menu_entry.active{
-    border-width: 2px;
-    background-color: rgba(255,255,255,0.1);
+    border-width: 1px;
+    background-color: @theme_border_color;
 }
 
 .app_menu_entry_text, .app_menu_entry_icon{
@@ -117,7 +118,7 @@ window, flowboxchild{
 
 /* Player */
 .now_playing_container{
-    background-color: @primary-colour;
+    background-color: @theme_bg_color;
 }
 
 .now_playing_cover{
@@ -133,28 +134,27 @@ window, flowboxchild{
 }
 
 .now_playing_info_artist{
-    color: rgba(200,200,200,0.9);
+    color: @theme_text_color;
 }
 
 /* Volume Slider */
 .volume_slider{
-    background-color: @primary-colour;
+    background-color: @theme_bg_color;
 }
 
 .volume_scale{
-  margin: 10px;
   margin-left: 20px;
   margin-right: 0px;
   padding: 5px;
 }
 
 trough{
-  background-color: rgba(255,255,255,1);
+  background-color: @theme_fg_color;
   color: rgba(255,255,255,1);
 }
 
 highlight{
-  background-color: rgba(40,40,60,0.8);
+  background-color: @theme_selected_bg_color;
 }
 
 slider{  
@@ -164,40 +164,49 @@ slider{
 }
 
 /* Quick Settings */
+.quick_setting_container{  
+
+}
+
 .quick_setting{
-  background-color: @primary-colour;
-  padding: 10px;
-  min-width: 60px;
-  min-height: 60px;
-  font-size: 28px;
+  min-width: 140px;
+  min-height: 140px;
+  background-color: @theme_bg_color;
+  font-size: 34px;
 }
 
 .quick_setting:checked{
-    background-color: @primary-colour-active;
+    background-color: @theme_selected_bg_color;
+    border-color: @theme_border_color;
     border-style: solid;
-    border-width: 2px;
-    border-color: rgba(255,255,255,0.2);
-    min-width: calc(60px - 4px);
-    min-height: calc(60px - 4px);
+    border-width: 1.5px;
+    min-width: calc(140px - 4px);
+    min-height: calc(140px - 4px);
+}
+
+.quick_setting_expand{
+
 }
 
 /* Device Info */
 .device_info{
-  background-color: @primary-colour;
+  background-color: @theme_bg_color;
   padding: 10px;
-  min-width: 60px;
-  min-height: 60px;
+  min-width: 120px;
+  min-height: 120px;
+  font-size: 20px;
 }
 
 /* Power Menu */
 .power_menu{
-    background-color: @primary-colour;
+  background-color: @theme_bg_color;
+    min-width: 260px;
 }
 
 .power_button{
-  font-size: 20px;
-  min-width: 30px;
-  min-height: 30px;
+  font-size: 26px;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .power_button:hover{
@@ -207,7 +216,7 @@ slider{
 
 /* Power Warning */
 .power_warning_container{
-    background-color: @primary-colour;
+  background-color: @theme_base_color;
     padding: 10px;
 }
 
@@ -216,10 +225,10 @@ slider{
 }
 
 .power_warning_button{
-  background-color: rgba(100,100,120,0.8);
+  background-color: @theme_bg_color;
   padding: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 10px;
 }

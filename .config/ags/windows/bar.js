@@ -83,6 +83,18 @@ const Calendar = Widget.Box({
     })
 })
 
+const Workspace_Item = (label_text) => {
+    return Widget.Box({
+        className: "bar_workspace",
+        hpack: "center",
+        child: Widget.Button({
+            hpack: "center",
+            hexpand: true,
+            label: label_text
+        })
+    })
+}
+
 const Workspace = Widget.Box({
     className: "bar_item bar_workspaces",
     setup: self => {
@@ -90,17 +102,7 @@ const Workspace = Widget.Box({
             let data = v["workspace-data"]
             let children = []
             for (let x = 0; x < data.length; x++){
-                children.push(
-                    Widget.Box({
-                        className: "bar_workspace",
-                        hpack: "center",
-                        child: Widget.Button({
-                            hpack: "center",
-                            hexpand: true,
-                            label: data[x]["name"]
-                        })
-                    })
-                )
+                children.push(Workspace_Item(data[x]["name"]))
                 if (data[x]["focused"] == true){
                     children[x].class_name = "bar_workspace focused"
                 }

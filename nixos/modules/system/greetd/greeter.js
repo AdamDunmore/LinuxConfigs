@@ -62,7 +62,7 @@ const Greeter_Box = Widget.Box({
 })
 
 const Greeter = Widget.Window({
-    css: "background-color: rgba(20,20,20,255);",
+    css: "background-color: rgba(0,0,0,1);",
     keymode: "exclusive",
     name: "greeter",
     anchor: ["top", "left", "right", "bottom"],
