@@ -39,7 +39,8 @@ in
     gnome.gnome-system-monitor
     protonvpn-gui
     arduino-ide
-
+    obs-studio
+    
     git
       
     alacritty
@@ -80,7 +81,6 @@ in
     ripgrep
     jq
     python3
-    obs-studio
 
     wineWowPackages.stable
     #winwWowPackages.waylandFull #Unstable
