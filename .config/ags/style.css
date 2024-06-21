@@ -120,26 +120,20 @@
 .now_playing_container{
     padding: 10px;
     background-color: @theme_bg_color;
-    min-width: 300px;
-
-}
-
-.now_playing_cover{
-    min-width: 200px;
-    background-size: contain;
+    min-width: 400px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .now_playing_info{
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .now_playing_info_artist{
-    color: @theme_text_color;
+    color: rgba(255,255,255,0.8);
 }
 
 /* Volume Slider */

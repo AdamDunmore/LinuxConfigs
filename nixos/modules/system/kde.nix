@@ -11,5 +11,6 @@
         dolphin
         gwenview
         ark
+        ksystemstats
     ];
 }

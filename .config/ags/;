@@ -4,12 +4,12 @@ function checkPlayer(s){
     if (s.players[0] == undefined){
         now_playing_title.set_label("Nothings playing");
         now_playing_artist.set_label("");
+        now_playing_cover.hide()
     }
     else{
         now_playing_title.set_label(s.players[0].track_title)
         now_playing_artist.set_label(s.players[0].track_artists[0])
         if (s.players[0].track_cover_url == ""){
-            Player.setCss(`background-image: none`)
         }
         else{
             //now_playing_cover.show()
@@ -36,21 +36,15 @@ const now_playing_artist = Widget.Label({
         className: "now_playing_info_artist",
 })
 
-const Player = Widget.CenterBox({
-    className: "now_playing_container",
+const Player = Widget.Box({
+    className: "now_playing_container now_playing_cover now_playing_info",
+    orientation: 1,
     vexpand: true,
     hexpand: true,
-    vertical: true,
-    end_widget: Widget.Box({
-            orientation: 1,
-            hpack: "center",
-            vpack: "end",
-            className: "now_playing_info",
-            children: [
-                now_playing_title,
-                now_playing_artist,
-            ] 
-    })
+    children: [
+        now_playing_title,
+        now_playing_artist,
+    ]
 })
 
 checkPlayer(player)

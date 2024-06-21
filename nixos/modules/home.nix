@@ -36,6 +36,8 @@ in
     gnome.eog
     gnome.file-roller
     gnome.seahorse
+    gnome.gnome-system-monitor
+    protonvpn-gui
 
     git
       
