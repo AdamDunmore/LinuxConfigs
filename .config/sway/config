@@ -8,7 +8,7 @@ set $screenshot grim -g "$(slurp)"
 set $menu ags -t 'menu' 
 
 ###Startup
-exec ags -t "bar"
+exec ags
 exec $wallpaper
 
 ### Output configuration

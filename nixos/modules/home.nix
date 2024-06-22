@@ -40,7 +40,8 @@ in
     protonvpn-gui
     arduino-ide
     obs-studio
-    
+    thonny
+
     git
       
     alacritty

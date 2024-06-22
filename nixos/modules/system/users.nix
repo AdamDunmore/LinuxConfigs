@@ -2,6 +2,6 @@
     users.users.adam = {
         isNormalUser = true;
         description = "Adam Dunmore";
-        extraGroups = [ "networkmanager" "wheel" "audio" ];
+        extraGroups = [ "networkmanager" "wheel" "audio" "dialout"];
     };
 }
