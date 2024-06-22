@@ -1,3 +1,5 @@
+//TODO: Add toggleable scanning 
+
 class BluetoothService extends Service{
 
     static{ 
@@ -46,8 +48,13 @@ class BluetoothService extends Service{
 
     constructor() {
         super();
-            
-        Utils.interval(6000, () => this.#onDeviceChange())
+         
+        Utils.interval(6000, () => {
+            if(this.#state){
+                this.#onDeviceChange()
+                this.#available_devices = []
+            }
+        })
         Utils.interval(1000, () => this.#onStateChange())
     }
 

@@ -175,7 +175,7 @@ slider{
 }
 
 .quick_setting:checked{
-    background-color: @theme_selected_bg_color;
+    background-color: @theme_base_color;
     border-color: @theme_border_color;
     border-style: solid;
     border-width: 1.5px;

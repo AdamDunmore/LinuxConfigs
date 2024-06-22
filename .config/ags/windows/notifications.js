@@ -8,6 +8,7 @@ const Notification_Item = (data) => {
     else if(data["app-icon"]){
         image_path = data["app-icon"]
     }
+
     return Widget.Box({
         orientation: 0,
         className: "notification_item",

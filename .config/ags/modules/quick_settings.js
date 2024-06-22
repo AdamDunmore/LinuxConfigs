@@ -32,15 +32,6 @@ const Wifi = Widget.CenterBox({
             })
         }
     }),
-    //end_widget: Widget.Button({
-    //    className: "quick_setting_expand",
-    //    label: '>',
-    //    on_clicked: () => {
-    //        //Toggle Menu
-    //        //Toggle Bluetooth Menu
-    //    }
-    //})
-
 })
 const Bluetooth = Widget.CenterBox({
     className: "quick_setting_container",
