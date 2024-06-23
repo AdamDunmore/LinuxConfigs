@@ -37,6 +37,7 @@ in
     gnome.file-roller
     gnome.seahorse
     gnome.gnome-system-monitor
+    gnome.gnome-calculator
     protonvpn-gui
     arduino-ide
     obs-studio
