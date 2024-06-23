@@ -11,13 +11,15 @@ class BluetoothService extends Service{
             },
             { //Properties
                 'available-devices' : ['jsobject', 'r'],
-                'state' : ['boolean', 'rw']
+                'state' : ['boolean', 'rw'],
+                'scanning' : ['boolean', 'rw'],
             }
         )
     }
 
     #available_devices = [];
     #state = false;
+    #scanning = false;
 
     get available_devices() {
         return this.#available_devices;
@@ -25,6 +27,10 @@ class BluetoothService extends Service{
 
     get state(){
         return this.#state;
+    }
+
+    get scanning(){
+        return this.#scanning
     }
 
     set state(s){
@@ -41,6 +47,10 @@ class BluetoothService extends Service{
         this.emit('state-changed', this.#state)
     }
 
+    set scanning(s){
+        this.#scanning = s;
+    }
+
     toggleBluetooth(){
         this.#state = !this.#state;
         Utils.execAsync("rfkill toggle bluetooth")
@@ -50,7 +60,7 @@ class BluetoothService extends Service{
         super();
          
         Utils.interval(6000, () => {
-            if(this.#state){
+            if(this.#state && this.#scanning){
                 this.#onDeviceChange()
                 this.#available_devices = []
             }
