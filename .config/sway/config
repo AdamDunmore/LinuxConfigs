@@ -103,8 +103,10 @@ bindsym $mod+r mode "resize"
 
 #Apperance
 default_border none
-for_window [class=".*"] opacity 0.9
+for_window [class=".*"] opacity 0.9 
 for_window [app_id=".*"] opacity 0.9
+for_window [class=".*"] border pixel 3
+for_window [app_id=".*"] border pixel 3
 gaps inner 10
 gaps outer 10
 
