@@ -42,6 +42,7 @@ in
     arduino-ide
     obs-studio
     thonny
+    bottles
 
     git
       
@@ -83,6 +84,7 @@ in
     ripgrep
     jq
     python3
+    rshell
 
     wineWowPackages.stable
     #winwWowPackages.waylandFull #Unstable
