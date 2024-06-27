@@ -51,3 +51,10 @@ vim.api.nvim_set_keymap(
     ":Telescope file_browser<CR>",
     {noremap = false, silent = true}
 )
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<C-l>',
+    ":TelescopeFindFilesCWD<CR>",
+    {noremap = false, silent = true}
+)

@@ -2,7 +2,7 @@
 vim.opt.termguicolors = true
 vim.opt.cmdheight = 0
 
--- Gets providers
+-- Gets providers Providers dont work
 local vi_mode = require('feline.providers.vi_mode')
 
 --Defines Constants
@@ -38,18 +38,6 @@ component.line_number = {
     right_sep = ""
 }
 
---Date Component
-component.date = {
-    provider = function () return " " .. tostring(os.date('%d/%m/%y %H:%M:%S',t0)) .. " " end,
-    hl = function ()
-        return{
-            fg = text_colour,
-            bg = background_colour,
-        }
-    end,
-    right_sep = ''
-}
-
 --LSP Component
 component.current_lsp = {
     provider = function ()
@@ -72,7 +60,7 @@ component.current_lsp = {
 local components_table = {
     active = {
         {component.file_name, component.line_number}, --Left
-        {component.date}, --Middle
+        {}, --Middle
         {component.current_lsp} --Right
     }
 }
