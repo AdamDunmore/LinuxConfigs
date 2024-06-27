@@ -43,6 +43,7 @@ in
     obs-studio
     thonny
     bottles
+    virtualbox
 
     git
       
@@ -63,6 +64,7 @@ in
 
     sddm
 
+    p7zip
     networkmanager
     brightnessctl
     blueman #Bluetooth
