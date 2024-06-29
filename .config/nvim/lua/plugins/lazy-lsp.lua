@@ -1,6 +1,7 @@
 local lsp_zero = require("lsp-zero");
 local cmp = require('cmp');
 local ls = require('luasnip');
+local lspconfig = require('lspconfig')
 
 lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({
@@ -43,7 +44,8 @@ cmp.setup({
 
 require("lazy-lsp").setup {
     preferred_servers = {
-        python = { "pyright" }
+        python = { "pyright" },
+        css = {"cssls"}
     }
 }
 
