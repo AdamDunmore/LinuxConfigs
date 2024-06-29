@@ -46,13 +46,18 @@ local plugins = {
 
     {
         'dundalek/lazy-lsp.nvim',
-        dependencies = { 'neovim/nvim-lspconfig' }
+        dependencies = {
+            {'neovim/nvim-lspconfig'},
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'VonHeikemen/lsp-zero.nvim'},
+        }
     }
 }
 
 require("lazy").setup(plugins, opts)
 
-require("lazy-lsp").setup {}
+--require("lazy-lsp").setup {}
 
 -- Sets colour scheme
 vim.cmd.colorscheme "catppuccin"
@@ -60,7 +65,8 @@ vim.cmd.colorscheme "catppuccin"
 require('autoclose').setup()
 
 -- configs
-require("/plugins/lspzero")
+--require("/plugins/lspzero")
+require("/plugins/lazy-lsp")
 require("/plugins/telescope")
 require("/plugins/feline")
 require("/plugins/dashboard")
