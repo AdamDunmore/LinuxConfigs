@@ -2,12 +2,30 @@
 vim.opt.termguicolors = true
 vim.opt.cmdheight = 0
 
--- Gets providers Providers dont work
-local vi_mode = require('feline.providers.vi_mode')
-
 --Defines Constants
-local text_colour = '#000000'
-local background_colour = '#CCCCCC'
+local vi_modes = {
+    n = "Normal",
+    i = "Insert",
+    v = "Visual",
+    V = "Visual Line",
+    ['DOESNT WORK'] = "Visual Block",
+    c = "Command"
+}
+
+local style = function ()
+    return {
+        fg = '#000000',
+        bg = '#CCCCCC',
+    }
+end
+
+local function left_side()
+    return " "
+end
+
+local function right_side()
+    return " "
+end
 
 --Components
 --
@@ -17,25 +35,34 @@ local component = {}
 --File Name Component
 component.file_name = {
     provider = function() return " " .. vim.fn.expand('%:t') .. " " end,
-    hl = function ()
-        return{
-            fg = text_colour,
-            bg = background_colour,
-        }
-    end,
-    right_sep = '    '
+    hl = style(),
+    left_sep = left_side(),
+    right_sep = right_side(),
 }
 
 --Line Number Component
 component.line_number = {
-    provider = function () return " " .. tostring(unpack(vim.api.nvim_win_get_cursor(0))) .. " " end,
-    hl = function ()
-        return{
-            fg = text_colour,
-            bg = background_colour,
-        }   
+    provider = function () 
+        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return " " .. row .. ":" .. col .. " " 
     end,
-    right_sep = ""
+    hl = style(),
+    left_sep = left_side(),
+    right_sep = right_side(),
+}
+
+-- Mode
+component.mode = {
+    provider = function ()
+        local mode = vi_modes[vim.api.nvim_get_mode().mode]
+        if mode == nil then
+           mode = vim.api.nvim_get_mode().mode 
+        end
+        return " " .. mode .. " "
+    end,
+    hl = style(),
+    left_sep = left_side(),
+    right_sep = right_side(),
 }
 
 --LSP Component
@@ -47,13 +74,9 @@ component.current_lsp = {
         end
         return " " .. str .. " "
     end,
-    hl = function ()
-        return{
-            fg = text_colour,
-            bg = background_colour,
-        }
-    end,
-    right_sep = '   '
+    hl = style(),
+    left_sep = left_side(),
+    right_sep = right_side(),
 }
 
 --Creates Variable to store layout
@@ -61,10 +84,12 @@ local components_table = {
     active = {
         {component.file_name, component.line_number}, --Left
         {}, --Middle
-        {component.current_lsp} --Right
+        {component.current_lsp, component.mode} --Right
     }
 }
 
 --Feline Setup
 require('feline').setup({components = {}})
-require('feline').winbar.setup({components = components_table})       -- to use winbar
+require('feline').winbar.setup({
+    components = components_table,
+})       -- to use winbar
