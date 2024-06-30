@@ -12,13 +12,6 @@ local vi_modes = {
     c = "Command"
 }
 
-local style = function ()
-    return {
-        fg = '#000000',
-        bg = '#CCCCCC',
-    }
-end
-
 local function left_side()
     return " "
 end
@@ -26,6 +19,11 @@ end
 local function right_side()
     return " "
 end
+
+local nord = {
+	fg = "#eceff4",
+	bg = "#3b4252",
+}
 
 --Components
 --
@@ -35,7 +33,6 @@ local component = {}
 --File Name Component
 component.file_name = {
     provider = function() return " " .. vim.fn.expand('%:t') .. " " end,
-    hl = style(),
     left_sep = left_side(),
     right_sep = right_side(),
 }
@@ -46,7 +43,6 @@ component.line_number = {
         local row, col = unpack(vim.api.nvim_win_get_cursor(0))
         return " " .. row .. ":" .. col .. " " 
     end,
-    hl = style(),
     left_sep = left_side(),
     right_sep = right_side(),
 }
@@ -60,7 +56,6 @@ component.mode = {
         end
         return " " .. mode .. " "
     end,
-    hl = style(),
     left_sep = left_side(),
     right_sep = right_side(),
 }
@@ -74,7 +69,6 @@ component.current_lsp = {
         end
         return " " .. str .. " "
     end,
-    hl = style(),
     left_sep = left_side(),
     right_sep = right_side(),
 }
@@ -92,4 +86,5 @@ local components_table = {
 require('feline').setup({components = {}})
 require('feline').winbar.setup({
     components = components_table,
+    theme = nord
 })       -- to use winbar
