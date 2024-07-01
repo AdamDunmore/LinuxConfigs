@@ -143,7 +143,6 @@ const Search = Widget.Box({
 })
 
 const Left = Widget.Box({
-    hexpand: true,
     hpack: "start",
     spacing: 10,
     children: [
@@ -163,7 +162,6 @@ const Middle = Widget.Box({
 })
 
 const Right = Widget.Box({
-    hexpand: true,
     hpack: "end",
     spacing: 10,
     children: [

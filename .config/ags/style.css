@@ -163,10 +163,6 @@ slider{
 }
 
 /* Quick Settings */
-.quick_setting_container{  
-
-}
-
 .quick_setting{
   min-width: 140px;
   min-height: 140px;
@@ -199,7 +195,7 @@ slider{
 /* Power Menu */
 .power_menu{
   background-color: @theme_bg_color;
-    min-width: 260px;
+  min-width: 260px;
 }
 
 .power_button{
