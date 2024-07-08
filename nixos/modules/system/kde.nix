@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
 {
-    #services.desktopManager.plasma6.enable = true;
-    services.xserver.desktopManager.plasma5.enable = true;
-    environment.plasma5.excludePackages = with pkgs.kdePackages; [
+    services.desktopManager.plasma6.enable = false;
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
         konsole
         kate
         elisa

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-    services.xserver.desktopManager.gnome.enable = false;
+    services.xserver.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = (with pkgs; [
       gnome-photos
       gnome-tour
@@ -18,11 +18,4 @@
       hitori 
       atomix 
     ]);
-
-    home-manager.users.adam = {
-        dconf = {
-            enable = false;
-        };
-    };
-
 }

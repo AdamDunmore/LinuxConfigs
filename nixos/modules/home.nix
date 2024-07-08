@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./configs/alacritty.nix
+    ./configs/dconf.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
     ./configs/theme.nix
     ./configs/wofi.nix
@@ -32,12 +33,6 @@ in
     prismlauncher
     motrix
     android-studio
-    gnome.nautilus
-    gnome.eog
-    gnome.file-roller
-    gnome.seahorse
-    gnome.gnome-system-monitor
-    gnome.gnome-calculator
     protonvpn-gui
     arduino-ide
     obs-studio
@@ -46,7 +41,8 @@ in
     virtualbox
 
     git
-      
+     
+    # Terminal Emulator
     alacritty
     zellij
     zsh
@@ -54,6 +50,7 @@ in
     zsh-syntax-highlighting
     zsh-autosuggestions
 
+    # Sway
     wl-clipboard
     swaylock-effects
     swaysome
@@ -62,6 +59,15 @@ in
     slurp
     wpaperd
     wofi
+
+    # Gnome
+    gnome.nautilus
+    gnome.eog
+    gnome.file-roller
+    gnome.seahorse
+    gnome.gnome-system-monitor
+    gnome.gnome-calculator
+    gnome.gnome-settings-daemon
 
     p7zip
     networkmanager

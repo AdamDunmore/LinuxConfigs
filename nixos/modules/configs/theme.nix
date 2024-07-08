@@ -9,7 +9,7 @@
             package = pkgs.nordic;
         };
         iconTheme = {
-            name = "breeze-dark";
+            name = "breeze";
         };
         font = {
             name = "CodeNewRoman";
