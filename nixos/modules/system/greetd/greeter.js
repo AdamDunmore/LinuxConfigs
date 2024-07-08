@@ -4,7 +4,6 @@ function Login(){
     const state = Greeter_Session_Selector.get_active()
     let command = "";
     if (state){
-        //command = "startplasma-wayland" 
         command = "gnome-shell --wayland" 
     }
     else{
@@ -38,7 +37,7 @@ const Greeter_Session_Selector_Box = Widget.Box({
     children: [
         Widget.Label({label: "Sway", css: "color: rgba(255,255,255,1);"}),
         Greeter_Session_Selector,
-        Widget.Label({label: "Plasma", css: "color: rgba(255,255,255,1);"}),
+        Widget.Label({label: "Gnome", css: "color: rgba(255,255,255,1);"}),
     ],
 })
 

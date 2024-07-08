@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
+with lib.hm.gvariant;
 {
     dconf = {
         enable = true;
@@ -22,6 +23,27 @@
             "org/gnome/nautilus" = {
                 "default-folder-viewer" = "list-view";
                 "default-visible-columns" = ["name" "size" "type" "date_modified"];
+            };
+
+            "org/gnome/desktop/peripherals/touchpad" = {
+                tap-to-click = true;
+                two-finger-scrolling-enabled = true;
+            };
+
+            "org/gnome/desktop/input-sources" = {
+                sources = [ (mkTuple [ "xkb" "gb" ]) ];
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys" = {
+                custom-keybindings = [
+                    "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/adam-open-termincal/"
+                ];
+            };
+
+            "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/adam-open-terminal" = {
+                name = "Open Terminal";
+                command = "alacritty";
+                binding = "<Super>a";
             };
         };
     };
