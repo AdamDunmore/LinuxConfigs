@@ -7,6 +7,7 @@
         ./system/bluetooth.nix
         ./system/bootloader.nix
         ./system/greetd/greetd.nix
+        ./system/gnome.nix
         ./system/kde.nix
         ./system/keyboard.nix
         ./system/timezone.nix
@@ -39,7 +40,4 @@
 
     # Enable networking
     networking.networkmanager.enable = true;
-
-    #Enables Wayland support for QT
-    programs.dconf.enable = true;
 }

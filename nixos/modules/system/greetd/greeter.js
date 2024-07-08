@@ -2,7 +2,7 @@ const greetd = await Service.import("greetd");
 
 function Login(){
     const state = Greeter_Session_Selector.get_active()
-    let command = ""
+    let command = "";
     if (state){
        command = "startplasma-wayland" 
     }

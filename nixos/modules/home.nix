@@ -63,12 +63,10 @@ in
     wpaperd
     wofi
 
-    sddm
-
     p7zip
     networkmanager
     brightnessctl
-    blueman #Bluetooth
+    blueman 
     bluez
     zip
     unzip
