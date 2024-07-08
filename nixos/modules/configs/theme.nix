@@ -3,7 +3,7 @@
 {
     # GTK
     gtk = {
-#        enable = true;
+        enable = true;
         theme = {
             name = "Nordic";
             package = pkgs.nordic;
