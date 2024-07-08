@@ -19,8 +19,11 @@
 
     qt = {
         enable = true;
-        platformTheme.name = "adwaita";
-        #style.name = "Nordic";
-        style.name = "adwaita-dark";
+        platformTheme.name = "gtk3";
+        style = {
+            name = "Nordic"; 
+            package = pkgs.nordic;
+        };
+
     };
 }
