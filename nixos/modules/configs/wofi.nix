@@ -10,6 +10,8 @@
             height = 300;
             width = 600;
             prompt = "";
+            matching = "multi-contains";
+            insensitive = true;
         };
         style = ''
             window {
