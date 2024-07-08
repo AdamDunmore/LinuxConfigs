@@ -7,7 +7,8 @@ class BluetoothService extends Service{
             this,
             { //Signals
                 'available-devices-changed' : ['jsobject'],
-                'state-changed': ['boolean']
+                'state-changed': ['boolean'],
+                'scanning-changed' : ['boolean'],
             },
             { //Properties
                 'available-devices' : ['jsobject', 'r'],
@@ -54,6 +55,13 @@ class BluetoothService extends Service{
     toggleBluetooth(){
         this.#state = !this.#state;
         Utils.execAsync("rfkill toggle bluetooth")
+    }
+
+    toggleScanning(){
+        this.#scanning = !this.#scanning;
+        this.emit('changed')
+        this.notify('scanning')
+        this.emit('scanning-changed', this.#state)
     }
 
     constructor() {

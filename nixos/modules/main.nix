@@ -39,4 +39,7 @@
 
     # Enable networking
     networking.networkmanager.enable = true;
+
+    #Enables Wayland support for QT
+    programs.dconf.enable = true;
 }

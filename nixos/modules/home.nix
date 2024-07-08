@@ -7,6 +7,7 @@ in
     ./configs/alacritty.nix
     (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
     ./configs/theme.nix
+    ./configs/wofi.nix
     ./configs/wpaperd.nix
     ./configs/zsh.nix
 ];
@@ -60,6 +61,7 @@ in
     grim
     slurp
     wpaperd
+    wofi
 
     sddm
 
