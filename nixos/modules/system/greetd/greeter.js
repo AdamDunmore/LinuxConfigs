@@ -73,3 +73,11 @@ App.config({
     style: "./style.css",
     windows: [Greeter]
 })
+
+Greeter.connect("key_press_event", (s,t) => {
+    let keyval = t.get_keyval()[1];
+    if (keyval == 65362){ //Currently Up arrow key (change to Tab)
+       Greeter_Session_Selector.toggle() //Find out if thats an actual function
+        return true;
+    }
+})

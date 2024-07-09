@@ -12,6 +12,7 @@ with lib.hm.gvariant;
                     dash-to-panel.extensionUuid
                     user-themes.extensionUuid
                 ];
+                disabled-extensions = [];
                 disable-user-extensions = false;
                 "favorite-apps" = ["firefox.desktop" "org.gnome.Nautilus.desktop" "Alacritty.desktop"]; 
             };
