@@ -15,6 +15,10 @@ function Login(){
     })
 }
 
+const Error1 = Widget.Label({
+    label: "",
+})
+
 const Greeter_Name = Widget.Entry({
     placeholder_text: "Username",
     on_accept: () => Greeter_Pwd.grab_focus(),
@@ -57,6 +61,7 @@ const Greeter_Box = Widget.Box({
                 on_clicked: () => {Login()}
         }),
         Greeter_Session_Selector_Box,
+        Error1
     ],
     css: 'padding: 40px; background-color: rgba(40, 40, 40, 1); border-color: rgba(255,255,255,0.7); border-radius: 10px; border-style: solid; border-width: 2px;'
 })
@@ -76,8 +81,15 @@ App.config({
 
 Greeter.connect("key_press_event", (s,t) => {
     let keyval = t.get_keyval()[1];
-    if (keyval == 65362){ //Currently Up arrow key (change to Tab)
-       Greeter_Session_Selector.toggle() //Find out if thats an actual function
+    if (keyval == 65515){
+        try {
+            Greeter_Session_Selector.activate()
+        }
+        catch {
+              err => {
+                    Error1.label = JSON.stringify(err)
+              }          
+        }
         return true;
     }
 })

@@ -2,8 +2,20 @@ local Popup = require("nui.popup")
 local Layout = require("nui.layout")
 local event = require("nui.utils.autocmd").event
 
-local help_visual = {"v: Enter visual mode", "y: Copy/Yank", "c: Cut", "v: Paste"}
-local help_plugins = {"Ctrl-f: File Browser", "Ctrl-l: Search Files", "Ctrl-p: Search Projects", "Ctrl-h: Display Help"}
+local help_visual = {
+    "v: Enter visual mode",
+    "y: Copy/Yank", 
+    "c: Cut", 
+    "v: Paste"
+}
+
+local help_plugins = {
+    "Leader-tf: File Browser", 
+    "Leader-tc: Search Files", 
+    "Leader-tp: Search Projects", 
+    "Leader-tb: Search Buffers", 
+    "Leader-h: Display Help"
+}
 
 local popupVisual = Popup({
     border = {
@@ -53,4 +65,4 @@ end
 vim.api.nvim_buf_set_lines(popupVisual.bufnr, 0, 1, false, help_visual)
 vim.api.nvim_buf_set_lines(popupPlugins.bufnr, 0, 1, false, help_plugins)
 
-vim.keymap.set({'n', 'i', 'v'}, '<C-h>', Toggle_Help, { noremap = false })
+vim.keymap.set({'n', 'i', 'v'}, '<leader>h', Toggle_Help, { noremap = false })

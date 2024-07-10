@@ -14,3 +14,7 @@ vim.opt.updatetime = 300
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- Bind Leader Key
+vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = ' ';

@@ -5,7 +5,7 @@ require('nvim_comment').setup({
 
 vim.api.nvim_set_keymap(
         'v',
-        '<C-_>',
+        '<leader>cc',
         ":CommentToggle<CR>",
         {noremap = false, silent = true}
 )

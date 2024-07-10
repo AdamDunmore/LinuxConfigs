@@ -23,7 +23,7 @@ require('dashboard').setup {
                 key = 'f',
                 key_hl = 'Number',
                 key_format = ' %s', -- remove default surrounding `[]`
-                action = 'TelescopeFindFilesCWD'
+                action = 'Telescope find_files'
             },
       
             {
@@ -46,7 +46,7 @@ require('dashboard').setup {
                 key = 'p',
                 key_hl = 'Number',
                 key_format = ' %s',
-                action = 'TelescopeOpenProjects'
+                action = 'Telescope project'
             },
 
             {

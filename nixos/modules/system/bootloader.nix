@@ -7,7 +7,7 @@
         useOSProber = true;
         efiInstallAsRemovable = false;
         efiSupport = true;
-        splashImage = /home/adam/Pictures/wallpaper.png;
+        splashImage = ../../../wallpapers/wallpaper_nixos.png;
     };
     systemd-boot.enable = false;   
 };
