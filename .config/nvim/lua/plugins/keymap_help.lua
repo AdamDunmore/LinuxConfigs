@@ -65,4 +65,4 @@ end
 vim.api.nvim_buf_set_lines(popupVisual.bufnr, 0, 1, false, help_visual)
 vim.api.nvim_buf_set_lines(popupPlugins.bufnr, 0, 1, false, help_plugins)
 
-vim.keymap.set({'n', 'i', 'v'}, '<leader>h', Toggle_Help, { noremap = false })
+vim.keymap.set({'n', 'v'}, '<leader>h', Toggle_Help, { noremap = false })

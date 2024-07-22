@@ -28,17 +28,17 @@ in
     vscode
     logseq
     lutris
-    discord
     heroic
-    prismlauncher
     motrix
+    prismlauncher
     android-studio
     protonvpn-gui
     arduino-ide
     obs-studio
     thonny
     bottles
-    virtualbox
+    tor-browser
+    armcord
 
     git
      
@@ -98,6 +98,7 @@ in
     winetricks
     gamescope
     vulkan-tools
+    # steamtinkerlaunch
 ])
 
 ++
@@ -106,8 +107,8 @@ in
     #Unstable Packages
     zed-editor
     neovim
-    vesktop
     parsec-bin
+    steamtinkerlaunch
 ]);
 }
 
