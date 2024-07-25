@@ -35,8 +35,8 @@ const Backlight = Widget.Box({
     className: "bar_item",
     child: Widget.Label({
         label: backlight.bind('screen_value').as(v => `󰃠\t${Math.floor(v*100)}%`),
-        visible: backlight.bind('available') //Fix when able to test
-    })
+    }),
+    visible: backlight.bind("available"),
 })
 
 const Volume = Widget.Box({
@@ -50,8 +50,8 @@ const Battery = Widget.Box({
     className: "bar_item",
     child: Widget.Label({
         label: battery.bind("percent").as(v => `\t${v}%`),
-        visible: battery.bind("available")
-    })
+    }),
+    visible: battery.bind("available"),
 })
 
 const Network = Widget.Box({
@@ -185,6 +185,7 @@ const BarBox = Widget.CenterBox({
 const Bar = Widget.Window({
     name: "bar",
     hexpand: true,
+    monitor: 1,
     className: "bar",
     anchor: ["left", "top", "right"],
     exclusivity: "exclusive",

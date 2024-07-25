@@ -92,6 +92,7 @@ in
     jq
     python3
     rshell
+    zulu8
 
     wineWowPackages.stable
     #winwWowPackages.waylandFull #Unstable

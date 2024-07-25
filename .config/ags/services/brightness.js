@@ -49,7 +49,7 @@ class BrightnessService extends Service {
 
     get available() {
         let returnVal = false;
-        Utils.exec("brightnessctl --list", (a) => {print(`a: ${a}`); returnVal = true}, (b) => {print(`b: ${b}`); returnVal = true})
+        Utils.exec("brightnessctl --list", (a) => {returnVal = true}, (b) => {returnVal = true})
         return returnVal; 
     }
 
