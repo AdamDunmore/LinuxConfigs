@@ -39,6 +39,7 @@ in
     bottles
     tor-browser
     armcord
+    piper
 
     git
      
@@ -93,13 +94,16 @@ in
     python3
     rshell
     zulu8
+    geckodriver
+    libratbag
+    yad
 
     wineWowPackages.stable
     #winwWowPackages.waylandFull #Unstable
     winetricks
     gamescope
     vulkan-tools
-    # steamtinkerlaunch
+    steamtinkerlaunch
 ])
 
 ++
@@ -109,7 +113,6 @@ in
     zed-editor
     neovim
     parsec-bin
-    steamtinkerlaunch
 ]);
 }
 

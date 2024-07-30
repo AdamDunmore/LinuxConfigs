@@ -50,4 +50,7 @@
         };
     };
     users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
+    # Enable Waydroid
+    virtualisation.waydroid.enable = true;
 }

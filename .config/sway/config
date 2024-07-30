@@ -103,15 +103,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Apperance
-default_border none
-for_window [class=".*"] opacity 0.9 
-for_window [app_id=".*"] opacity 0.9
+for_window [class=".*"] opacity 0.95
+for_window [app_id=".*"] opacity 0.95
 for_window [class=".*"] border pixel 3
 for_window [app_id=".*"] border pixel 3
 gaps inner 10
 gaps outer 10
 
-
+# class          title     border    title text
+client.focused   #FF000000 #4C566AFF #00000000 
+client.unfocused #FF000000 #2E3440FF #0000FF00
 
 include /etc/sway/config.d/*
 include ~/.config/sway/swaysome.conf
