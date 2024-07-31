@@ -12,6 +12,7 @@
         ./system/keyboard.nix
         ./system/timezone.nix
         ./system/users.nix
+        ./system/virtualbox.nix
     ];
 
 
@@ -41,16 +42,9 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    # Enable VirtualBox TODO: Move to own file
-    virtualisation.virtualbox = {
-        host.enable = true;
-        guest = {
-            enable = true;
-            draganddrop = true;
-        };
-    };
-    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
-
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
+
+    #Enables Kanshi
+    # systemd.user.services.kanshi.enable = true;
 }

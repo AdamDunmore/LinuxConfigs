@@ -10,13 +10,14 @@ set $menu ags -t "menu"
 ###Startup
 exec ags
 exec $wallpaper
+exec kanshi
 
 ### Output configuration
 
 #PC
-output DP-1 resolution 1920x1080 position 0,0
-output DP-3 resolution 1920x1080 position 1920,0
-output HDMI-A-1 resolution 1920x1080 position 3840,0
+# output DP-1 resolution 1920x1080 position 0,0
+# output DP-3 resolution 1920x1080 position 1920,0
+# output HDMI-A-1 resolution 1920x1080 position 3840,0
 
 #Laptop
 output eDP-1 resolution 1920x1080 position 0,0
