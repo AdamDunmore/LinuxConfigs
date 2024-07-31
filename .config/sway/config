@@ -12,16 +12,6 @@ exec ags
 exec $wallpaper
 exec kanshi
 
-### Output configuration
-
-#PC
-# output DP-1 resolution 1920x1080 position 0,0
-# output DP-3 resolution 1920x1080 position 1920,0
-# output HDMI-A-1 resolution 1920x1080 position 3840,0
-
-#Laptop
-output eDP-1 resolution 1920x1080 position 0,0
-
 ### Input configuration
 input "10182:480:GXTP7863:00_27C6:01E0_Touchpad" {
        natural_scroll enabled

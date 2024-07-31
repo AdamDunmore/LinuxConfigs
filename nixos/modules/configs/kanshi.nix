@@ -24,6 +24,17 @@
                     }
                 ];
             }
+
+            {
+                profile.name = "Laptop";
+                profile.outputs = [
+                    {
+                        criteria = "BOE 0x0872 Unknown";
+                        mode = "1920x1080@60Hz";
+                        position = "0,0";
+                    }
+                ];
+            }
         ];
     };
 }
