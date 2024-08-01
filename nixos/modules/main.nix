@@ -44,7 +44,4 @@
 
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
-
-    #Enables Kanshi
-    # systemd.user.services.kanshi.enable = true;
 }

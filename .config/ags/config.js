@@ -4,8 +4,6 @@ import app_launcher from './windows/application_menu.js'
 import bar from './windows/bar.js'
 import notifications from './windows/notifications.js'
 import bluetooth_menu from './windows/bluetooth_menu.js'
-import test from './windows/test.js'
-
 
 const Power_Warning_SH = power_warning("shutdown now");
 const Power_Warning_RE = power_warning("reboot");
@@ -22,7 +20,6 @@ App.config({
         bar,
         notifications,
         bluetooth_menu,
-        test,
     ]
 })
 
@@ -33,5 +30,4 @@ Power_Warning_SW.hide()
 app_launcher.hide()
 menu.hide()
 bluetooth_menu.hide()
-test.hide()
 

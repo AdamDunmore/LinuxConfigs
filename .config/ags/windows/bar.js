@@ -3,6 +3,7 @@ import workspace from '../services/workspaces.js'
 const audio = await Service.import('audio')
 const battery = await Service.import('battery')
 const network = await Service.import('network')
+const power_profiles = await Service.import('powerprofiles')
 
 function getTime(){
     const date = new Date()
@@ -142,6 +143,45 @@ const Search = Widget.Box({
     ]
 })
 
+const PowerProfileToggleState = () => {
+    if (power_profiles.active_profile == 'balanced'){
+        power_profiles.active_profile = 'power-saver'
+    }
+    else if(power_profiles.active_profile == 'power-saver'){
+        power_profiles.active_profile = 'balanced'
+    }
+    else{
+        power_profiles.active_profile = 'balanced'
+    }
+}
+
+const PowerProfile = Widget.Button({
+    className: "bar_item",
+    hpack: "center",
+    on_clicked: (self) => {
+        PowerProfileToggleState()
+    }, 
+    setup: self => {
+        let balanced_icon = " ";
+        let power_saving_icon = " ";
+        if (power_profiles.active_profile == "balanced"){
+            self.label = balanced_icon;
+        }
+        else{
+            self.label = power_saving_icon;
+        }
+
+        power_profiles.connect('changed', (data) => {
+            if (data.active_profile == "balanced"){
+                self.label = balanced_icon;
+            }
+            else{
+                self.label = power_saving_icon;
+            }
+        })
+    },
+})
+
 const Left = Widget.Box({
     hpack: "start",
     spacing: 10,
@@ -165,6 +205,7 @@ const Right = Widget.Box({
     hpack: "end",
     spacing: 10,
     children: [
+        PowerProfile,
         Search,
         Backlight,
         Volume,
