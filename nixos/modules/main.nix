@@ -27,7 +27,7 @@
     #Enabling Programs
     programs = {
         steam.enable = true;
-        sway.enable = true;
+        river.enable = true;
     };
 
 

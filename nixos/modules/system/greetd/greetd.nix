@@ -12,7 +12,6 @@ in
         settings = {
             default_session = {
                 command = "${pkgs.cage}/bin/cage -- ${pkgs.ags}/bin/ags --config ${agsConfig}";
-#                command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
             };
         };
     };

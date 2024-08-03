@@ -16,31 +16,11 @@ class WorkspaceService extends Service {
         );
     }
     
-    #connect_to_ipc() {
-        const sock = GLib.getenv("SWAYSOCK") || "";
-        const path = GLib.file_test(sock, GLib.FileTest.EXISTS) //Fix this 
-            ? sock
-            : sock
-
-        const connection = new Gio.SocketClient()
-            .connect(new Gio.UnixSocketAddress({ path: path }), null);
-
-        const message = JSON.stringify({
-            "command": "subscribe",
-            "payload": ["workspace"]
-        })
-
-        const istream = connection.get_input_stream()
-        const ostream = connection.get_output_stream()
-
-        ostream.write_all(new TextEncoder().encode(message), null)
-    
-    }
-
     #workspace_active = "0";
     #workspace_data = {};
 
     #old_output = "";
+    #wm = "";
 
     get workspace_active(){
         return this.#workspace_active;
@@ -52,37 +32,51 @@ class WorkspaceService extends Service {
 
     constructor() {
         super();
+        
+        this.#wm = Utils.exec(`${Utils.HOME}/.config/ags/scripts/getwm.sh`)
 
         //Monitor
         Utils.interval(150, () => this.#updateWorkspace())
     }
 
-    #updateWorkspace() { //TODO: Change to IPC
-        const output_raw = Utils.exec("swaymsg -t get_workspaces -r")
-        if(output_raw != this.#old_output){
-            this.#old_output = output_raw
+    #updateWorkspace() {
+        let active;
+        let data;
+        switch(this.#wm){
+            // case "river":
+            //     break;
+            case "sway":
+                const output_raw = Utils.exec("swaymsg -t get_workspaces -r")
+                if(output_raw != this.#old_output){
+                    this.#old_output = output_raw
+                
+                    data = JSON.parse(output_raw) 
+                    //Find active workspace
+                    for (let x = 0; x < data.length; x++){
+                        if (data[x]["focused"] == true){
+                            active = data[x]["name"]
+                            x = data.length;
+                        }
+                    }
 
-
-            const y = JSON.parse(output_raw)
-            let active = "0"
-
-            //Find active workspace
-            for (let x = 0; x < y.length; x++){
-                if (y[x]["focused"] == true){
-                    active = y[x]
-                    break
+                    this.#workspace_active = active
+                    this.#workspace_data = data
                 }
-            }
+                break;
 
-            this.#workspace_active = active["name"]
-            this.#workspace_data = y
-            this.emit('changed')
-            this.notify('workspace-data')
-            this.emit('workspace-data-changed', this.#workspace_data)
+            default:
+                active = "Error"
+                data = {}
+                break;
+                
         }
+        
+        this.emit('changed')
+        this.notify('workspace-data')
+        this.emit('workspace-data-changed', this.#workspace_data)
     }
 
-    connect(event = 'workspace-changed', callback) {
+    connect(event = 'workspace-changed', callback){
         return super.connect(event, callback);
     }
 }

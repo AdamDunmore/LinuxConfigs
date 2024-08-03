@@ -8,6 +8,7 @@ function Login(){
     }
     else{
         command = "sway"
+        // command = "river"
     }
     greetd.login(Greeter_Name.text || '', Greeter_Pwd.text || '', command)
         .catch((err) => {

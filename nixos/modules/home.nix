@@ -30,6 +30,7 @@ in
         tor-browser
         armcord
         piper
+        zapzap
 
         git
          
@@ -110,7 +111,9 @@ in
         ./configs/alacritty.nix
         ./configs/dconf.nix
         ./configs/kanshi.nix
+        ./configs/river.nix
         (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
+        ./configs/sway.nix
         ./configs/theme.nix
         ./configs/wofi.nix
         ./configs/wpaperd.nix
