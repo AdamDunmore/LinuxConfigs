@@ -22,10 +22,10 @@ in
                 resize = {
                         Escape = "mode default";
                         Return = "mode default";
-                        Up = "resize shrink height 10 px";
-                        Left = "resize shrink width 10 px";
-                        Down = "resize grow height 10 px";
-                        Right = "resize grow width 10 px";
+                        Up = "resize shrink height 20px";
+                        Left = "resize shrink width 20px";
+                        Down = "resize grow height 20px";
+                        Right = "resize grow width 20px";
 
                 };
             };
@@ -47,6 +47,9 @@ in
                 "${mod}+l" = "exec ${pkgs.swaylock}/bin/swaylock";
                 "${mod}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
                 "${mod}+a" = "exec ${pkgs.ags}/bin/ags -t \"menu\"";
+
+                #Modes
+                "${mod}+R" = "mode \"resize\"";
 
                 #Movements
                 "${mod}+Left" = "focus Left";
