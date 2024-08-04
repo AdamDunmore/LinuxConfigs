@@ -1,6 +1,3 @@
-import GLib from 'gi://GLib';
-import Gio from 'gi://Gio';
-
 class WorkspaceService extends Service {
     static {
         Service.register(

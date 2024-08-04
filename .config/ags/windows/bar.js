@@ -103,15 +103,20 @@ const Workspace = Widget.Box({
     className: "bar_item bar_workspaces",
     setup: self => {
         workspace.connect("changed", v => {
-            let data = v["workspace-data"]
-            let children = []
-            for (let x = 0; x < data.length; x++){
-                children.push(Workspace_Item(data[x]["name"]))
-                if (data[x]["focused"] == true){
-                    children[x].class_name = "bar_workspace focused"
+            if (v["workspace-active"] != "Error"){
+                let data = v["workspace-data"]
+                let children = []
+                for (let x = 0; x < data.length; x++){
+                    children.push(Workspace_Item(data[x]["name"]))
+                    if (data[x]["focused"] == true){
+                        children[x].class_name = "bar_workspace focused"
+                    }
                 }
+                self.children = children;
             }
-            self.children = children;
+            else{
+                self.destroy();
+            }
         })
     }
 })
