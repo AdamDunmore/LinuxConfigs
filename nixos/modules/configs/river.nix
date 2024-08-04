@@ -7,12 +7,13 @@
         settings = {
             default-layout = "rivertile";
             keyboard-layout = "gb";
+            set-focused-tags = "1";
             declare-mode = [
                 "normal"
                 "locked"
             ];
             spawn = [
-                # "${pkgs.ags}/bin/ags" TODO: Fix ags workspaces for river support
+                "${pkgs.ags}/bin/ags" 
                 "${pkgs.kanshi}/bin/kanshi"
                 "${pkgs.wpaperd}/bin/wpaperd"
                 "${pkgs.river}/bin/rivertile" 
