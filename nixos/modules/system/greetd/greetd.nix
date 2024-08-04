@@ -11,7 +11,7 @@ in
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.cage}/bin/cage -- ${pkgs.ags}/bin/ags --config ${agsConfig}";
+                command = "${pkgs.cage}/bin/cage -s -- ${pkgs.ags}/bin/ags --config ${agsConfig}";
             };
         };
     };
