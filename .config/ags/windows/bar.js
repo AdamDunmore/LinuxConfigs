@@ -158,6 +158,7 @@ const PowerProfileToggleState = () => {
 const PowerProfile = Widget.Button({
     className: "bar_item",
     hpack: "center",
+    visible: battery.bind("available"),
     on_clicked: (self) => {
         PowerProfileToggleState()
     }, 

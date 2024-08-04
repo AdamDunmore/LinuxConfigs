@@ -2,40 +2,45 @@ const notifications = await Service.import("notifications");
 
 const Notification_Item = (data) => {
     let image_path = "";
-    if(data["image"]){
-        image_path = data["image"]
-    }
-    else if(data["app-icon"]){
-        image_path = data["app-icon"]
-    }
+    if (data != undefined){
+        if(data["image"]){
+            image_path = data["image"]
+        }
+        else if(data["app-icon"]){
+            image_path = data["app-icon"]
+        }
 
-    return Widget.Box({
-        orientation: 0,
-        className: "notification_item",
-        children: [
-            Widget.Icon({
-                className: "notification_image",
-                icon: image_path,
-                setup: (self) => {
-                    if(!image_path){
-                        self.destroy()
+        return Widget.Box({
+            orientation: 0,
+            className: "notification_item",
+            children: [
+                Widget.Icon({
+                    className: "notification_image",
+                    icon: image_path,
+                    setup: (self) => {
+                        if(!image_path){
+                            self.destroy()
+                        }
                     }
-                }
-            }),
-            Widget.Box({
-                orientation: 1,
-                vpack: "center",
-                children: [
-                    Widget.Label({
-                        label: `${data.summary}`
-                    }),
-                    Widget.Label({
-                        label: `${data.body}`
-                    })
-                ]
-            })
-        ]
-    })
+                }),
+                Widget.Box({
+                    orientation: 1,
+                    vpack: "center",
+                    children: [
+                        Widget.Label({
+                            label: `${data.summary}`,
+                        }),
+                        Widget.Label({
+                            label: `${data.body}`
+                        })
+                    ]
+                })
+            ]
+        })
+    }
+    else{
+        return Widget.Box();
+    }
 }
 
 const Notification_Box = Widget.Box({
