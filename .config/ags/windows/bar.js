@@ -85,17 +85,15 @@ const Calendar = Widget.Box({
 })
 
 const Workspace_Item = (name) => {
-    return Widget.Box({
+    return Widget.Button({
         className: "bar_workspace",
-        hpack: "center",
-        child: Widget.Button({
-            hpack: "center",
-            hexpand: true,
-            label: name,
-            on_clicked: () => {
-                Utils.execAsync(`sway workspace "${name}"`)
-            }
-        })
+        hpack: "fill",
+        vpack: "fill",
+        label: name,
+        on_clicked: () => {
+            let output = Utils.execAsync(`sway workspace "${name}"`)
+            console.log(output);
+        }
     })
 }
 
