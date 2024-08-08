@@ -30,7 +30,7 @@ in
         tor-browser
         armcord
         piper
-        zapzap
+        beeper
 
         git
          
