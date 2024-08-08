@@ -34,6 +34,8 @@ in
                 { command = "${pkgs.ags}/bin/ags"; }
                 { command = "${pkgs.wpaperd}/bin/wpaperd"; }
                 { command = "${pkgs.kanshi}/bin/kanshi"; }
+
+                { command = "${pkgs.swaysome}/bin/swaysome init 1"; }
             ];
 
             seat = {
