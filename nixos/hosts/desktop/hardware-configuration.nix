@@ -14,18 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c93bc1e1-b426-43dd-a898-fd414f76318d";
+    { device = "/dev/disk/by-uuid/ae18e8a3-292b-45c0-835e-0f7121853055";
       fsType = "ext4";
     };
 
-  fileSystems."/nix/store" =
-    { device = "/nix/store";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9D61-C78D";
+    { device = "/dev/disk/by-uuid/430A-430D";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -43,6 +37,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.vboxnet0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
