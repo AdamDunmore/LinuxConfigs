@@ -42,6 +42,8 @@ in
         zsh-syntax-highlighting
         zsh-autosuggestions
         lsd
+        bat
+        starship
 
         # Sway
         wl-clipboard
@@ -115,6 +117,7 @@ in
         ./configs/lsd.nix
         ./configs/river.nix
         (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
+        ./configs/starship.nix
         ./configs/sway.nix
         ./configs/theme.nix
         ./configs/wofi.nix
