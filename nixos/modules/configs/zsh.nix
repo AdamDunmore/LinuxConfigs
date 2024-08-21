@@ -1,5 +1,11 @@
 { pkgs, lib, ... }:
 
+let 
+
+    lsd = "${pkgs.lsd}/bin/lsd";
+
+in
+
 {
     programs.zsh = {
         enable = true;
@@ -13,5 +19,9 @@
         envExtra = "
         HOSTNAME=$(hostname)
         ";
+        shellAliases = {
+            ls = "${lsd} -l";
+            lst = "${lsd} --tree -l";
+        };
     };
 }

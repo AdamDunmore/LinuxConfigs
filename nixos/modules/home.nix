@@ -41,6 +41,7 @@ in
         zsh-autocomplete
         zsh-syntax-highlighting
         zsh-autosuggestions
+        lsd
 
         # Sway
         wl-clipboard
@@ -111,6 +112,7 @@ in
         ./configs/alacritty.nix
         ./configs/dconf.nix
         ./configs/kanshi.nix
+        ./configs/lsd.nix
         ./configs/river.nix
         (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
         ./configs/sway.nix
