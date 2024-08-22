@@ -125,8 +125,8 @@ in
                     background = "#4C566AFF";
                     border = "#4C566AFF";
                     childBorder = "#4C566AFF";
-                    indicator = "000000";
-                    text = "000000";
+                    indicator = "#2C364AFF";
+                    text = "#000000";
                 };
             };
 
