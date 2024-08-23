@@ -30,7 +30,6 @@
         river.enable = true;
     };
 
-
     # Services (Mainly for AGS)
     services = {
         libinput.enable = true;
@@ -44,4 +43,7 @@
 
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
+    
+    # Enables Gnome Keyring
+    services.gnome.gnome-keyring.enable = true;
 }
