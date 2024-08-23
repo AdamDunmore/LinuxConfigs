@@ -4,6 +4,7 @@
         enableZshIntegration = true;
         settings = {
             format = "[ ](#3B4252)$username[](fg:#3B4252 bg:#4C566A)$directory[ ](#4C566A)";
+            add_newline = false;
             username = {
                 style_user = "bg:#3B4252 fg:#D8DEE9";
                 disabled = false;

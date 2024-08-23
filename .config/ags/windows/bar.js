@@ -89,10 +89,11 @@ const Workspace_Item = (name) => {
         className: "bar_workspace",
         hpack: "fill",
         vpack: "fill",
+        hexpand: true,
+        vexpand: true,
         label: name,
         on_clicked: () => {
-            let output = Utils.execAsync(`sway workspace "${name}"`)
-            console.log(output);
+            let output = Utils.execAsync(`sway workspace "${name}"`) //Change to be modular for difference comps
         }
     })
 }
@@ -104,7 +105,7 @@ const Workspace = Widget.Box({
             if (v["workspace-active"] != "Error"){
                 let data = v["workspace-data"]
                 let children = []
-                for (let x = 0; x < data.length; x++){
+                for (let x = 0; x < data.length; x++){ //Can be heavily optimised
                     children.push(Workspace_Item(data[x]["name"]))
                     if (data[x]["focused"] == true){
                         children[x].class_name = "bar_workspace focused"
