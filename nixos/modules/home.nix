@@ -116,6 +116,7 @@ in
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/river.nix
+        ./configs/sops/nix
         (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
         ./configs/starship.nix
         ./configs/sway.nix

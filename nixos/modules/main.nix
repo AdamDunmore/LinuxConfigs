@@ -43,7 +43,14 @@
 
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
-    
-    # Enables Gnome Keyring
-    services.gnome.gnome-keyring.enable = true;
+
+    #Git credential helper setup
+    programs.git = {
+        enable = true;
+        extraConfig = {
+            credential.helper = "${
+                pkgs.git.override { withLibsecret = true; }
+            }/bin/git-credential-libsecret";
+        };
+    };
 }

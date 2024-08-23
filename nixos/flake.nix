@@ -9,6 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = { 
