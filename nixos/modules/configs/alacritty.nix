@@ -1,5 +1,11 @@
 { pkgs, lib, ... }:
 
+let 
+
+colours = import ../../values/colours.nix;
+
+in
+
 {
     programs.alacritty = {
         enable = true;
@@ -7,8 +13,8 @@
             shell = "zsh";
             colors = {
                 primary = {
-                    background = "#2E3440";
-                    foreground = "#D8DEE9";
+                    background = "${colours.blue.three}";
+                    foreground = "${colours.white.one}";
                 };
             };
         };

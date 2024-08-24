@@ -1,11 +1,14 @@
 { config, lib, pkgs, pkgs-unstable, spicetify-nix, inputs, ... }:
 
 let
+
+core = import ../values/core.nix;
+
 in
 {
     home.username = "adam";
     home.homeDirectory = "/home/adam";
-    home.stateVersion = "24.05";
+    home.stateVersion = "${core.version}";
 
     programs.home-manager.enable = true;
 
@@ -33,6 +36,7 @@ in
         beeper
 
         git
+        git-credential-manager
          
         # Terminal Emulator
         alacritty
@@ -116,7 +120,6 @@ in
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/river.nix
-        ./configs/sops/nix
         (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
         ./configs/starship.nix
         ./configs/sway.nix
@@ -125,6 +128,18 @@ in
         ./configs/wpaperd.nix
         ./configs/zsh.nix
     ];
+
+    #Git credential helper setup
+    programs.git = {
+        enable = true;
+        userName = "Adam Dunmore";
+        userEmail = "adamfdunmore@gmail.com";
+        extraConfig = {
+            credential.helper = "${
+                pkgs.git.override { withLibsecret = true; }
+            }/bin/git-credential-libsecret";
+        };
+    };
 }
 
 

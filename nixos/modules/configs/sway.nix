@@ -2,6 +2,8 @@
 
 let
     mod = "Mod4";
+
+    colours = import ../../values/colours.nix;
 in
 {
     wayland.windowManager.sway = {
@@ -46,7 +48,7 @@ in
                 "${mod}+Shift+Q" = "kill";
                 "${mod}+D" = "exec ${pkgs.wofi}/bin/wofi";
                 "${mod}+Shift+C" = "reload";
-                "${mod}+l" = "exec ${pkgs.swaylock}/bin/swaylock";
+                "${mod}+l" = "exec ${pkgs.swaylock}/bin/swaylock -C ~/.config/swaylock/config";
                 "${mod}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
                 "${mod}+a" = "exec ${pkgs.ags}/bin/ags -t \"menu\"";
 
@@ -115,18 +117,18 @@ in
 
             colors = {
                 unfocused = {
-                    background = "2E3440FF";
-                    border = "2E3440FF";
-                    childBorder = "2E3440FF";
-                    indicator = "000000";
-                    text = "000000";
+                    background = "#00000000";
+                    border = "#00000000";
+                    childBorder = "${colours.blue.two}";
+                    indicator = "#00000000";
+                    text = "#00000000";
                 };
                 focused = {
-                    background = "#4C566AFF";
-                    border = "#4C566AFF";
-                    childBorder = "#4C566AFF";
-                    indicator = "#2C364AFF";
-                    text = "#000000";
+                    background = "#00000000";
+                    border = "#00000000";
+                    childBorder = "${colours.blue.two}";
+                    indicator = "${colours.blue.one}";
+                    text = "#00000000";
                 };
             };
 

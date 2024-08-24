@@ -1,5 +1,11 @@
 { pkgs, ... }:
 
+let
+
+core = import ../values/core.nix;
+
+in
+
 {
 
     imports = [
@@ -16,7 +22,7 @@
     ];
 
 
-    system.stateVersion = "24.05";	
+    system.stateVersion = "${core.version}";	
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Downloading Nerd Font
@@ -43,14 +49,4 @@
 
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
-
-    #Git credential helper setup
-    programs.git = {
-        enable = true;
-        extraConfig = {
-            credential.helper = "${
-                pkgs.git.override { withLibsecret = true; }
-            }/bin/git-credential-libsecret";
-        };
-    };
 }
