@@ -8,6 +8,8 @@ in
 {
     wayland.windowManager.sway = {
         enable = true;
+        package = pkgs.swayfx;
+        checkConfig = false; #Temporary fix for swayfx
         config = {
             input = {
                 "*" = {
@@ -136,6 +138,11 @@ in
                 modifier = "${mod}";
             };
         };
+
+        extraConfig = ''
+            corner_radius 5
+            default_dim_inactive 0.2
+        '';
     };
 
     programs.swaylock = {

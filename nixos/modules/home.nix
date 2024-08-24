@@ -50,6 +50,7 @@ in
         starship
 
         # Sway
+        swayfx
         wl-clipboard
         swaylock-effects
         swaysome
