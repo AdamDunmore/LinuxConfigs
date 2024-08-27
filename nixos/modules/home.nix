@@ -65,7 +65,6 @@ in
         gnome.nautilus
         gnome.eog
         gnome.file-roller
-        gnome.seahorse
         gnome.gnome-system-monitor
         gnome.gnome-calculator
         gnome.gnome-settings-daemon
@@ -97,6 +96,7 @@ in
         geckodriver
         libratbag
         yad
+        dotnet-runtime_7
 
         wineWowPackages.stable
         #winwWowPackages.waylandFull #Unstable
@@ -117,6 +117,7 @@ in
 
     imports = [
         ./configs/alacritty.nix
+        ./configs/code.nix
         ./configs/dconf.nix
         ./configs/kanshi.nix
         ./configs/lsd.nix

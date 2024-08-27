@@ -17,6 +17,16 @@ in
                     foreground = "${colours.white.one}";
                 };
             };
+            # keyboard.bindings = [
+            #     {
+            #         key = "n";
+            #         mods = "Control";    
+            #         command = { 
+            #             program = "nvim";
+            #             args = ["."];
+            #         };
+            #     }
+            # ];
         };
     };
 }
