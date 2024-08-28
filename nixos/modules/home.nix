@@ -34,6 +34,7 @@ in
         armcord
         piper
         beeper
+        syncthing
 
         git
         git-credential-manager
@@ -142,6 +143,9 @@ in
             }/bin/git-credential-libsecret";
         };
     };
+
+    #Enables Syncthing
+    services.syncthing.enable = true;
 }
 
 
