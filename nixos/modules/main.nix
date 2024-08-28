@@ -16,6 +16,7 @@ in
         ./system/gnome.nix
         ./system/kde.nix
         ./system/keyboard.nix
+        # ./system/syncthing.nix
         ./system/timezone.nix
         ./system/users.nix
         ./system/virtualbox.nix

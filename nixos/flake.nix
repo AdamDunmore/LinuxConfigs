@@ -75,6 +75,17 @@
                     }
                 ];
             };
+
+            server = nixpkgs.lib.nixosSystem {
+                modules = [
+                    ./hosts/server/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager = {
+                           users.adam = import ./hosts/server/home.nix; 
+                        }; 
+                    }
+                ];
+            };
         };
     };
 }

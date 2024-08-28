@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, spicetify-nix, inputs, ... }:
+{ pkgs, pkgs-unstable, inputs, ... }:
 
 let
 
@@ -6,8 +6,8 @@ core = import ../values/core.nix;
 
 in
 {
-    home.username = "adam";
-    home.homeDirectory = "/home/adam";
+    home.username = core.user;
+    home.homeDirectory = "/home/${core.user}";
     home.stateVersion = "${core.version}";
 
     programs.home-manager.enable = true;
@@ -123,7 +123,7 @@ in
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/river.nix
-        (import ./configs/spicetify.nix { inherit pkgs; inherit spicetify-nix; })
+        (import ./configs/spicetify.nix { inherit inputs; inherit pkgs; })
         ./configs/starship.nix
         ./configs/sway.nix
         ./configs/theme.nix
@@ -143,9 +143,6 @@ in
             }/bin/git-credential-libsecret";
         };
     };
-
-    #Enables Syncthing
-    services.syncthing.enable = true;
 }
 
 
