@@ -17,5 +17,6 @@
       iagno 
       hitori 
       atomix 
+      seahorse
     ]);
 }

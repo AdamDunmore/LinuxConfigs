@@ -50,4 +50,9 @@ in
 
     # Enable Waydroid
     virtualisation.waydroid.enable = true;
+
+    # Dotnet location fix
+    environment.sessionVariables = {
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
+    };
 }
