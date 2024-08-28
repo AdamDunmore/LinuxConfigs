@@ -97,7 +97,7 @@ in
         geckodriver
         libratbag
         yad
-        dotnet-runtime_8
+        dotnet-sdk_7 
 
         wineWowPackages.stable
         #winwWowPackages.waylandFull #Unstable
