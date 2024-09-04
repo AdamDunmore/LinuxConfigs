@@ -35,6 +35,7 @@ in
         piper
         beeper
         syncthing
+        godot_4
 
         git
         git-credential-manager
