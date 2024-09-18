@@ -35,6 +35,7 @@ in
         piper
         beeper
         syncthing
+        logisim-evolution
 
         git
         git-credential-manager
@@ -120,6 +121,7 @@ in
         ./configs/alacritty.nix
         ./configs/code.nix
         ./configs/dconf.nix
+        ./configs/firefox.nix
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/river.nix
