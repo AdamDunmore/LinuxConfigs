@@ -35,7 +35,11 @@ in
         piper
         beeper
         syncthing
+<<<<<<< HEAD
         logisim-evolution
+=======
+        godot_4
+>>>>>>> 6b2ef0bf760263c3665ab6f648c18f3897cf21d0
 
         git
         git-credential-manager
