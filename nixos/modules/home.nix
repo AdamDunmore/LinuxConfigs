@@ -19,6 +19,7 @@ in
         ./configs/dconf.nix
         # ./configs/firefox.nix
         ./configs/flatpak.nix
+        ./configs/git.nix
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/river.nix
@@ -31,18 +32,6 @@ in
 
         (import ./configs/spicetify.nix { inherit inputs; inherit pkgs; })
     ];
-
-    #Git credential helper setup
-    programs.git = {
-        enable = true;
-        userName = "Adam Dunmore";
-        userEmail = "adamfdunmore@gmail.com";
-        extraConfig = {
-            credential.helper = "${
-                pkgs.git.override { withLibsecret = true; }
-            }/bin/git-credential-libsecret";
-        };
-    };
 }
 
 
