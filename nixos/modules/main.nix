@@ -55,4 +55,7 @@ in
     environment.sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
     };
+
+    # Enables Flatpak
+    services.flatpak.enable = true;
 }

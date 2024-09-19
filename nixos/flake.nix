@@ -1,92 +1,92 @@
 {
-  description = "NixOS configuration flake";
+    description = "NixOS configuration flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        home-manager.url = "github:nix-community/home-manager/release-24.05";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
-  };
+        spicetify-nix.url = "github:the-argus/spicetify-nix";
 
-  outputs = { 
-    self, 
-    nixpkgs, 
-    nixpkgs-unstable, 
-    home-manager, 
-    spicetify-nix,
-  }@inputs: 
-    let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-            inherit system;
-            config = {
-                allowUnfree = true;
-            };
-        };
-        pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config = {
-                allowUnfree = true;
-            };
-        };
+        nix-flatpak.url = "github:gmodena/nix-flatpak";
+    };
 
-        nixConfigSpecialArgs = {
-                    inherit system;
-                    inherit pkgs;
-                    inherit pkgs-unstable;
-                    inherit spicetify-nix;
-                    inherit inputs;
+    outputs = { ... } @inputs: 
+        let
+            system = "x86_64-linux";
+            pkgs = import inputs.nixpkgs {
+                inherit system;
+                config = {
+                    allowUnfree = true;
                 };
-        homeManagerConfig = {
-            backupFileExtension = "bkp";
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.adam.imports = [ ./modules/home.nix ];
-            extraSpecialArgs = {
+            };
+            pkgs-unstable = import inputs.nixpkgs-unstable {
+                inherit system;
+                config = {
+                    allowUnfree = true;
+                };
+            };
+
+            nixConfigSpecialArgs = {
+                inherit system;
                 inherit pkgs;
                 inherit pkgs-unstable;
-                inherit spicetify-nix;
                 inherit inputs;
             };
-        };
+
+            homeManagerConfig = {
+                backupFileExtension = "bkp";
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.adam.imports = [
+                    inputs.spicetify-nix.homeManagerModules.default
+                    inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                    ./modules/home.nix
+                ];
+                extraSpecialArgs = {
+                    inherit pkgs;
+                    inherit pkgs-unstable;
+                    inherit inputs;
+                };
+            };
  
-    in
-    {
-        nixosConfigurations = {
-            laptop = nixpkgs.lib.nixosSystem {
-                specialArgs = nixConfigSpecialArgs;
-                modules = [
-                    ./hosts/laptop/configuration.nix  
-                    home-manager.nixosModules.home-manager {
-                        home-manager = homeManagerConfig;
-                    }
-                ];
-            };
+        in
 
-            desktop = nixpkgs.lib.nixosSystem {
-                specialArgs = nixConfigSpecialArgs;
-                modules = [
-                    ./hosts/desktop/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager = homeManagerConfig;
-                    }
-                ];
-            };
+        {
+            nixosConfigurations = {
+                laptop = inputs.nixpkgs.lib.nixosSystem {
+                    specialArgs = nixConfigSpecialArgs;
+                    modules = [
+                        ./hosts/laptop/configuration.nix  
+                        inputs.home-manager.nixosModules.home-manager {
+                            home-manager = homeManagerConfig;
+                        }
+                    ];
+                };
 
-            server = nixpkgs.lib.nixosSystem {
-                modules = [
-                    ./hosts/server/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager = {
-                           users.adam = import ./hosts/server/home.nix; 
-                        }; 
-                    }
-                ];
+                desktop = inputs.nixpkgs.lib.nixosSystem {
+                    specialArgs = nixConfigSpecialArgs;
+                    modules = [
+                        ./hosts/desktop/configuration.nix
+                        inputs.home-manager.nixosModules.home-manager {
+                            home-manager = homeManagerConfig;
+                        }
+                    ];
+                };
+
+                server = inputs.nixpkgs.lib.nixosSystem {
+                    modules = [
+                        ./hosts/server/configuration.nix
+                        inputs.home-manager.nixosModules.home-manager {
+                            home-manager = {
+                               users.adam = import ./hosts/server/home.nix; 
+                            }; 
+                        }
+                    ];
+                };
             };
         };
-    };
 }
 
