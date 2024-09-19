@@ -17,7 +17,6 @@ in
         ./configs/apps.nix
         ./configs/code.nix
         ./configs/dconf.nix
-        # ./configs/firefox.nix
         ./configs/flatpak.nix
         ./configs/git.nix
         ./configs/kanshi.nix

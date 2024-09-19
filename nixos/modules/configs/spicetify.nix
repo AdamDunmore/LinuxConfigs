@@ -11,6 +11,9 @@ in
         hidePodcasts
         adblock
         lastfm
+        fullAppDisplay
+        popupLyrics
+        skipOrPlayLikedSongs
       ];
     };
 }

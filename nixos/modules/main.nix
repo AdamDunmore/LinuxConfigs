@@ -7,7 +7,6 @@ core = import ../values/core.nix;
 in
 
 {
-
     imports = [
         ./system/audio.nix
         ./system/bluetooth.nix
