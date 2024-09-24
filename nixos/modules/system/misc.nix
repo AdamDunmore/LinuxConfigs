@@ -24,4 +24,12 @@
     fonts.packages = with pkgs; [
 	    (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
     ];
+
+    #Enables Flatpak
+    services.flatpak.enable = true;
+
+    #Enables Wms
+    programs.hyprland.enable = true;
+    programs.river.enable = true;
+
 }

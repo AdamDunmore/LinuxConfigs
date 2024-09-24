@@ -6,7 +6,7 @@ import bluetooth_menu from './windows/bluetooth_menu.js'
 
 const Power_Warning_SH = power_warning("shutdown now");
 const Power_Warning_RE = power_warning("reboot");
-const Power_Warning_SW = power_warning("swaylock -C ~/.config/sway/swaylock");
+const Power_Warning_SW = power_warning("swaylock -C ~/.config/swaylock/config");
 
 App.config({
     style: "./style.css",
@@ -16,7 +16,6 @@ App.config({
         Power_Warning_SW,
         menu,
         bar,
-        notifications,
         bluetooth_menu,
     ]
 })
