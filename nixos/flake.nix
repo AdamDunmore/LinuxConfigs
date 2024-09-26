@@ -11,8 +11,6 @@
         spicetify-nix.url = "github:the-argus/spicetify-nix";
 
         nix-flatpak.url = "github:gmodena/nix-flatpak";
-
-        hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
 
     outputs = { ... } @inputs: 
@@ -39,11 +37,10 @@
             };
 
             homeManagerConfig = {
-                backupFileExtension = "bkp";
+                backupFileExtension = "bakp";
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.adam.imports = [
-                    inputs.hyprland.homeManagerModules.default
                     inputs.spicetify-nix.homeManagerModules.default
                     inputs.nix-flatpak.homeManagerModules.nix-flatpak
                     ./modules/home.nix

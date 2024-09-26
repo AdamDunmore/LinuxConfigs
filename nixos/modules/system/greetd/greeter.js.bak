@@ -3,19 +3,20 @@ const greetd = await Service.import("greetd");
 function Login(){
     const state = Greeter_Session_Selector.get_active()
     let command = "";
-    Greeter_Pwd.text = Greeter_Custom.text
-    if (Greeter_Custom.text != Greeter_Custom.placeholder_text){
-        command = Greeter_Custom.text
-    }
-    else if (state){
-        command = "gnome-shell --wayland" 
-    }
-    else{
-        // command = "sway"
-    }
+    // if (Greeter_Custom.text != "sdcksbd"){
+    //     command = Greeter_Custom.text
+    // }
+    // else{
+        if (state){
+            command = "gnome-shell --wayland" 
+        }
+        else{
+            command = "sway"
+        }
+    // }
     greetd.login(Greeter_Name.text || '', Greeter_Pwd.text || '', command)
         .catch((err) => {
-            Error1.label = JSON.stringify(err)
+            // Error1.label = JSON.stringify(err)
     })
 }
 
@@ -30,7 +31,7 @@ const Greeter_Custom = Widget.Box({
     vpack: "start",
     child: Widget.Entry({
         placeholder_text: "Custom start command",
-        css: "min-width: 300px; min-height: 20px;",
+        css: "min-width: 300px; min-height: 50px;",
         hexpand: false,
         vexpand: false
     })
@@ -39,7 +40,10 @@ const Greeter_Custom = Widget.Box({
 const Greeter_Name = Widget.Entry({
     placeholder_text: "Username",
     on_accept: () => Greeter_Pwd.grab_focus(),
-    css: "min-width: 300px;"
+    css: "min-width: 300px;",
+    setup: self => {
+        Greeter_Name.grab_focus()
+    }
 })
 
 const Greeter_Pwd = Widget.Entry({
@@ -84,18 +88,14 @@ const Greeter_Box = Widget.Box({
 })
 
 const Greeter = Widget.Window({
-    css: "background-color: rgba(0,0,0,1);",
+    css: "background-color: rgba(255,255,255,1);",
     keymode: "exclusive",
     name: "greeter",
     anchor: ["top", "left", "right", "bottom"],
-    child: Widget.Box({
-        hexpand: true,
-        vexpand: true,
-        child: Widget.CenterBox({
-            vertical: true,
-            endWidget: Greeter_Custom,
-            centerWidget: Greeter_Box
-        })
+    child: Widget.CenterBox({
+        vertical: true,
+        startWidget: Greeter_Custom,
+        centerWidget: Greeter_Box
     })
 })
 
@@ -112,7 +112,7 @@ Greeter.connect("key_press_event", (s,t) => {
         }
         catch {
               err => {
-                    Error1.label = JSON.stringify(err)
+                    // Error1.label = JSON.stringify(err)
               }          
         }
         return true;

@@ -43,23 +43,46 @@ class WorkspaceService extends Service {
             // case "river":
             //     break;
             case "sway":
-                const output_raw = Utils.exec("swaymsg -t get_workspaces -r")
-                if(output_raw != this.#old_output){
-                    this.#old_output = output_raw
+                const output_raw_sway = Utils.exec("swaymsg -t get_workspaces -r")
+                if(output_raw_sway != this.#old_output){
+                    this.#old_output = output_raw_sway
                 
-                    data = JSON.parse(output_raw) 
-                    //Find active workspace
-                    for (let x = 0; x < data.length; x++){
-                        if (data[x]["focused"] == true){
-                            active = data[x]["name"]
-                            x = data.length;
-                        }
-                    }
+                    try {
+                        data = JSON.parse(output_raw_sway) 
 
-                    this.#workspace_active = active
-                    this.#workspace_data = data
+                        //Find active workspace
+                        for (let x = 0; x < data.length; x++){
+                            if (data[x]["focused"] == true){
+                                active = data[x]["name"]
+                                x = data.length;
+                            }
+                        }
+
+                        this.#workspace_active = active
+                        this.#workspace_data = data
+                    } catch (e){
+                        console.log("Error: " + e)
+                    }
                 }
-                break;
+
+            case ".Hyprland-wrapp": //Hyprland
+                const output_raw_hyprland = Utils.exec("hyprctl workspaces -j")
+                if(output_raw_hyprland != this.#old_output){
+                    this.#old_output = output_raw_hyprland
+
+                    try {
+                        data = JSON.parse(output_raw_hyprland)
+                        
+                        //Find active workspace
+                        const output_active_hyprland = Utils.exec("hyprctl activeworkspace -j")
+                        active = JSON.parse(output_active_hyprland)["name"]
+
+                        this.#workspace_active = active;
+                        this.#workspace_data = data;
+                    } catch(e){
+                        console.log("Error: " + e)
+                    }
+                }
 
             default:
                 active = "Error"

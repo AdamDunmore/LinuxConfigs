@@ -84,9 +84,9 @@ const Calendar = Widget.Box({
     })
 })
 
-const Workspace_Item = (name) => {
+const Workspace_Item = (name, focused) => {
     return Widget.Button({
-        className: "bar_workspace",
+        className: "bar_workspace " + (focused ? "focused" : ""),
         hpack: "fill",
         vpack: "fill",
         hexpand: true,
@@ -102,14 +102,12 @@ const Workspace = Widget.Box({
     className: "bar_item bar_workspaces",
     setup: self => {
         workspace.connect("changed", v => {
+            console.log(v)
             if (v["workspace-active"] != "Error"){
                 let data = v["workspace-data"]
                 let children = []
-                for (let x = 0; x < data.length; x++){ //Can be heavily optimised
-                    children.push(Workspace_Item(data[x]["name"]))
-                    if (data[x]["focused"] == true){
-                        children[x].class_name = "bar_workspace focused"
-                    }
+                for (let x = 0; x < data.length; x++){
+                    children.push(Workspace_Item(data[x]["name"], v["workspace-active"] == data[x]["name"]))
                 }
                 self.children = children;
             }

@@ -28,4 +28,3 @@ menu.hide()
 
 //WIP
 bluetooth_menu.hide()
-

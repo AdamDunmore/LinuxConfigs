@@ -19,7 +19,7 @@ in
         ./configs/dconf.nix
         ./configs/flatpak.nix
         ./configs/git.nix
-        # ./configs/hyprland.nix
+        ./configs/hyprland.nix
         ./configs/kanshi.nix
         ./configs/lsd.nix
         ./configs/mako.nix
