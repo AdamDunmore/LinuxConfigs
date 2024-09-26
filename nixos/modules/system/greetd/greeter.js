@@ -11,7 +11,7 @@ function Login(){
         command = "gnome-shell --wayland" 
     }
     else{
-        // command = "sway"
+        command = "sway"
     }
     greetd.login(Greeter_Name.text || '', Greeter_Pwd.text || '', command)
         .catch((err) => {

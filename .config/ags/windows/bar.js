@@ -102,7 +102,6 @@ const Workspace = Widget.Box({
     className: "bar_item bar_workspaces",
     setup: self => {
         workspace.connect("changed", v => {
-            console.log(v)
             if (v["workspace-active"] != "Error"){
                 let data = v["workspace-data"]
                 let children = []
