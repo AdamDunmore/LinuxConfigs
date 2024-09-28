@@ -37,7 +37,7 @@
             };
 
             homeManagerConfig = {
-                backupFileExtension = "bkp";
+                backupFileExtension = "bakp";
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.adam.imports = [

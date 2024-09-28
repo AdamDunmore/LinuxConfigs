@@ -14,13 +14,17 @@ in
 
     imports = [
         ./configs/alacritty.nix
+        ./configs/ags/ags.nix
         ./configs/apps.nix
         ./configs/code.nix
         ./configs/dconf.nix
         ./configs/flatpak.nix
         ./configs/git.nix
+        ./configs/hyprland.nix
         ./configs/kanshi.nix
         ./configs/lsd.nix
+        ./configs/mako.nix
+        ./configs/nvim/nvim.nix
         ./configs/river.nix
         ./configs/starship.nix
         ./configs/sway.nix

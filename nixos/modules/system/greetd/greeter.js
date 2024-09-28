@@ -1,15 +1,8 @@
 const greetd = await Service.import("greetd");
 
+let command = "sway";
+
 function Login(){
-    const state = Greeter_Session_Selector.get_active()
-    let command = "";
-    if (state){
-        command = "gnome-shell --wayland" 
-    }
-    else{
-        command = "sway"
-        // command = "river"
-    }
     greetd.login(Greeter_Name.text || '', Greeter_Pwd.text || '', command)
         .catch((err) => {
             Error1.label = JSON.stringify(err)
@@ -18,6 +11,22 @@ function Login(){
 
 const Error1 = Widget.Label({
     label: "",
+})
+
+const Greeter_Custom = Widget.Box({
+    hexpand: true,
+    vexpand: false,
+    hpack: "center",
+    vpack: "start",
+    child: Widget.Entry({
+        placeholder_text: "Custom start command",
+        css: "min-width: 300px; min-height: 20px;",
+        hexpand: false,
+        vexpand: false,
+        on_change: function({ text }){
+            command = text;
+        }
+    })
 })
 
 const Greeter_Name = Widget.Entry({
@@ -33,7 +42,16 @@ const Greeter_Pwd = Widget.Entry({
     css: "min-width: 300px;"
 })
 
-const Greeter_Session_Selector = Widget.Switch({})
+const Greeter_Session_Selector = Widget.Switch({
+    on_activate: function({ active }){
+        if(active){
+            command = "gnome-shell --wayland";
+        }
+        else{
+            command = "sway";
+        }
+    }
+})
 
 const Greeter_Session_Selector_Box = Widget.Box({
     spacing: 10,
@@ -72,7 +90,15 @@ const Greeter = Widget.Window({
     keymode: "exclusive",
     name: "greeter",
     anchor: ["top", "left", "right", "bottom"],
-    child: Greeter_Box
+    child: Widget.Box({
+        hexpand: true,
+        vexpand: true,
+        child: Widget.CenterBox({
+            vertical: true,
+            endWidget: Greeter_Custom,
+            centerWidget: Greeter_Box
+        })
+    })
 })
 
 App.config({

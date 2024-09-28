@@ -1,8 +1,9 @@
 {
-  services.flatpak = {
-    packages = [
-        "io.github.zen_browser.zen"
-    ];
-  };
+    services.flatpak = {
+        enable = true;
+        packages = [
+            "io.github.zen_browser.zen"
+        ];
+    };
 }
 

@@ -15,15 +15,18 @@ in
         ./system/gnome.nix
         ./system/kde.nix
         ./system/keyboard.nix
-        # ./system/syncthing.nix
+        ./system/misc.nix
+        ./system/steam.nix
+        ./system/syncthing.nix
         ./system/timezone.nix
         ./system/users.nix
         ./system/virtualbox.nix
-    ];
 
+    ];
 
     system.stateVersion = "${core.version}";	
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+<<<<<<< HEAD
 
     # Downloading Nerd Font
     fonts.packages = with pkgs; [
@@ -65,4 +68,6 @@ in
 
         ];
     };
+=======
+>>>>>>> 7f3d26a873b0a3b6e540306bf5bd5456b93092b5
 }
