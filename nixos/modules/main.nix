@@ -57,4 +57,12 @@ in
 
     # Enables Flatpak
     services.flatpak.enable = true;
+
+    #Enabled Dynamically Linked Executables
+    programs.nix-ld = {
+        enable = true;
+        libraries =  with pkgs; [
+
+        ];
+    };
 }
