@@ -7,7 +7,7 @@ let
   '';
 
     cageCommand = "${pkgs.cage}/bin/cage -s -- ${pkgs.ags}/bin/ags --config ${agsConfig}";
-    swayCommand = "${pkgs.swayfx}/bin/sway --config ${swayConfig}";
+    swayCommand = "${pkgs.swayfx}/bin/sway --config ${swayConfig}"; # Doesn't work
 in
 {
     services.greetd = {
