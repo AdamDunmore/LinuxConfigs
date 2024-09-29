@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, hyprland, ... }:
+{ pkgs, ... }:
 
 {
   networking.hostName = "desktop";

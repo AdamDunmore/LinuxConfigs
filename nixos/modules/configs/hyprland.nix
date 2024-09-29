@@ -57,6 +57,9 @@
                 ", XF86AudioMute, exec, pactl set-sink-volume @DEFAULT_SINK@ 0%"
                 ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
                 ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
+                # Suspend on laptop close
+                ", switch:Lid Switch, esec, systemctl suspend"
             ];
             exec = [
                 "${pkgs.wpaperd}/bin/wpaperd"
@@ -65,7 +68,7 @@
             ];
             general = {
                 gaps_in = 5;
-                gaps_out = 20;
+                gaps_out = 10;
 
                 border_size = 2;
 
