@@ -1,3 +1,9 @@
+let
+
+core = ../../values/core.nix;
+
+in
+
 {
     boot.loader = {
         efi.canTouchEfiVariables = true;
@@ -9,7 +15,6 @@
             useOSProber = true;
             efiInstallAsRemovable = false;
             efiSupport = true;
-            # splashImage = ../../../wallpapers/wallpaper_nixos.png;
         };
         systemd-boot.enable = false;   
     };
