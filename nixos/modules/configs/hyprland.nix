@@ -59,7 +59,7 @@
                 ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
 
                 # Suspend on laptop close
-                ", switch:Lid Switch, esec, systemctl suspend"
+                ", switch:Lid Switch, exec, systemctl suspend"
             ];
             exec = [
                 "${pkgs.wpaperd}/bin/wpaperd"

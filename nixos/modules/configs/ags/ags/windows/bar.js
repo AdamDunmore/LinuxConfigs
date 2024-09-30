@@ -93,7 +93,7 @@ const Workspace_Item = (name, focused) => {
         vexpand: true,
         label: name,
         on_clicked: () => {
-            let output = Utils.execAsync(`sway workspace "${name}"`) //Change to be modular for difference comps
+            workspace.workspace_active = name;
         }
     })
 }
