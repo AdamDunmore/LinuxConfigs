@@ -18,9 +18,17 @@ class WorkspaceService extends Service {
 
     #old_output = "";
     #wm = "";
+    #wm_workspace_command = "";
 
     get workspace_active(){
         return this.#workspace_active;
+    }
+
+    set workspace_active(new_workspace){
+        Utils.execAsync(this.#wm_workspace_command + `${new_workspace}`)
+            .then(function(){
+                this.#workspace_active = new_workspace;
+            })
     }
 
     get workspace_data(){
@@ -31,6 +39,15 @@ class WorkspaceService extends Service {
         super();
         
         this.#wm = Utils.exec(`${Utils.HOME}/.config/ags/scripts/getwm.sh`)
+        
+        switch(this.#wm){
+            case "sway":
+                this.#wm_workspace_command = "sway workspace ";
+            case ".Hyprland-wrapp":
+                this.#wm_workspace_command = "hyprctl dispatch workspace ";
+            default:
+                break;
+        }
 
         //Monitor
         Utils.interval(150, () => this.#updateWorkspace())

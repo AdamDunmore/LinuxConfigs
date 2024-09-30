@@ -1,10 +1,14 @@
 {
-    # Enable VirtualBox TODO: Move to own file
     virtualisation.virtualbox = {
-        host.enable = true;
+        host = {
+            enable = true;
+            enableExtensionPack = true;
+        };
+
         guest = {
             enable = true;
             draganddrop = true;
+            clipboard = true;
         };
     };
     users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];

@@ -1,5 +1,3 @@
-{ config, pkgs, pkgs-unstable, ... }:
-
 {  
   networking.hostName = "laptop";
 

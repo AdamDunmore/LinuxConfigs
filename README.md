@@ -2,8 +2,13 @@
 
 ## Nixos
 ### Main
+#### Configures the System
+* Configures  
 
 ### Home Manager
+#### Manages All Configs
+* Provides options to configure programs in nix
+* Creates symlinks for configs that can't be configured in nix
 
 ## Nvim
 ### Main

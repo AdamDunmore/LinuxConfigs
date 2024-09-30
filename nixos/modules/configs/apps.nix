@@ -52,6 +52,7 @@
         wpaperd
         wofi
         kanshi
+        xdg-desktop-portal
 
         # Gnome
         gnome.nautilus
