@@ -52,6 +52,11 @@
                 "$mod_SHIFT, 8, movetoworkspace, 8"
                 "$mod_SHIFT, 9, movetoworkspace, 9"
 
+                "$mod_ALT, left, resizeactive, -10 0"
+                "$mod_ALT, up, resizeactive, 0 10"
+                "$mod_ALT, right, resizeactive, 10 0"
+                "$mod_ALT, down, resizeactive, 0 -10"
+
                 ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
                 ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
                 ", XF86AudioMute, exec, pactl set-sink-volume @DEFAULT_SINK@ 0%"
