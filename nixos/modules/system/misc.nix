@@ -32,4 +32,14 @@
     programs.hyprland.enable = true;
     programs.river.enable = true;
 
+    #Enables Hyprlock
+    security.polkit.enable = true;
+    security.pam.services.hyprlock = {};
+    security.pam.services.swaylock = {};
+
+    nix.gc = {
+        automatic = true;
+        options = "--delete-older-than 30d";
+    };
+
 }

@@ -8,7 +8,8 @@
         home-manager.url = "github:nix-community/home-manager/release-24.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        spicetify-nix.url = "github:the-argus/spicetify-nix";
+        spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+        spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
         nix-flatpak.url = "github:gmodena/nix-flatpak";
     };
@@ -20,6 +21,9 @@
                 inherit system;
                 config = {
                     allowUnfree = true;
+                    permittedInsecurePackages = [
+                        "electron-27.3.11"
+                    ];
                 };
             };
             pkgs-unstable = import inputs.nixpkgs-unstable {

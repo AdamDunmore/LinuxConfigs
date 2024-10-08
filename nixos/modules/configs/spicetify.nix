@@ -1,11 +1,11 @@
 { pkgs, inputs, ... }:
 let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
   programs.spicetify = {
       enable = true;
-      theme = spicePkgs.themes.BurntSienna;
+      theme = spicePkgs.themes.burntSienna;
 
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
