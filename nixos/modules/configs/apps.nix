@@ -26,6 +26,8 @@
         syncthing
         logisim-evolution
         godot_4
+        distrobox
+        parsec-bin
 
         git
         git-credential-manager
@@ -92,7 +94,6 @@
         dotnet-sdk_7 
 
         wineWowPackages.stable
-        #winwWowPackages.waylandFull #Unstable
         winetricks
         gamescope
         vulkan-tools
@@ -103,8 +104,6 @@
 
     (with pkgs-unstable; [
         #Unstable Packages
-        zed-editor
         neovim
-        parsec-bin
     ]);
 }

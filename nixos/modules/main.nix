@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 let
 
 core = import ../values/core.nix;

@@ -9,7 +9,10 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
         spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+<<<<<<< Updated upstream
         spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+=======
+>>>>>>> Stashed changes
 
         nix-flatpak.url = "github:gmodena/nix-flatpak";
     };
