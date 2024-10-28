@@ -96,7 +96,6 @@
     "spicetify-nix": {
       "inputs": {
         "flake-compat": "flake-compat",
-<<<<<<< Updated upstream
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -107,7 +106,6 @@
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
         "rev": "194e9bb7a43639cbebf26527438ca56defc4c076",
-=======
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
@@ -116,7 +114,6 @@
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
         "rev": "1389b9841aa50f3c5719f77b41041d78a66fb0ed",
->>>>>>> Stashed changes
         "type": "github"
       },
       "original": {
