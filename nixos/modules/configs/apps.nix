@@ -28,6 +28,7 @@
         godot_4
         distrobox
         parsec-bin
+        gqview
 
         git
         git-credential-manager

@@ -31,6 +31,7 @@ in
         ./configs/theme.nix
         ./configs/wofi.nix
         ./configs/wpaperd.nix
+        ./configs/yazi.nix
         ./configs/zsh.nix
 
         (import ./configs/spicetify.nix { inherit inputs; inherit pkgs; })
