@@ -10,23 +10,17 @@ in
     programs.alacritty = {
         enable = true;
         settings = {
-            shell = "zsh";
+            shell = "${pkgs.zsh}/bin/zsh";
             colors = {
                 primary = {
                     background = "${colours.blue.three}";
                     foreground = "${colours.white.one}";
                 };
             };
-            # keyboard.bindings = [
-            #     {
-            #         key = "n";
-            #         mods = "Control";    
-            #         command = { 
-            #             program = "nvim";
-            #             args = ["."];
-            #         };
-            #     }
-            # ];
+            keyboard.bindings = [
+                    { key = "N"; mods = "Control"; action = "ToggleFullscreen"; }
+                    { key = "E"; mods = "Control"; command = "${pkgs.neovim}/bin/nvim"; }
+            ];
         };
     };
 }

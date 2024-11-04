@@ -24,7 +24,7 @@ function padTime(time){
 function getCalendar(){
     const date = new Date()
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct, Dec"]
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     const day = weekday[date.getDay()]
     const date_day = date.getDate()
     const date_month = months[date.getMonth()]

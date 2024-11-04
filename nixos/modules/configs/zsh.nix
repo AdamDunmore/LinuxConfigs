@@ -18,6 +18,8 @@ in
         shellAliases = {
             ls = "${lsd} -l";
             lst = "${lsd} --tree -l";
+
+            cds = "echo \"Disk usage of current dir: $(du . -sh)\"";
         };
     };
 }
