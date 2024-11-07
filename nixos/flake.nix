@@ -90,6 +90,17 @@
                         }
                     ];
                 };
+
+                vps = inputs.nixpkgs.lib.nixosSystem {
+                    modules = [
+                        ./hosts/vps/configuration.nix
+                        inputs.home-manager.nixosModules.home-manager {
+                            home-manger = {
+                                users.adam = import ./hosts/vps/home.nix;
+                            };
+                        }
+                    ];
+                };
             };
         };
 }
