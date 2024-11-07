@@ -1,8 +1,14 @@
-{  
-  networking.hostName = "vps";
+let 
+    core = import ../../values/core.nix;
 
-  imports =
-    [ 
+in
+{  
+    networking.hostName = "vps";
+
+    imports = [ 
       ./hardware-configuration.nix
     ];
+
+    system.stateVersion = "${core.version}";	
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
