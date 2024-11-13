@@ -13,28 +13,9 @@ in
     programs.home-manager.enable = true;
 
     imports = [
-        ./configs/alacritty.nix
-        ./configs/ags/ags.nix
-        ./configs/apps.nix
-        ./configs/code.nix
-        ./configs/dconf.nix
-        ./configs/flatpak.nix
-        ./configs/git.nix
-        ./configs/hyprland.nix
-        ./configs/kanshi.nix
-        ./configs/lsd.nix
-        ./configs/mako.nix
-        ./configs/nvim/nvim.nix
-        ./configs/river.nix
-        ./configs/starship.nix
-        ./configs/sway.nix
-        ./configs/theme.nix
-        ./configs/wofi.nix
-        ./configs/wpaperd.nix
-        ./configs/yazi.nix
-        ./configs/zsh.nix
-
-        (import ./configs/spicetify.nix { inherit inputs; inherit pkgs; })
+        ( import ./apps { isHomeModule = true; inherit inputs; inherit pkgs; } )
+        ( import ./terminal { isHomeModule = true; inherit inputs; } )
+        ( import ./wm { isHomeModule = true; inherit inputs; } )
     ];
 }
 

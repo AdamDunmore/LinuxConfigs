@@ -9,7 +9,7 @@ in
 {
     home.file = {
         ".config/nvim" = {
-            source = config.lib.file.mkOutOfStoreSymlink "${core.config_path}/nixos/modules/configs/nvim/nvim";
+            source = config.lib.file.mkOutOfStoreSymlink "${core.config_path}/nixos/modules/terminal/nvim/nvim";
         }; 
     };
 }

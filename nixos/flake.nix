@@ -85,38 +85,19 @@
                         ./hosts/server/configuration.nix
                         inputs.home-manager.nixosModules.home-manager {
                             home-manager = {
-				useGlobalPkgs = true;
-				useUserPackages = true;
-			        extraSpecialArgs = {
-			    	    inherit pkgs;
-			    	    inherit pkgs-unstable;
-			    	    inherit inputs;
-                	    	};
-                               users.adam = import ./hosts/server/home.nix; 
+				                useGlobalPkgs = true;
+				                    useUserPackages = true;
+                                        extraSpecialArgs = {
+                                            inherit pkgs;
+                                            inherit pkgs-unstable;
+                                            inherit inputs;
+                                    };
+                                   users.adam = import ./hosts/server/home.nix; 
                             }; 
                         }
                     ];
                 };
-
-                vps = inputs.nixpkgs.lib.nixosSystem {
-		    specialArgs = nixConfigSpecialArgs;
-                    modules = [
-                        ./hosts/vps/configuration.nix
-                        inputs.home-manager.nixosModules.home-manager {
-                            home-manger = {
-				useGlobalPkgs = true;
-				useUserPackages = true;
-			        extraSpecialArgs = {
-			    	    inherit pkgs;
-			    	    inherit pkgs-unstable;
-			    	    inherit inputs;
-                	    	};
-                                users.adam = import ./hosts/vps/home.nix;
-                            };
-                        }
-                    ];
                 };
-            };
         };
 }
 
