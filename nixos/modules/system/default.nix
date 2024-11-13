@@ -5,7 +5,7 @@
 
     ] else [
         ./audio.nix
-        ./blueooth.nix
+        ./bluetooth.nix
         ./bootloader.nix
         ./keyboard.nix
         ./misc.nix

@@ -32,6 +32,10 @@ local plugins = {
         priority = 1000
     },
 
+    { -- ToggleTerm
+        'akinsho/toggleterm.nvim'
+    },
+
     { --Autoclose
         'm4xshen/autoclose.nvim'
     },
@@ -90,3 +94,4 @@ require("/plugins/dashboard")
 require("/plugins/treesitter")
 require("/plugins/keymap_help")
 require("/plugins/comments")
+require("/plugins/toggleterm")
