@@ -5,7 +5,7 @@ require('toggleterm').setup({
 
 vim.api.nvim_set_keymap(
         'n',
-        '<leader>tt',
+        '<C-t>',
         ":ToggleTerm direction=float<CR>",
         {noremap = false, silent = true}
 )
