@@ -29,7 +29,7 @@
         distrobox
         parsec-bin
         gqview
-        kdeconnect-kde
+        kdePackages.kdeconnect-kde
 
         git
         git-credential-manager
