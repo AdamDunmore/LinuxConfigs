@@ -32,7 +32,6 @@
         kdeconnect-kde
 
         git
-        git-credential-manager
          
         # Terminal Emulator
         alacritty
