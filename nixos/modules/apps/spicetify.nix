@@ -13,6 +13,14 @@ in
         fullAppDisplay
         popupLyrics
         skipOrPlayLikedSongs
+        powerBar
+
+        skipOrPlayLikedSongs
+        showQueueDuration
+        history
+        playNext
+        volumePercentage
+        skipAfterTimestamp
       ];
     };
 }
