@@ -59,7 +59,7 @@ class WorkspaceService extends Service {
         switch(this.#wm){
             // case "river":
             //     break;
-            case "sway":
+            case "sway": 
                 const output_raw_sway = Utils.exec("swaymsg -t get_workspaces -r")
                 if(output_raw_sway != this.#old_output){
                     this.#old_output = output_raw_sway

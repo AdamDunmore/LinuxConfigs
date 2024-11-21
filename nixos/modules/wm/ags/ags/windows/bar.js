@@ -85,16 +85,14 @@ const Calendar = Widget.Box({
 })
 
 const Workspace_Item = (name, focused) => {
-    return Widget.Button({
-        className: "bar_workspace " + (focused ? "focused" : ""),
-        hpack: "fill",
-        vpack: "fill",
-        hexpand: true,
-        vexpand: true,
-        label: name,
-        on_clicked: () => {
-            workspace.workspace_active = name;
-        }
+    return Widget.Box({
+        child: Widget.Button({
+            className: "bar_workspace" + (focused ? " focused" : ""),
+            label: name,
+            on_clicked: () => {
+                workspace.workspace_active = name;
+            }
+        })
     })
 }
 
