@@ -21,6 +21,7 @@ in
         playNext
         volumePercentage
         skipAfterTimestamp
+        groupSession
       ];
     };
 }
