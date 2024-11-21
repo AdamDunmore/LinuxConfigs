@@ -9,7 +9,6 @@ in
 
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
-        adblock
         lastfm
         fullAppDisplay
         popupLyrics
