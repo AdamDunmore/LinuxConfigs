@@ -21,6 +21,9 @@ in
             lst = "${lsd} --tree -l";
 
             cds = "echo \"Disk usage of current dir: $(du . -sh)\"";
+
+            nix-switch = "sudo nixos-rebuild switch --flake";
+            nix-test = "sudo nixos-rebuild test --fast --flake";
         };
     };
 }
