@@ -45,6 +45,9 @@
         bat
         starship
 
+        # Language Servers
+        nil
+        
         # Sway
         swayfx
         wl-clipboard
