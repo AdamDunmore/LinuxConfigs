@@ -24,6 +24,8 @@ in
 
             nix-switch = "sudo nixos-rebuild switch --flake";
             nix-test = "sudo nixos-rebuild test --fast --flake";
+
+            emacs = "emacs -nw --init-directory ~/.config/emacs";
         };
     };
 }

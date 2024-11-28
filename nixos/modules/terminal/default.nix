@@ -3,6 +3,7 @@
 {
     imports = if isHomeModule then [
         ./alacritty.nix
+        ./emacs
         ./git.nix
         ./kitty.nix
         ./lsd.nix
