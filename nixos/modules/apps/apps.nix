@@ -47,6 +47,7 @@
 
         # Language Servers
         nil
+        nodePackages_latest.typescript-language-server
         
         # Sway
         swayfx
@@ -72,6 +73,7 @@
         p7zip
         networkmanager
         brightnessctl
+        typescript
         blueman 
         bluez
         zip
