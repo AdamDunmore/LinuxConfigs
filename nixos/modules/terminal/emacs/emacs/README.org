@@ -13,7 +13,7 @@ Runs Elpaca default installer and configures use-package
 				:ref nil :depth 1
 				:files (:defaults "elpaca-test.el" (:exclude "extensions"))
 				:build (:not elpaca--activate-package)))
-  (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
+   (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
 	 (build (expand-file-name "elpaca/" elpaca-builds-directory))
 	 (order (cdr elpaca-order))
 	 (default-directory repo))
@@ -187,6 +187,13 @@ This is where I configure my language servers
     :hook (typescript-mode . lsp-deferred)
     :config
     (setq typescript-indent-level 2)
+  )
+#+end_src
+*** Rust
+#+begin_src emacs-lisp
+  (use-package rust-mode :ensure :demand t
+    :mode "\\.rs\\'"
+    :hook (rust-mode . lsp-deferred)
   )
 #+end_src
 * Autocompletion
