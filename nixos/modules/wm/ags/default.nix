@@ -9,7 +9,7 @@ in
 {
     home.file = {
         ".config/ags" = {
-            source = config.lib.file.mkOutOfStoreSymlink "${core.config_path}/nixos/modules/wm/ags/ags";
+            source = ./ags;
         }; 
     };
 }

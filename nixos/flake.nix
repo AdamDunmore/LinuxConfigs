@@ -1,11 +1,17 @@
 {
+  
     description = "NixOS configuration flake";
 
+    # https://github.com/NixOS/nix/issues/4945 
+    # Nix cant evaluate flakes properly so until then values are hardcoded
+    #inputs = let core = import ./values/core.nix; in {
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        # nixpkgs.url = "github:nixos/nixpkgs/nixos-${core.version}";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-        home-manager.url = "github:nix-community/home-manager/release-24.05";
+        # home-manager.url = "github:nix-community/home-manager/release-${core.version}";
+        home-manager.url = "github:nix-community/home-manager/release-24.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
         spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -22,6 +28,8 @@
                 config = {
                     allowUnfree = true;
                     permittedInsecurePackages = [
+                        "dotnet-sdk-7.0.410"
+                        "dotnet-sdk-wrapped-7.0.410"
                         "electron-27.3.11"
                     ];
                 };

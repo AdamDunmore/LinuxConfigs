@@ -6,7 +6,7 @@
       gnome-photos
       gnome-tour
       gedit 
-    ]) ++ (with pkgs.gnome; [
+    ]) ++ (with pkgs; [
       gnome-music
       gnome-terminal
       epiphany 
