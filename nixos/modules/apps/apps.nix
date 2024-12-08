@@ -20,7 +20,7 @@
         thonny
         bottles
         tor-browser
-        armcord
+        legcord
         piper
         beeper
         syncthing
@@ -28,7 +28,6 @@
         godot_4
         distrobox
         parsec-bin
-        gqview
         kdePackages.kdeconnect-kde
 
         git
@@ -63,12 +62,12 @@
         xdg-desktop-portal
 
         # Gnome
-        gnome.nautilus
-        gnome.eog
-        gnome.file-roller
-        gnome.gnome-system-monitor
-        gnome.gnome-calculator
-        gnome.gnome-settings-daemon
+        nautilus
+        eog
+        file-roller
+        gnome-system-monitor
+        gnome-calculator
+        gnome-settings-daemon
 
         p7zip
         networkmanager
@@ -98,7 +97,7 @@
         geckodriver
         libratbag
         yad
-        dotnet-sdk_7 
+        dotnet-sdk_9 
 
         wineWowPackages.stable
         winetricks

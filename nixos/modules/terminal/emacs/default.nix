@@ -14,7 +14,7 @@ in
         ".config/emacs/" = {
             enable = true;
             recursive = true;
-            source = config.lib.file.mkOutOfStoreSymlink "${core.config_path}/nixos/modules/terminal/emacs/emacs/";
+            source = ./emacs;
         }; 
     };
 }
