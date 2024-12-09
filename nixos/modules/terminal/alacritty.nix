@@ -10,7 +10,7 @@ in
     programs.alacritty = {
         enable = true;
         settings = {
-            shell = "${pkgs.zsh}/bin/zsh";
+            terminal.shell = "${pkgs.zsh}/bin/zsh";
             colors = {
                 primary = {
                     background = "${colours.blue.three}";
