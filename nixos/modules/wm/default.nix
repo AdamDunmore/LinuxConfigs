@@ -10,6 +10,7 @@
             ./river.nix
             ./sway.nix
             ./theme.nix
+            ./waybar.nix
             ./wofi.nix
             ./wpaperd.nix
         ] else [

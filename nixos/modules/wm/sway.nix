@@ -35,7 +35,8 @@ in
             };
 
             startup = [
-                { command = "${pkgs.ags}/bin/ags"; }
+                { command = "${pkgs.waybar}/bin/waybar";}
+                # { command = "${pkgs.ags}/bin/ags"; }
                 { command = "${pkgs.wpaperd}/bin/wpaperd"; }
                 { command = "${pkgs.kanshi}/bin/kanshi"; }
 

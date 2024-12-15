@@ -8,6 +8,8 @@
                 "permission"
             ];
 
+            sorting.dir-grouping = "first";
+
             date = "+%X %d-%m-%y";
             layout = "grid";
             dereference = false;
