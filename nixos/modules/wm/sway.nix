@@ -13,10 +13,16 @@ in
         config = {
             input = {
                 "*" = {
+                    # Keyboard
                     xkb_layout = "gb";
+
+                    # Mouse
+                    accel_profile = "flat";
+                    
                 };
 
-                "10182:480:GXTP7863:00_27C6:01E0_Touchpad" = {
+                "10182:480:GXTP7863:00_27C6:01E0_Touchpad" = { 
+                    click_method = "clickfinger";
                     natural_scroll = "enabled";
                     tap = "enabled";
                 };
