@@ -1,12 +1,18 @@
-{ pkgs, lib, ... }:
+{ lib, config, pkgs, ... }:
 
 let 
 
 colours = import ../../values/colours.nix;
+cfg = config.adam.terminal.terminals.alacritty;
 
 in
+with lib;
+{  
+  options.adam.terminal.terminals.alacritty = {
 
-{
+  };
+  
+  config = mkIf cfg {
     programs.alacritty = {
         enable = true;
         settings = {
@@ -23,4 +29,5 @@ in
             ];
         };
     };
+  };
 }

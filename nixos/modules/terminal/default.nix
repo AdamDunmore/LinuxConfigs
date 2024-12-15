@@ -2,10 +2,6 @@
 
 {
     imports = if isHomeModule then [
-        # Terminal
-        ./alacritty.nix
-        #./kitty.nix
-
         # Editor
         ./emacs
         ./nvim
