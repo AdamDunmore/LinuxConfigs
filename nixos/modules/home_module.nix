@@ -6,6 +6,7 @@ in
 with lib;
 {
   imports = [
+    ./terminal/editors.nix
     ./terminal/terminals.nix
   ];
 

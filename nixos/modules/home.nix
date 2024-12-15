@@ -24,7 +24,16 @@ with lib;
 
     adam = {
       enable = true;
-      terminal.terminals.alacritty = true;
+      terminal = {
+        editors = {
+          default = "${pkgs.emacs}/bin/emacs";
+          emacs = true;
+        };
+        terminals = {
+          default = "${pkgs.alacritty}/bin/alacritty";
+          alacritty = true;
+        };
+      };
     };
 }
 

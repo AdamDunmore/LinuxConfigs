@@ -2,10 +2,6 @@
 
 {
     imports = if isHomeModule then [
-        # Editor
-        # ./emacs
-        ./nvim
-
         # Shell
         ./zsh.nix
 

@@ -28,14 +28,14 @@ with lib;
         ".config/emacs/" = {
             enable = true;
             recursive = true;
-            source = ./emacs/emacs;
+            source = ./emacs;
         };
       };
     })
     ( mkIf cfg.nvim {
       home.file = {
         ".config/nvim" = {
-          source = ./nvim/nvim;
+          source = ./nvim;
           recursive = true;
         };
       };

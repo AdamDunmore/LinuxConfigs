@@ -12,7 +12,7 @@ in
             # margin-top = 20;
             # margin-left = 100;
             # margin-right = 100;
-            margin-bottom = 20;
+            margin-bottom = 10;
             spacing = 30;
             # output = [
 
