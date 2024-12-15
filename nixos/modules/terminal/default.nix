@@ -3,7 +3,7 @@
 {
     imports = if isHomeModule then [
         # Editor
-        ./emacs
+        # ./emacs
         ./nvim
 
         # Shell

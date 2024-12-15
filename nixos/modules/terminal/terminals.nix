@@ -39,6 +39,12 @@ in
 with lib;
 {
   options.adam.terminal.terminals = {
+    default = mkOption {
+      type = types.str;
+      default = "${pkgs.foot}/bin/foot";
+      example = "\${pkgs.foot}/bin/foot";
+      description = "The binary for your default terminal";
+    };
     alacritty = mkEnableOption "Enable Alacritty";
     kitty = mkEnableOption "Enable Kitty";
   };
@@ -46,5 +52,6 @@ with lib;
   config = mkMerge [
     ( mkIf cfg.alacritty { programs.alacritty = alacrittyConfig; } )
     ( mkIf cfg.kitty { programs.kitty = kittyConfig; } )
+    { home.sessionVariables = { ADAM_TERMINAL = cfg.default; }; }
   ];   
 }
