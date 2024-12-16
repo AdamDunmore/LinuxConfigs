@@ -1,5 +1,6 @@
 {
     imports = [
-	./widgets
+        ./widgets
+        ./window_managers
     ];
 }

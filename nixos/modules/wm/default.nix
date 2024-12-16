@@ -2,11 +2,6 @@
 
 {
         imports = if isHomeModule then [
-            # WM
-            ./river.nix
-            ./sway.nix
-            #./hyprland.nix
-
             #Enabled
             ./dconf.nix
             ./kanshi.nix

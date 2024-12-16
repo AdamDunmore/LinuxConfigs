@@ -32,10 +32,16 @@ in
           alacritty = true;
         };
       };
-      wm.widgets = {
-        mako = true;
-        waybar = true;
-        wofi = true;
+      wm = {
+        widgets = {
+          mako = true;
+          waybar = true;
+          wofi = true;
+        };
+        window_managers.sway = {
+          enable = true;
+          swaylock = true;
+        };
       };
     };
 }

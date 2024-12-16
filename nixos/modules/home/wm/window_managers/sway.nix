@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 let
     mod = "Mod4";
-
-    colours = import ../../values/colours.nix;
-in
-{
-    wayland.windowManager.sway = {
+    colours = import ../../../../values/colours.nix;
+    cfg = config.adam.wm.window_managers.sway;
+    swayConfig = {
         enable = true;
         package = pkgs.swayfx;
         checkConfig = false; #Temporary fix for swayfx
@@ -151,8 +149,7 @@ in
             default_dim_inactive 0.2
         '';
     };
-
-    programs.swaylock = {
+    swaylockConfig = {
         enable = true;
         package = pkgs.swaylock-effects;
         settings = {
@@ -179,4 +176,17 @@ in
             indicator-radius = 150;
         };
     };
+
+in
+with lib;
+{
+
+  options.adam.wm.window_managers.sway = {
+    enable = mkEnableOption "Enable Sway";
+    swaylock = mkEnableOption "Enable Swaylock";
+  };
+  config = mkMerge [
+    ( mkIf cfg.enable { wayland.windowManager.sway = swayConfig; })
+    ( mkIf cfg.swaylock { programs.swaylock = swaylockConfig; }) 
+  ];
 }
