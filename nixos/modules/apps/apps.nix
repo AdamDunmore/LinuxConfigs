@@ -20,7 +20,7 @@
         thonny
         bottles
         tor-browser
-        legcord
+        discord
         piper
         beeper
         syncthing

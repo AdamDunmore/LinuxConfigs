@@ -8,6 +8,7 @@ with lib;
   imports = [
     ./terminal/editors.nix
     ./terminal/terminals.nix
+    ./wm/widgets.nix
   ];
 
     options.adam = {

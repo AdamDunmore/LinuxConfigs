@@ -1,12 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
 
 core = import ../values/core.nix;
-cfg = config.adam;
 
 in
-with lib;
 { 
     home.username = core.user;
     home.homeDirectory = "/home/${core.user}";
@@ -33,6 +31,10 @@ with lib;
           default = "${pkgs.alacritty}/bin/alacritty";
           alacritty = true;
         };
+      };
+      wm.widgets = {
+        mako = true;
+        waybar = true;
       };
     };
 }

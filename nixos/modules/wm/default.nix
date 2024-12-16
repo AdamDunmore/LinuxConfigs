@@ -2,10 +2,6 @@
 
 {
         imports = if isHomeModule then [
-            # Bar/Widgets
-            ./waybar.nix
-            #./ags
-
             # App Menu
             ./wofi.nix
          
@@ -13,9 +9,6 @@
             ./river.nix
             ./sway.nix
             #./hyprland.nix
-
-            # Notifictions
-            ./mako.nix
 
             #Enabled
             ./dconf.nix
