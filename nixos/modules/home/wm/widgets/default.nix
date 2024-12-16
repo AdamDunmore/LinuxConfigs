@@ -2,8 +2,8 @@
 
 let
   cfg = config.adam.wm.widgets;
-  colours = import ../../values/colours.nix;
-  font = import ../../values/font.nix;
+  colours = import ../../../../values/colours.nix;
+  font = import ../../../../values/font.nix;
 
   waybarConfig = {
       enable = true;
@@ -77,6 +77,52 @@ let
         textColor = "${colours.white.one}";
         width = 300;
     };
+  wofiConfig = {
+        enable = true;
+        settings = {
+            allow_images = true;
+            no_actions = true;
+            show = "drun";
+            height = 300;
+            width = 600;
+            prompt = "";
+            matching = "multi-contains";
+            insensitive = true;
+        };
+        style = ''
+            window {
+                font-size: 22px;
+                font-family: "CodeNewRoman";
+
+                border-radius: 10px;
+                border-width: 3px;
+                border-style: solid;
+                border-color: rgba(0,0,0,0.2);
+            }
+
+            #entry {
+                padding: 10px;
+                color: #ffffff;
+            }
+
+            #entry:selected {
+                border: none;
+            }
+
+            #text{
+                padding-left: 20px;
+            }
+
+            #input{
+                font-size: 24px;
+                padding: 10px;
+                margin: 10px;
+
+                border-radius: 5px;
+            }
+        '';
+    };
+
 
 
 in
@@ -88,8 +134,9 @@ with lib;
     ags = {
       enable = mkEnableOption "Enable Ags"; #TODO: Divide into modules
     };
-    waybar = mkEnableOption "Enable Waybar";
     mako = mkEnableOption "Enable Mako";
+    waybar = mkEnableOption "Enable Waybar";
+    wofi = mkEnableOption "Enable Wofi";
   };
 
   config = mkMerge [
@@ -100,7 +147,8 @@ with lib;
             }; 
         };
     })
-    (mkIf cfg.waybar { programs.waybar = waybarConfig; })
     (mkIf cfg.mako { services.mako = makoConfig; })
+    (mkIf cfg.waybar { programs.waybar = waybarConfig; })
+    (mkIf cfg.wofi { programs.wofi = wofiConfig; })
   ];
 }

@@ -17,7 +17,7 @@ in
         ( import ./terminal { isHomeModule = true; inherit inputs; } )
         ( import ./wm { isHomeModule = true; inherit inputs; } )
 
-        ./home_module.nix
+        ./home
     ];
 
     adam = {
@@ -35,6 +35,7 @@ in
       wm.widgets = {
         mako = true;
         waybar = true;
+        wofi = true;
       };
     };
 }

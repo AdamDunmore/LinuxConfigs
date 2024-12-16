@@ -2,9 +2,6 @@
 
 {
         imports = if isHomeModule then [
-            # App Menu
-            ./wofi.nix
-         
             # WM
             ./river.nix
             ./sway.nix

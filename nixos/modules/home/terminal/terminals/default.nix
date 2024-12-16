@@ -2,7 +2,7 @@
 
 let
   cfg = config.adam.terminal.terminals;
-  colours = import ../../values/colours.nix;
+  colours = import ../../../../values/colours.nix;
 
   alacrittyConfig = {
         enable = true;
