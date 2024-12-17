@@ -23,10 +23,10 @@ with lib;
       };
       terminals = {
         default = mkOption {
-        type = types.str;
-        default = "${pkgs.foot}/bin/foot";
-        example = "\${pkgs.foot}/bin/foot";
-        description = "The binary for your default terminal";
+            type = types.str;
+            default = "${pkgs.foot}/bin/foot";
+            example = "\${pkgs.foot}/bin/foot";
+            description = "The binary for your default terminal";
         };
         alacritty = mkEnableOption "Enable Alacritty";
         kitty = mkEnableOption "Enable Kitty";
