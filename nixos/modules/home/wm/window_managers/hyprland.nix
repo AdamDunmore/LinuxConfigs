@@ -1,13 +1,9 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 let 
-
-core = import ../../values/core.nix;
-
-in
-
-{
-    wayland.windowManager.hyprland = {
+    core = import ../../values/core.nix;
+    cfg = config.adam.wm.window_managers.hyprland;
+    hyprlandConfig = {
         enable = true;
         settings = {
             "$mod" = "SUPER";
@@ -108,8 +104,7 @@ in
             };
         };
     };
-
-    programs.hyprlock = {
+    hyprlockConfig = {
         enable = true;
         settings = {
             general = {
@@ -143,4 +138,18 @@ in
             ];
         };
     };
+
+
+in
+with lib;
+{
+  options.adam.wm.window_managers.hyprland = {
+    enable = mkEnableOption "Enable Hyprland";
+    hyprlock = mkEnableOption "Enable Hyprlock";
+  };
+
+  config = mkMerge [
+    (mkIf cfg.enable { wayland.windowManager.hyprland = hyprlandConfig; })
+    (mkIf cfg.hyprlock { programs.hyprlock = hyprlockConfig; })
+  ];
 }

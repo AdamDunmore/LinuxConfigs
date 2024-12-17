@@ -6,8 +6,8 @@ in
 with lib;
 {
   imports = [
-    # ./hyprland.nix
-    # ./river.nix
+    ./hyprland.nix
+    ./river.nix
     ./sway.nix
   ];
 

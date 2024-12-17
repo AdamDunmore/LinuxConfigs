@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
-{
-    wayland.windowManager.river = {
+let
+  cfg = config.adam.wm.window_managers.river;
+  riverConfig = {
         enable = true;
         systemd.enable = true;
         settings = {
@@ -62,4 +63,14 @@
             };
         };
     };
+
+in
+with lib;
+{
+  options.adam.wm.window_managers.river = {
+    enable = mkEnableOption "Enable River";
+  };
+  config = mkMerge [
+    ( mkIf cfg.enable { wayland.windowManager.river = riverConfig; })
+  ];
 }

@@ -38,14 +38,12 @@ in
           waybar = true;
           wofi = true;
         };
-        window_managers.sway = {
-          enable = true;
-          swaylock = true;
+        window_managers = {
+          default = "${pkgs.swayfx}/bin/sway";
+          default_locker = "${pkgs.swaylock}/bin/swaylock";
+          sway.enable = true;
+          hyprland.hyprlock = true;
         };
       };
     };
 }
-
-
-
-
