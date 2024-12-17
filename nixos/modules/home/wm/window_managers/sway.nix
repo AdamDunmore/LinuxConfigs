@@ -179,11 +179,6 @@ let
 in
 with lib;
 {
-
-  options.adam.wm.window_managers.sway = {
-    enable = mkEnableOption "Enable Sway";
-    swaylock = mkEnableOption "Enable Swaylock";
-  };
   config = mkMerge [
     ( mkIf cfg.enable { wayland.windowManager.sway = swayConfig; })
     ( mkIf cfg.swaylock { programs.swaylock = swaylockConfig; }) 

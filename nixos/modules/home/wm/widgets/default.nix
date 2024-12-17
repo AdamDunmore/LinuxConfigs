@@ -129,16 +129,7 @@ in
 with lib;
 {
   imports = [];
-
-  options.adam.wm.widgets = {
-    ags = {
-      enable = mkEnableOption "Enable Ags"; #TODO: Divide into modules
-    };
-    mako = mkEnableOption "Enable Mako";
-    waybar = mkEnableOption "Enable Waybar";
-    wofi = mkEnableOption "Enable Wofi";
-  };
-
+  
   config = mkMerge [
     (mkIf cfg.ags.enable {
         home.file = {

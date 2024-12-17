@@ -4,18 +4,7 @@ let
   cfg = config.adam.terminal.editors;
 in
 with lib;
-{
-  options.adam.terminal.editors = {
-    default = mkOption {
-      type = types.str;
-      default = "${pkgs.nano}/bin/nano";
-      example = "\${pkgs.nano}/bin/nano";
-      description = "The binary for your default editor";
-    };
-    emacs = mkEnableOption "Enable Emacs";
-    nvim = mkEnableOption "Enable Neovim";
-  };
-  
+{ 
   config = mkMerge [
     ( mkIf cfg.emacs {
       programs.emacs = {

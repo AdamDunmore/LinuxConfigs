@@ -6,6 +6,7 @@ let
     colours = import ../../../../values/colours.nix;
     hyprlandConfig = {
         enable = true;
+        package = pkgs.hyprland;
         settings = {
             "$mod" = "SUPER";
             bind = [
@@ -155,11 +156,6 @@ let
 in
 with lib;
 {
-  options.adam.wm.window_managers.hyprland = {
-    enable = mkEnableOption "Enable Hyprland";
-    hyprlock = mkEnableOption "Enable Hyprlock";
-  };
-
   config = mkMerge [
     (mkIf cfg.enable { wayland.windowManager.hyprland = hyprlandConfig; })
     (mkIf cfg.hyprlock { programs.hyprlock = hyprlockConfig; })

@@ -34,8 +34,6 @@
         git-credential-manager
          
         # Terminal Emulator
-        alacritty
-        zellij
         zsh
         zsh-autocomplete
         zsh-syntax-highlighting
@@ -45,13 +43,12 @@
         starship
 
         # Language Servers
+        rust-analyzer
         nil
         nodePackages_latest.typescript-language-server
         
         # Sway
-        swayfx
         wl-clipboard
-        swaylock-effects
         swaysome
         ags
         grim

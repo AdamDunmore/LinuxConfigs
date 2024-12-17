@@ -6,11 +6,9 @@ in
 with lib;
 {
   imports = [
+    ../common.nix
+    
     ./terminal
     ./wm
   ];
-
-    options.adam = {
-        enable = mkEnableOption "Enable Config";
-    };
 }
