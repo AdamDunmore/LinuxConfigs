@@ -15,4 +15,6 @@ in
 
     system.stateVersion = "${core.version}";	
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    adam.display_managers.greetd = true;
 }

@@ -9,7 +9,6 @@
             ./wpaperd.nix
         ] else [
             ./gnome.nix
-            ./greetd
             ./kde.nix
         ];
 }

@@ -3,6 +3,7 @@
 with lib;
 {
   imports = [
+    ./greetd
     ./ly.nix
   ];
 

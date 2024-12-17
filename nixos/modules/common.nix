@@ -6,7 +6,10 @@ with lib;
 {
   options.adam = {
     enable = mkEnableOption "Enable Config";
-    display_managers.ly = mkEnableOption "Enables Ly";
+    display_managers = {
+      greetd = mkEnableOption "Enable Greetd";
+      ly = mkEnableOption "Enable Ly";
+    };
     terminal = {
       editors = {
         default = mkOption {
