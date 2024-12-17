@@ -51,11 +51,11 @@ let
             };
 
             keybindings = {
-                "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+                "${mod}+Return" = "exec ${config.adam.terminal.terminals.default}";
                 "${mod}+Shift+Q" = "kill";
                 "${mod}+D" = "exec ${pkgs.wofi}/bin/wofi";
                 "${mod}+Shift+C" = "reload";
-                "${mod}+l" = "exec ${pkgs.swaylock}/bin/swaylock -C ~/.config/swaylock/config";
+                "${mod}+l" = "exec ${config.adam.wm.window_managers.default_locker}";
                 "${mod}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
                 "${mod}+a" = "exec ${pkgs.ags}/bin/ags -t \"menu\"";
 

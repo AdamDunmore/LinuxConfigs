@@ -8,7 +8,7 @@ let
         settings = {
             "$mod" = "SUPER";
             bind = [
-                "$mod, Return, exec, ${pkgs.alacritty}/bin/alacritty"
+              "$mod, Return, exec, ${config.adam.terminal.terminals.default}"
                 "$mod, D, exec, ${pkgs.wofi}/bin/wofi"
 
                 "$mod, F, fullscreen, active"
@@ -17,7 +17,7 @@ let
                 "$mod_SHIFT, Q, killactive"
                 "$mod, H, togglesplit,"
                 "$mod_SHIFT, C, exec, hyprctl reload"
-                "$mod, L, exec, ${pkgs.swaylock}/bin/swaylock -C ~/.config/swaylock/config"
+                "$mod, L, exec, ${config.adam.wm.window_managers.default_locker}"
                 "$mod, C, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
                 "$mod, A, exec, ${pkgs.ags}/bin/ags -t \"menu\""
 

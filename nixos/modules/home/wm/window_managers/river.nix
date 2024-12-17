@@ -25,7 +25,8 @@ let
                     "Super+Shift F" = "toggle-float";
                     "Super F" = "toggle-fullscreen";
 
-                    "Super Return" = "spawn alacritty";
+                    
+                    "Super Return" = "spawn ${config.adam.terminal.terminals.default}";
                     "Super D" = "spawn ${pkgs.wofi}/bin/wofi";
 
                     "Super Left" = "focus-view left";
