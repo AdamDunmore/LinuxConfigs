@@ -155,8 +155,6 @@ let
         settings = {
             ignore-empty-password = true;
             
-            image = "../../wallpapers/wallpaper_nixos.png";
-
             clock = true;
             timestr = "%R";
             datestr = "%a, %e of %B";
@@ -164,6 +162,7 @@ let
             effect-blur="7x5";
             effect-vignette="0.5:0.5";
 
+            color = colours.blue.one;
             line-color = "00000000";
             ring-color = "333355CC";
             key-hl-color = "555577EE";

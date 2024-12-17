@@ -40,7 +40,7 @@ in
         };
         window_managers = {
           default = "${pkgs.swayfx}/bin/sway";
-          default_locker = "${pkgs.swaylock-effects}/bin/swaylock";
+          default_locker = "${pkgs.hyprlock}/bin/hyprlock";
           sway.enable = true;
           hyprland.hyprlock = true;
         };

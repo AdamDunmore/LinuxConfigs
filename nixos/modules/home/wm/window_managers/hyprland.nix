@@ -3,6 +3,7 @@
 let 
     core = import ../../values/core.nix;
     cfg = config.adam.wm.window_managers.hyprland;
+    colours = import ../../../../values/colours.nix;
     hyprlandConfig = {
         enable = true;
         settings = {
@@ -106,21 +107,32 @@ let
     };
     hyprlockConfig = {
         enable = true;
+        package = pkgs.hyprlock;
         settings = {
             general = {
                 disable_loading_bar = false;
-                grace = 300;
                 hide_cursor = true;
                 no_fade_in = false;
             };
             background = [
                 {
-                    # path = "${core.config_path}/wallpaper/wallpaper_nixos.png";
+                    color = colours.blue.one;
                     blur_passes = 3;
                     blur_size = 8;
                 }
             ];
-            #CHANGE
+            label = [
+              {
+                size = "500, 200";
+                position = "0, 200";
+                monitor = "";
+                text = "Locked";
+                font_size = 50;
+                color = colours.white.one;
+                halign = "center";
+                valign = "center";
+              }
+            ];
             input-field = [
                 {
                     size = "200, 50";
@@ -132,7 +144,7 @@ let
                     inner_color = "rgb(91, 96, 120)";
                     outer_color = "rgb(24, 25, 38)";
                     outline_thickness = 5;
-                    # placeholder_text = "\'<span foreground=\"##cad3f5\">Password...</span>'\";
+                    placeholder_text = "<span foreground=\"##cad3f5\">Password...</span>";
                     shadow_passes = 2;
                 }
             ];
