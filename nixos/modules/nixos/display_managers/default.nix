@@ -5,9 +5,11 @@ with lib;
   imports = [
     ./greetd
     ./ly.nix
+    ./sddm.nix
   ];
 
   config = mkMerge [
-    (mkIf config.adam.wm.window_managers.sway.enable { services.displayManager.sessionPackages = [ pkgs.swayfx ]; })
+    ({ services.displayManager.sessionPackages = [ pkgs.swayfx pkgs.hyprland pkgs.river ]; })
+    # ({ services.displayManager.defaultSession = ""; })
   ];
 }

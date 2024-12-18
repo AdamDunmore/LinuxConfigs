@@ -9,6 +9,7 @@ with lib;
     display_managers = {
       greetd = mkEnableOption "Enable Greetd";
       ly = mkEnableOption "Enable Ly";
+      sddm = mkEnableOption "Enable SDDM";
     };
     terminal = {
       editors = {

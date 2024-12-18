@@ -20,6 +20,7 @@ in
         ./home
     ];
 
+
     adam = {
       enable = true;
       terminal = {
