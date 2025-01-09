@@ -28,6 +28,7 @@ in
           default = "${pkgs.emacs}/bin/emacs";
           emacs = true;
         };
+        shell = true;
         terminals = {
           default = "${pkgs.alacritty}/bin/alacritty";
           alacritty = true;

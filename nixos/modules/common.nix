@@ -22,6 +22,7 @@ with lib;
         emacs = mkEnableOption "Enable Emacs";
         nvim = mkEnableOption "Enable Neovim";
       };
+      shell = mkEnableOption "Enable Shell Configuration";
       terminals = {
         default = mkOption {
             type = types.str;

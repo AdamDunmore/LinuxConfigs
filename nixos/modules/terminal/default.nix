@@ -7,7 +7,7 @@
 
         # Enabled
         ./git.nix
-        ./lsd.nix
+        # ./lsd.nix
         ./starship.nix
         ./yazi.nix
     ] else [

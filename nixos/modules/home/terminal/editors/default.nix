@@ -22,6 +22,7 @@ with lib;
       };
     })
     ( mkIf cfg.nvim {
+      programs.neovim.plugins = [ (pkgs.vimPlugins.nvim-treesitter.withAllGrammars) ];
       home.file = {
         ".config/nvim" = {
           source = ./nvim;
