@@ -48,6 +48,7 @@
         nodePackages_latest.typescript-language-server
         java-language-server
         pyright
+        lua-language-server
         
         # Sway
         wl-clipboard
