@@ -46,6 +46,8 @@
         rust-analyzer
         nil
         nodePackages_latest.typescript-language-server
+        java-language-server
+        pyright
         
         # Sway
         wl-clipboard
