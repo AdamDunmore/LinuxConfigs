@@ -24,7 +24,7 @@ with lib;
       programs.neovim.plugins = [ (pkgs.vimPlugins.nvim-treesitter.withAllGrammars) ];
       home.file = {
         ".config/nvim/" = {
-          source = ./nvim
+          source = ./nvim;
           target = ".config/nvim";
           recursive = true;
         };
