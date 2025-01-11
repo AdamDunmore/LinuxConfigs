@@ -25,8 +25,9 @@ in
       enable = true;
       terminal = {
         editors = {
-          default = "${pkgs.emacs}/bin/emacs";
+          default = "${pkgs.neovim}/bin/nvim";
           emacs = true;
+          nvim = true;
         };
         shell = true;
         terminals = {

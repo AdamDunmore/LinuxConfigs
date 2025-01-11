@@ -1,20 +1,14 @@
 -- Adds line numbers
-vim.opt.number = true
+vim.opt.number = true;
+vim.opt.relativenumber = true;
 
--- Adds relative line numbers
-vim.opt.relativenumber = true
+-- Adds mouse support
+vim.opt.mouse = "a";
 
--- Adds mouse support 
-vim.opt.mouse = "a"
+-- Sets update time
+vim.opt.updatetime = 300;
 
--- Sets time for plugins to take effect after typing
-vim.opt.updatetime = 300
-
--- Tab width
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
--- Bind Leader Key
-vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
-vim.g.mapleader = ' ';
+-- Tabs
+vim.opt.tabstop = 4;
+vim.opt.shiftwidth = 4;
+vim.opt.expandtab = true;

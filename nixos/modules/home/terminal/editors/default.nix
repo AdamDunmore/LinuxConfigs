@@ -15,7 +15,6 @@ with lib;
 
       home.file = {
         ".config/emacs/" = {
-            enable = true;
             recursive = true;
             source = ./emacs;
         };
@@ -24,8 +23,9 @@ with lib;
     ( mkIf cfg.nvim {
       programs.neovim.plugins = [ (pkgs.vimPlugins.nvim-treesitter.withAllGrammars) ];
       home.file = {
-        ".config/nvim" = {
-          source = ./nvim;
+        ".config/nvim/" = {
+          source = ./nvim
+          target = ".config/nvim";
           recursive = true;
         };
       };
