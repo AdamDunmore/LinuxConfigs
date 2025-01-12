@@ -44,6 +44,10 @@ plugins = {
         "nvimdev/dashboard-nvim"
     },
 
+    {
+        "nvim-tree/nvim-tree.lua"
+    },
+
     -- Code
     { --Treesitter
         "nvim-treesitter/nvim-treesitter"
