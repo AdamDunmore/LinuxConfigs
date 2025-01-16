@@ -5,3 +5,4 @@ require('ui.theme');
 require('ui.bufferline');
 require('ui.dashboard');
 require('ui.tree');
+require('ui.lualine');
