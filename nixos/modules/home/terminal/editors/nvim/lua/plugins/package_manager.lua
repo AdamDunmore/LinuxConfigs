@@ -44,8 +44,16 @@ plugins = {
         "nvimdev/dashboard-nvim"
     },
 
-    {
+    { -- Tree
         "nvim-tree/nvim-tree.lua"
+    },
+    
+    { -- Ex line
+        "folke/noice.nvim",
+    },
+
+    { -- Terminal
+        "akinsho/toggleterm.nvim",
     },
 
     { -- Statusline

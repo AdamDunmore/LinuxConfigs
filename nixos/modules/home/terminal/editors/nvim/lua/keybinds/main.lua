@@ -96,6 +96,21 @@ vim.api.nvim_set_keymap(
     { noremap = true, silent = true }
 )
 
+-- Toggle Term
+vim.api.nvim_set_keymap(
+    't',
+    '<Esc>', 
+    [[<C-\><C-n>]], 
+    { noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<C-\'>',
+    ":ToggleTerm<CR>",
+    { noremap = true, silent = true }
+)
+
 -- Code --
 -- Luasnip
 vim.api.nvim_set_keymap(

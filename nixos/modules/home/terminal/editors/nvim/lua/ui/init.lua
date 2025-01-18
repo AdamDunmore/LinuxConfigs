@@ -6,3 +6,5 @@ require('ui.bufferline');
 require('ui.dashboard');
 require('ui.tree');
 require('ui.lualine');
+require('ui.noice');
+require('ui.toggleterm');
