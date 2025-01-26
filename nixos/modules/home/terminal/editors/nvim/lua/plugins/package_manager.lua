@@ -93,6 +93,11 @@ plugins = {
     { --Nvim Comment
         "terrortylor/nvim-comment"
     },
+
+    -- Note
+    { --Markdown renderer
+        "MeanderingProgrammer/render-markdown.nvim"
+    }
 };
 
 
