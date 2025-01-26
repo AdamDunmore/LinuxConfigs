@@ -40,3 +40,25 @@ lsp_config.nil_ls.setup({
 lsp_config.rust_analyzer.setup({
     capabilities = capabilities,
 })
+
+-- HTML
+lsp_config.html.setup({
+    capabilities = capabilities,
+})
+
+--CSS
+lsp_config.cssls.setup({
+    capabilities = capabilities,
+})
+
+-- Bash
+lsp_config.bashls.setup({
+    capabilities = capabilities,
+})
+
+-- C/C++
+lsp_config.clangd.setup({
+    capabilities = capabilities,
+})
+
+

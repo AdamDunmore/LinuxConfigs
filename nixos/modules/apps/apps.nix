@@ -49,6 +49,9 @@
         jdt-language-server
         pyright
         lua-language-server
+        vscode-langservers-extracted
+        bash-language-server
+        clang-tools
         
         # Sway
         wl-clipboard
