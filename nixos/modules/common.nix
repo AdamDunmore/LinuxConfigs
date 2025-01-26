@@ -1,7 +1,5 @@
-{ lib, config, pkgs, ... }:
+{ lib, pkgs, ... }:
 
-let 
-in
 with lib;
 {
   options.adam = {
@@ -10,6 +8,9 @@ with lib;
       greetd = mkEnableOption "Enable Greetd";
       ly = mkEnableOption "Enable Ly";
       sddm = mkEnableOption "Enable SDDM";
+    };
+    services = {
+        syncthing = mkEnableOption "Enable Syncthing";
     };
     terminal = {
       editors = {

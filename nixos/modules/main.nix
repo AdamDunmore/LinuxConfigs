@@ -18,5 +18,8 @@ in
     system.stateVersion = "${core.version}";	
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    adam.display_managers.greetd = true;
+    adam = {
+        display_managers.greetd = true;
+        services.syncthing = false;
+    };
 }

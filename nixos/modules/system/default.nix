@@ -9,7 +9,6 @@
         ./bootloader.nix
         ./keyboard.nix
         ./misc.nix
-        ./syncthing.nix
         ./timezone.nix
         ./users.nix
     ]; 
