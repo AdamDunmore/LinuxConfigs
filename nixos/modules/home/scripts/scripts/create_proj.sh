@@ -9,6 +9,7 @@ fi
 
 langs=(
     "python"
+    "java"
 )
 
 script_path="$(dirname $0)"
