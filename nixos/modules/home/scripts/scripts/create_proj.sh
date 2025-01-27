@@ -15,5 +15,5 @@ langs=(
 script_path="$(dirname $0)"
 
 if [[ ${langs[*]} =~ $1 ]]; then
-    cp "$script_path"/create_proj/templates/"$1"/. "$PWD" -r
+    cp "$script_path"/create_proj/templates/"$1"/. "$PWD" -r -L
 fi
