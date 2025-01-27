@@ -8,6 +8,7 @@ with lib;
   imports = [
     ../common.nix
     
+    ./scripts
     ./terminal
     ./wm
   ];

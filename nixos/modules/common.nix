@@ -12,6 +12,7 @@ with lib;
     services = {
         syncthing = mkEnableOption "Enable Syncthing";
     };
+    scripts = mkEnableOption "Enable Scripts";
     terminal = {
       editors = {
         default = mkOption {

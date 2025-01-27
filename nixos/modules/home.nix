@@ -23,6 +23,7 @@ in
 
     adam = {
       enable = true;
+      scripts = true;
       terminal = {
         editors = {
           default = "${pkgs.neovim}/bin/nvim";
