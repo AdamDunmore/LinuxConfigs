@@ -37,6 +37,16 @@ require('dashboard').setup {
                 action = 'ADTelescopeFindFilesRoot'
             },
 
+            {
+                icon = ' 󱞂 ',
+                icon_hl = 'Title',
+                desc = 'Open Empty Buffer',
+                desc_hl = 'String',
+                key = 'b',
+                key_hl = 'Number',
+                key_format = ' %s',
+                action = 'enew'
+            },
 
             {
                 icon = '  ',
