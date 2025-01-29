@@ -13,6 +13,10 @@ with lib;
         syncthing = mkEnableOption "Enable Syncthing";
     };
     scripts = mkEnableOption "Enable Scripts";
+    keyboard = {
+        enable = mkEnableOption "Enable Configuring Keyboard";
+        custom_layout = mkEnableOption "Enable Custom Keyboard Layout";
+    };
     terminal = {
       editors = {
         default = mkOption {

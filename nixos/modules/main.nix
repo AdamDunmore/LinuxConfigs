@@ -21,5 +21,9 @@ in
     adam = {
         display_managers.greetd = true;
         services.syncthing = false;
+        keyboard = {
+            enable = true;
+            custom_layout = true;
+        };
     };
 }
