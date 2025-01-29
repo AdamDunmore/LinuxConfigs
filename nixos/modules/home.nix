@@ -14,7 +14,6 @@ in
 
     imports = [
         ( import ./apps { isHomeModule = true; inherit inputs; inherit pkgs; } )
-        ( import ./terminal { isHomeModule = true; inherit inputs; } )
         ( import ./wm { isHomeModule = true; inherit inputs; } )
 
         ./home

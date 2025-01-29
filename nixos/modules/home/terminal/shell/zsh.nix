@@ -2,6 +2,7 @@
 
 let
   cfg = config.adam.terminal.shell;
+  lsd = "${pkgs.lsd}/bin/lsd";
 in
 with lib;
 {
