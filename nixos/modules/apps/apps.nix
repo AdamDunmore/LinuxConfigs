@@ -101,6 +101,7 @@
         libratbag
         yad
         dotnet-sdk_9 
+        htop
 
         wineWowPackages.stable
         winetricks

@@ -16,6 +16,8 @@ with lib;
         HOSTNAME=$(hostname)
         ";
         shellAliases = {
+            top = "htop";
+
             ls = "${lsd} -l";
             lst = "${lsd} --tree -l";
 
