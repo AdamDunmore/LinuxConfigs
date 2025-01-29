@@ -25,7 +25,8 @@ const Greeter_Custom = Widget.Box({
         vexpand: false,
         on_change: function({ text }){
             command = text;
-        }
+        },
+        on_accept: () => {Login()},
     })
 })
 
