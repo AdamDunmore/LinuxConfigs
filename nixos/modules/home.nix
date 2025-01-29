@@ -13,7 +13,6 @@ in
     programs.home-manager.enable = true;
 
     imports = [
-        ( import ./apps { isHomeModule = true; inherit inputs; inherit pkgs; } )
         ( import ./wm { isHomeModule = true; inherit inputs; } )
 
         ./home
@@ -22,6 +21,7 @@ in
 
     adam = {
       enable = true;
+      apps.all = true;
       scripts = true;
       terminal = {
         editors = {

@@ -4,6 +4,11 @@ with lib;
 {
   options.adam = {
     enable = mkEnableOption "Enable Config";
+    apps = {
+        all = mkEnableOption "Install all apps";
+        light = mkEnableOption "Install all light apps";
+        minimal = mkEnableOption "Install all minimal apps";
+    };
     display_managers = {
       greetd = mkEnableOption "Enable Greetd";
       ly = mkEnableOption "Enable Ly";

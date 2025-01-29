@@ -29,6 +29,7 @@
         distrobox
         parsec-bin
         kdePackages.kdeconnect-kde
+        steam
 
         git
         git-credential-manager

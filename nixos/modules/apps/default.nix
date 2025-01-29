@@ -7,7 +7,7 @@
         ./flatpak.nix
         (import ./spicetify.nix { inherit inputs; inherit pkgs; })
     ] else [
-        ./steam.nix
-        ./virtualbox.nix
+        # ./steam.nix
+        # ./virtualbox.nix
     ];
 }

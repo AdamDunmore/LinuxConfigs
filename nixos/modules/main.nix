@@ -8,7 +8,6 @@ in
 
 {
     imports = [
-        (import ./apps { isHomeModule = false; })
         (import ./system { isHomeModule = false; }) 
         (import ./wm { isHomeModule = false; })
 

@@ -6,7 +6,7 @@ let
 in
 with lib;
 {
-    config = mkIf cfg.light {
+    config = mkIf (cfg.light || cfg.all) {
         programs.spicetify = {
             enable = true;
             theme = spicePkgs.themes.burntSienna;
