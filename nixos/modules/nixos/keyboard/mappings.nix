@@ -16,6 +16,7 @@ with lib;
                     esc = "`"; 
                     z = "102nd";
                     #p = "marco(G-102nd space)";
+                    c = "capslock";
                 };
             };
         };   
