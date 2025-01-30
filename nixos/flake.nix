@@ -63,7 +63,22 @@
                     inherit inputs;
                 };
             };
- 
+
+            home_imports = [
+                inputs.spicetify-nix.homeManagerModules.default
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+            ];
+
+            home_args = {
+                backupFileExtension = "bakp";
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {    
+                    inherit pkgs;
+                    inherit pkgs-unstable;
+                    inherit inputs;  
+                };
+            };
         in
 
         {
@@ -73,7 +88,11 @@
                     modules = [
                         ./hosts/laptop/configuration.nix  
                         inputs.home-manager.nixosModules.home-manager {
-                            home-manager = homeManagerConfig;
+                            home-manager = {
+                                users.adam.imports = [
+                                    ./hosts/laptop/home.nix
+                                ] ++ home_imports;
+                            } // home_args;
                         }
                     ];
                 };
@@ -83,7 +102,11 @@
                     modules = [
                         ./hosts/desktop/configuration.nix
                         inputs.home-manager.nixosModules.home-manager {
-                            home-manager = homeManagerConfig;
+                            home-manager = {
+                                users.adam.imports = [
+                                    ./hosts/desktop/home.nix
+                                ] ++ home_imports;
+                            } // home_args;
                         }
                     ];
                 };
