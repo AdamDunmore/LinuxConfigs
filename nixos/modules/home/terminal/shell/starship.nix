@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 let
-  cfg = config.adam.terminal.shell;
+  cfg = config.adam.terminal.shell.enable;
   colours = import ../../../../values/colours.nix;
 in
 with lib;

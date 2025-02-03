@@ -33,7 +33,10 @@ with lib;
         emacs = mkEnableOption "Enable Emacs";
         nvim = mkEnableOption "Enable Neovim";
       };
-      shell = mkEnableOption "Enable Shell Configuration";
+      shell = {
+        enable = mkEnableOption "Enable Shell Configuration";
+        tmux = mkEnableOption "Enable Tmux Configuration";
+      };
       terminals = {
         default = mkOption {
             type = types.str;

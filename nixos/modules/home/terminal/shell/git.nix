@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.adam.terminal.shell;
+  cfg = config.adam.terminal.shell.enable;
 in
 with lib;
 {

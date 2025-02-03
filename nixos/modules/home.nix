@@ -28,7 +28,10 @@ in
           emacs = true;
           nvim = true;
         };
-        shell = true;
+        shell = {
+            enable = true;
+            tmux = true;
+        };
         terminals = {
           default = "${pkgs.alacritty}/bin/alacritty";
           alacritty = true;
