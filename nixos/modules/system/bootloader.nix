@@ -14,7 +14,6 @@ in
             device = "nodev";
             useOSProber = true;
             efiInstallAsRemovable = false;
-            efiSupport = true;
         };
         systemd-boot.enable = false;   
     };

@@ -25,4 +25,6 @@
 
     # Add ntfs support
     boot.supportedFilesystems = [ "ntfs" ];
+
+    boot.loader.grub.efiSupport = true;
 }

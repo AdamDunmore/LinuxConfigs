@@ -21,7 +21,6 @@ in
 
     adam = {
       enable = true;
-      apps.all = true;
       scripts = true;
       terminal = {
         editors = {
