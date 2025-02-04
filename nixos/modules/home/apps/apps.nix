@@ -69,7 +69,7 @@ with lib;
         })
 
 
-        (mkIf (cfg.minimal || cfg.all) {
+        (mkIf (cfg.minimal || cfg.light || cfg.all) {
             home.packages = (with pkgs; [
                 #Stable Packages
                 git

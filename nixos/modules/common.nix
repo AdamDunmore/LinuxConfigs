@@ -36,6 +36,7 @@ with lib;
       shell = {
         enable = mkEnableOption "Enable Shell Configuration";
         tmux = mkEnableOption "Enable Tmux Configuration";
+        zellij = mkEnableOption "Enable Zellij Configuration";
       };
       terminals = {
         default = mkOption {

@@ -30,7 +30,7 @@ in
         };
         shell = {
             enable = true;
-            tmux = true;
+            zellij = true;
         };
         terminals = {
           default = "${pkgs.alacritty}/bin/alacritty";
