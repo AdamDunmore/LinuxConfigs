@@ -1,5 +1,4 @@
-{
-  
+{  
     description = "NixOS configuration flake";
 
     # https://github.com/NixOS/nix/issues/4945 
@@ -110,6 +109,20 @@
                         }
                     ];
                 };
+
+		vps = inputs.nixpkgs.lib.nixosSystem {
+			specialArgs = nixConfigSpecialArgs;
+			modules = [
+				./hosts/vps/configuration.nix
+				inputs.home-manager.nixosModules.home-manager {
+					home-manager = {
+						users.adam.imports = [
+							./hosts/vps/home.nix
+						] ++ home_imports;
+					} // home_args;
+				}
+			];
+		};
 
                 server = inputs.nixpkgs.lib.nixosSystem {
                     modules = [
