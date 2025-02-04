@@ -24,6 +24,8 @@ with lib;
 
             cds = "echo \"Disk usage of current dir: $(du . -sh)\"";
 
+            z = "zellij options --attach-to-session=true --session-name=main"; 
+    
             nix-switch = "sudo nixos-rebuild switch --flake";
             nix-test = "sudo nixos-rebuild test --fast --flake";
 

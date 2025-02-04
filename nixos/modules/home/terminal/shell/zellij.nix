@@ -10,6 +10,7 @@ with lib;
             enable = true;
             settings = {
                 default_shell = "${pkgs.zsh}/bin/zsh";
+                default_mode = "Locked";
             };
         };
         xdg.configFile."zellij/config.kdl".text = ''
