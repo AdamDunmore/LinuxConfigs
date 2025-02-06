@@ -33,7 +33,6 @@ with lib;
                 thonny
                 bottles
                 tor-browser
-                discord
                 beeper
                 syncthing
                 kdePackages.kdeconnect-kde
@@ -65,6 +64,13 @@ with lib;
                 gamescope
                 vulkan-tools
                 steamtinkerlaunch
+            ])
+
+            ++
+
+            (with pkgs-unstable; [
+                #Unstable Packages
+                discord
             ]);
         })
 
