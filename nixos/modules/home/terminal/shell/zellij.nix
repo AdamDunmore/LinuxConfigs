@@ -21,7 +21,7 @@ with lib;
                 }
 
                 normal {
-                    bind "i" { SwitchToMode "Locked"; }
+                    bind "Shift i" { SwitchToMode "Locked"; }
                     bind "n" { NewPane "Right"; }
                     bind "x" { CloseFocus; }
                     bind "f" { ToggleFocusFullscreen; }
@@ -29,7 +29,7 @@ with lib;
                 }
 
                 locked {
-                    bind "Esc" { SwitchToMode "Normal"; }
+                    bind "Shift Esc" { SwitchToMode "Normal"; }
                 }
             }
         '';
