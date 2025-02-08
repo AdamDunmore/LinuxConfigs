@@ -61,4 +61,17 @@ lsp_config.clangd.setup({
     capabilities = capabilities,
 })
 
+-- Zig
+lsp_config.zls.setup({
+    capabilities = capabilities,
+})
 
+-- Vue
+lsp_config.volar.setup({
+    capabilities = capabilities,
+})
+
+-- Dart
+lsp_config.dartls.setup({
+    capabilities = capabilities,
+})

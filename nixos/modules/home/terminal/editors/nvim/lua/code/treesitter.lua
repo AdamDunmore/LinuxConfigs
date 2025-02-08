@@ -11,7 +11,8 @@ require('nvim-treesitter.configs').setup({
 --        "python",
 --    },
     highlight = {
-        enable = true;
+        enable = true,
+        disable = { "zig" },
     },
     indent = {
         enable = true
