@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, pkgs-unstable, ... }:
 
 let
   cfg = config.adam.terminal.editors;
@@ -21,14 +21,14 @@ with lib;
       };
     })
     ( mkIf cfg.nvim {
-      programs.neovim.plugins = [ (pkgs.vimPlugins.nvim-treesitter.withAllGrammars) ];
-      home.file = {
-        ".config/nvim/" = {
-          source = ./nvim;
-          target = ".config/nvim";
-          recursive = true;
+        programs.neovim.plugins = [ (pkgs-unstable.vimPlugins.nvim-treesitter.withAllGrammars) ];
+        home.file = {
+            ".config/nvim/" = {
+                source = ./nvim;
+                target = ".config/nvim";
+                recursive = true;
+            };
         };
-      };
     })
     { home.sessionVariables = { ADAM_EDITOR = cfg.default; }; }
   ];   

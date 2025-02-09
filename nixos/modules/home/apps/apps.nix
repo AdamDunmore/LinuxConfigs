@@ -64,6 +64,7 @@ with lib;
                 gamescope
                 vulkan-tools
                 steamtinkerlaunch
+                rshell
             ])
 
             ++
@@ -100,38 +101,48 @@ with lib;
                 vscode-langservers-extracted
                 bash-language-server
                 clang-tools
+                zls
+                vscode-extensions.vue.volar
+                luajitPackages.luarocks     
             
+                # Tools
                 p7zip
                 networkmanager
                 brightnessctl
-                typescript
                 blueman 
                 bluez
                 zip
                 unzip
-                pulseaudio
                 killall
-                pkg-config
-                pango
-                nodejs_22
-                libgccjit
-                cargo
-                home-manager
-                sops
-                tree-sitter
+                htop
                 wget
                 fd
                 ripgrep
                 jq
-                python3
-                rshell
+                fzf
+                home-manager
+                sops
+                pulseaudio
+
+                # Languages
+                typescript
+                dotnet-sdk_9 
+                zig
                 zulu8
+                libgccjit
+                cargo
+                nodejs_22
+                dart
+
+                #Libs
+                tree-sitter
                 geckodriver
                 libratbag
                 yad
-                dotnet-sdk_9 
-                htop
-                fzf
+                python3
+                pkg-config
+                pango
+                binutils
             ])
 
             ++
