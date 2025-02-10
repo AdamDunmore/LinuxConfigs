@@ -22,6 +22,8 @@ with lib;
             ls = "${lsd} -l";
             lst = "${lsd} --tree -l";
 
+            cz = "zoxide";
+
             cds = "echo \"Disk usage of current dir: $(du . -sh)\"";
 
             z = "zellij options --attach-to-session=true --session-name=main"; 
