@@ -5,6 +5,9 @@ let
 in
 with lib;
 { 
+    imports = [
+        ./nvim.nix
+    ];
   config = mkMerge [
     ( mkIf cfg.emacs {
       programs.emacs = {
@@ -19,16 +22,6 @@ with lib;
             source = ./emacs;
         };
       };
-    })
-    ( mkIf cfg.nvim {
-        programs.neovim.plugins = [ (pkgs-unstable.vimPlugins.nvim-treesitter.withAllGrammars) ];
-        home.file = {
-            ".config/nvim/" = {
-                source = ./nvim;
-                target = ".config/nvim";
-                recursive = true;
-            };
-        };
     })
     { home.sessionVariables = { ADAM_EDITOR = cfg.default; }; }
   ];   

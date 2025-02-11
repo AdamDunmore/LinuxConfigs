@@ -17,6 +17,8 @@
         spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
         nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+        mnw.url = "github:Gerg-L/mnw";
     };
 
     outputs = { ... } @inputs: 
@@ -47,25 +49,10 @@
                 inherit inputs;
             };
 
-            homeManagerConfig = {
-                backupFileExtension = "bakp";
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.adam.imports = [
-                    inputs.spicetify-nix.homeManagerModules.default
-                    inputs.nix-flatpak.homeManagerModules.nix-flatpak
-                    ./modules/home.nix
-                ];
-                extraSpecialArgs = {
-                    inherit pkgs;
-                    inherit pkgs-unstable;
-                    inherit inputs;
-                };
-            };
-
             home_imports = [
                 inputs.spicetify-nix.homeManagerModules.default
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
+                inputs.mnw.homeManagerModules.mnw
             ];
 
             home_args = {

@@ -90,20 +90,6 @@ with lib;
                 lsd
                 bat
                 starship
-
-                # Language Servers
-                rust-analyzer
-                nil
-                nodePackages_latest.typescript-language-server
-                jdt-language-server
-                pyright
-                lua-language-server
-                vscode-langservers-extracted
-                bash-language-server
-                clang-tools
-                zls
-                vscode-extensions.vue.volar
-                luajitPackages.luarocks     
             
                 # Tools
                 p7zip
@@ -149,7 +135,6 @@ with lib;
 
             (with pkgs-unstable; [
                 #Unstable Packages
-                neovim
             ]);
         })
     ];

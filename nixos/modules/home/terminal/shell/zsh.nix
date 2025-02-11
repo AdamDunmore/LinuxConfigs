@@ -22,11 +22,9 @@ with lib;
             ls = "${lsd} -l";
             lst = "${lsd} --tree -l";
 
-            cz = "zoxide";
-
             cds = "echo \"Disk usage of current dir: $(du . -sh)\"";
 
-            z = "zellij options --attach-to-session=true --session-name=main"; 
+            ze = "zellij options --attach-to-session=true --session-name=main"; 
     
             nix-switch = "sudo nixos-rebuild switch --flake";
             nix-test = "sudo nixos-rebuild test --fast --flake";
