@@ -72,6 +72,14 @@ vim.api.nvim_set_keymap(
     ":Telescope diagnostics<CR>",
     { noremap = true, silent = true }
 );
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<leader>fi',
+    ":Telescope lsp_references<CR>",
+    { noremap = true, silent = true }
+);
+
 vim.api.nvim_set_keymap(
     'n',
     '<leader>fb',
