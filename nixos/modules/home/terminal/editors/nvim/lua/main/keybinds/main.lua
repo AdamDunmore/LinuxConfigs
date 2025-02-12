@@ -68,6 +68,12 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
     'n',
+    '<leader>fd',
+    ":Telescope diagnostics<CR>",
+    { noremap = true, silent = true }
+);
+vim.api.nvim_set_keymap(
+    'n',
     '<leader>fb',
     ":Telescope buffers<CR>",
     { noremap = true, silent = true }
