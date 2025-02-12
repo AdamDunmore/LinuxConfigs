@@ -4,32 +4,39 @@ with lib;
 {
   options.adam = {
     enable = mkEnableOption "Enable Config";
+
     apps = {
         all = mkEnableOption "Install all apps";
         light = mkEnableOption "Install all light apps";
         minimal = mkEnableOption "Install all minimal apps";
     };
+
     display_managers = {
       greetd = mkEnableOption "Enable Greetd";
       ly = mkEnableOption "Enable Ly";
       sddm = mkEnableOption "Enable SDDM";
     };
+
     services = {
         syncthing = mkEnableOption "Enable Syncthing";
     };
+
     scripts = mkEnableOption "Enable Scripts";
+
     keyboard = {
         enable = mkEnableOption "Enable Configuring Keyboard";
         custom_layout = mkEnableOption "Enable Custom Keyboard Layout";
     };
+
     terminal = {
       editors = {
         default = mkOption {
-        type = types.str;
-        default = "${pkgs.nano}/bin/nano";
-        example = "\${pkgs.nano}/bin/nano";
-        description = "The binary for your default editor";
+            type = types.str;
+            default = "${pkgs.nano}/bin/nano";
+            example = "\${pkgs.nano}/bin/nano";
+            description = "The binary for your default editor";
         };
+
         emacs = mkEnableOption "Enable Emacs";
         nvim = mkEnableOption "Enable Neovim";
       };
@@ -45,6 +52,7 @@ with lib;
             example = "\${pkgs.foot}/bin/foot";
             description = "The binary for your default terminal";
         };
+
         alacritty = mkEnableOption "Enable Alacritty";
         kitty = mkEnableOption "Enable Kitty";
       };
@@ -52,8 +60,9 @@ with lib;
     wm = {
       widgets = { 
         ags = {
-        enable = mkEnableOption "Enable Ags"; #TODO: Divide into modules
+            enable = mkEnableOption "Enable Ags"; #TODO: Divide into modules
         };
+
         mako = mkEnableOption "Enable Mako";
         waybar = mkEnableOption "Enable Waybar";
         wofi = mkEnableOption "Enable Wofi";
@@ -65,17 +74,21 @@ with lib;
             example = "\${pkgs.i3}/bin/i3";
             description = "The binary for your default Window Manager/Compositor";
         };
+
         default_locker = mkOption {
             type = types.str;
             default = "${pkgs.swaylock}/bin/swaylock";
             example = "\${pkgs.swaylock}/bin/swaylock";
             description = "The binary for your default Wayland locker";
         };
+
         hyprland = {
             enable = mkEnableOption "Enable Hyprland";
             hyprlock = mkEnableOption "Enable Hyprlock";
         };
+
         river.enable = mkEnableOption "Enable River";
+
         sway = {
             enable = mkEnableOption "Enable Sway";
             swaylock = mkEnableOption "Enable Swaylock";
