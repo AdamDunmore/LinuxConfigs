@@ -38,18 +38,6 @@ with lib;
                 kdePackages.kdeconnect-kde
                 steam
 
-
-                # Sway
-                wl-clipboard
-                swaysome
-                ags
-                grim
-                slurp
-                wpaperd
-                wofi
-                kanshi
-                xdg-desktop-portal
-
                 # Gnome
                 nautilus
                 eog

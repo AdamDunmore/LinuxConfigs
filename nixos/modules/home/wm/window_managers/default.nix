@@ -16,5 +16,21 @@ with lib;
         ADAM_WM = cfg.default;
         ADAM_LOCKER = cfg.default_locker;
     };}
+
+    (
+        mkIf (cfg.sway.enable || cfg.river.enable || cfg.hyprland.enable) {
+            home.packages = with pkgs; [
+                wl-clipboard
+                swaysome
+                ags
+                grim
+                slurp
+                wpaperd
+                wofi
+                kanshi
+                xdg-desktop-portal
+            ];
+        } 
+    )
   ]; 
 }
