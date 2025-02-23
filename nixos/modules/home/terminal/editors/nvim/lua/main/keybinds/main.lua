@@ -101,6 +101,13 @@ vim.api.nvim_set_keymap(
     { noremap = true, silent = true }
 );
 
+vim.api.nvim_set_keymap(
+    'n',
+    '<leader>fg',
+    ":Telescope grep_string<CR>",
+    { noremap = true, silent = true }
+);
+
 -- UI --
 -- Nvim Tree
 vim.api.nvim_set_keymap(
