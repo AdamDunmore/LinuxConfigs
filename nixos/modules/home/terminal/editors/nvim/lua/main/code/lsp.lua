@@ -22,7 +22,7 @@ lsp_config.lua_ls.setup({
 })
 
 -- Python
-lsp_config.lua_ls.setup({
+lsp_config.pyright.setup({
     capabilities = capabilities,
 })
 
